@@ -97,13 +97,6 @@ $ git commit -m '커밋 메시지'
 
 **항상 status 명령어를 통해 git의 상태를 확인하자! commit 이후에는 log 명령어를 통해 이력들을 확인하자!**
 
-### 4.업로드
-
-```bash
-git remote add origin https://github.com/Hae-gun/TIL.git
-git push -u origin master
-```
-
 
 
 ## 2. 원격 저장소 활용하기.
