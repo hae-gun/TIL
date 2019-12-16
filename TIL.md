@@ -12,3 +12,13 @@
 ---
 
 * 마크다운... ...?!?!?
+* 백준 알고리즘.
+
+
+
+### .gitignore 
+
+> gitignore파일을 통해 업로드 무시가능. 
+>
+> 또는 [gitignore](gitignore.io) 싸이트 활용
+
