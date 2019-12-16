@@ -20,4 +20,12 @@ a.txt  # 특정 파일
 
 예) `eclipse`, `java`, `windows`, ...
 
+
+
+수업내용 정리
+
+[강사님 github](https://github.com/edutak/TIL)
+
+
+
  
