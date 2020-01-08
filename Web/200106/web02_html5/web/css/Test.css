@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+
+body {
+	
+	background-color: pink;
+}
+.navi {
+	background: yellow;
+	margin-top: 30px;
+	width: 960px;
+	height: 100px;
+}
+
+.navi ul {
+	list-style: none;
+	height: 40px;
+	padding-top: 10;
+	padding-bottom: 5px;
+}
+
+.navi ul li {
+	float: left;
+	font-size: 15px;
+	margin-left: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+

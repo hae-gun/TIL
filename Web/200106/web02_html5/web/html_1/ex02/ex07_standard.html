@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>웹 표준을 지킨 문서</title>
+		<style type="text/css">
+			
+			.accent{
+				font-size: 20px;
+				color: #1a1aff;
+				font-weight: bold;
+			}
+			
+			body,p { /* 다중지정 */
+				background-color: #ffffb3;
+			}
+			
+			h1{
+				color: purple;
+			}
+			
+			h1.blue{
+				color: blue;
+			}
+			
+			h2.blue{
+				color: #009933;
+				font-style: italic;
+				margin:150px;
+					}
+					
+			h2#aa {
+				/* margin: 100px 200px 400px 30%; /*  top right bottom left 순서로 margin줌 2개 쓰면 t,b >100px l,r> 50px */ 
+				margin-bottom: 100px;
+				margin-top: 30px;
+				color: #808000; 우선순위 /* id > class > 선택자 */
+			}
+		</style>	
+	<!-- class 이름 : . clasName{	속성: 값; 속성2: 값; .........	} 다중
+						#idName{	속성: 값; 속성2: 값; .........	} 고유한 특징 제어
+	-->
+	</head>
+	<body> <!-- 선택자 -->
+		<h1>선택자 다중 지정 연습</h1>
+		<h1 class="blue">선택자 다중 지정 연습2</h1>
+		<h1>선택자 다중 지정 연습3</h1>
+		<h2 class="blue">선택자 다중 지정 연습3</h2>
+		<h2 class="blue" id="aa">선택자 다중 지정 연습3</h2>
+		<h3>선택자 다중 지정 연습3</h3>
+		<h1>선택자 다중 지정 연습3</h1>
+		<p>
+			이제 <span class="accent">웹표준</span>의 역할은 아주 <span class="accent">중요</span>합니다.
+			span은 제어용. class name 이용.
+			margin 중첩 되었을 때 가장 큰것으로 적용.
+		</p>
+		
+	</body>
+</html>
