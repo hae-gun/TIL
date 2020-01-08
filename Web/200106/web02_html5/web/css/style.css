@@ -1,11 +1,16 @@
 @charset "utf-8";
 body {
 	font: 14px 맑은 고딕;
-	/* background-image: url(bg.png); */
+	background-color: rgb(153,179,193);
+}
+.center{
+	text-align: center;
 }
 a img { 
 	border: none;
 }
+
+
 a:link {
 	color: #42413C;
 	text-decoration: underline; 
@@ -26,7 +31,8 @@ a:hover, a:active, a:focus {
 header {  /*  일반 태그  */
 	height: 280px;
 	margin-top: 0;
-	background-image: url(../html/images/bg.png);
+	background-image: url(../html_1/images/bg.png);
+	background-size:cover;
 	background-repeat: no-repeat;
 	background-position: left top;
 }
@@ -34,10 +40,11 @@ header {  /*  일반 태그  */
 #header {   /* id명 */
 	height: 280px;
 	margin-top: 0;
-	background-image: url(../html/images/bg.png);
+	background-image: url(../html_1/images/bg.png);
 	background-repeat: no-repeat;
 	background-position: left top;
 }
+
 
 header hgroup{
 	position:relative;
@@ -48,9 +55,10 @@ header hgroup{
 } 
 hgroup h1{
 	font-size:3em;		
-	color:#FFC;	
+	color:#6699ff;	
 	text-shadow:1px 2px 2px #000;	
 }
+
 hgroup h2{
 	font-size:2em;
 	color:#FF0;	
@@ -94,6 +102,7 @@ h4 {
 .navi a:hover, .navi a:active, .navi a:focus {
 		text-shadow:0px 2px 2px #000;
 		color:#FC0;
+		
 }
 
 .sidebar1 {
@@ -135,8 +144,8 @@ h4 {
 
 footer {
 	padding: 10px 0;
-	background-color:#030;
-	color:#fff;
+	background-color:rgb(210,230,209);
+	color:#3333ff;
 	text-align:center;
 	clear: both;
 }

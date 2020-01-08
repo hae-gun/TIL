@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";			
+			.jb {
+				width: 100px;
+				height: 100px;
+				margin: 60px auto;
+				background-color: orange;
+				transition:width 2s, height 2s, background-color 2s, transform 2s;
+			}
+			.jb:hover {
+				width:200px;
+    			height:200px;
+				transform: rotate( 180deg );
+				
+			}
