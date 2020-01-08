@@ -2,7 +2,10 @@
 
 
 
-ul {
+body{
+	background-color: #b3ffec;
+}
+.menubar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -33,7 +36,7 @@ li a:hover:not(.active) {
 
 div.contents{
 	background-color: #ffff99;
-	width: 100%;
+	width: 50%;
 	height: 500px;
 	
 }
@@ -52,4 +55,7 @@ div.contents{
 }
 .menubar li:hover ul {
 	display:block;   /* 마우스 커서 올리면 서브메뉴 보이게 하기 */
+}
+div h1{
+	text-align: center;
 }
