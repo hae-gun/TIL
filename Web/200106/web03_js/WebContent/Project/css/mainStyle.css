@@ -8,6 +8,7 @@ background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA
 }
 
 table.type01 {
+	align: center;
 	border: 1px;
     border-collapse: collapse;
     text-align: left;
@@ -24,8 +25,8 @@ table.type01 th {
 }
 table.type01 td {
 	
-	width: 350px;
-	height: 150px;
+	width: 200px;
+	height: 100px;
 	text-align: center;
      padding: 5% 0; 
     vertical-align: middle;
