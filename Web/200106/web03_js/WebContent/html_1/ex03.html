@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>sssssst</title>
+		<style>
+		.dan{
+			
+			color: aqua;
+		}
+		</style>
+		<script type="text/javascript">
+			/* for(a=1;a<11;a++){
+				document.write(a+ "*" +a+ "="+a*a+"<br>");
+			} */
+			 sum = 0;
+			 count = 0;
+
+			for(a=1;a<101;a++){
+				if((a%3)==0){
+					count++;	
+					sum+=a;
+				}
+			}
+
+			document.write("3의배수 갯수: "+count +" 총합 :" +sum+"<br>"); 
+			for(a=1;a<10;a++){
+
+				document.write(" <input type=\"button\" value=\""+a+"\" id=\"dan\">")
+			}
+
+
+
+			//구구단
+			/* document.write("<table");
+				for(row=1;row<10;row++){
+					
+					document.write("<tr>");
+						for(col=2;col<10;col++){
+							document.write("<td>\t"+col + " * " + row + " = " + col*row+"</td>");
+						}
+						
+						document.write("<tr>");
+				}
+				
+			document.write("</table>"); */
+
+		</script>
+		
+		
+	
+	</head>
+	
+	<body>
+		<p id="text">
+			<textarea cols="30" rows="12" id="result"></textarea>
+		</p>
+		
+		
+	</body>
+
+</html>

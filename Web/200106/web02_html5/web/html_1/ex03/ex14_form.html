@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title> ex14_form.html form, filedset, label</title>
+		
+		<style type="text/css">
+		
+			form ul li{
+				list-style: none;
+				margin: 15px 0;
+			}
+			form fieldset { margin-bottom: 25px;}
+			form legend{
+			
+				font-size: 15px;
+				font-weight: 600;
+			}
+	
+}
+		
+		</style>
+		
+		
+	</head>
+	
+	<body>
+		<form>
+			<fieldset>
+				<legend>관심분야?<small>(다수 선택 가능)</small></legend>
+				<ul>
+				
+					<li><input type="checkbox" name="pre" value="grammer">문법</li>
+					<li><input type="checkbox" name="pre" value="voca">어휘</li>
+					<li><input type="checkbox" name="pre" value="listening">리스닝</li>
+					<li><input type="checkbox" name="pre" value="speaking">회화</li>
+				
+				</ul>
+			</fieldset>
+			
+			<label for="name">name</label>
+			<input type="text" name="irum" id="name"><br/>
+				
+			<label for="id">ID</label>
+			<input type="text" name="id" id="id"><br/>
+			
+		</form>
+
+	</body>
+
+</html>

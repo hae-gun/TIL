@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>title</title>
+	<script type="text/javascript">
+		window.onload = function(){/* 
+			alert("innerHTML" + document.body.innerHTML + '\n' + "innerText:"+ document.body.innerText);
+		 */
+		
+		 var list = '';
+		list += "<ul>";	
+		list += "<li>Hello</li>";	
+		list += "<li>Hello</li>";	
+		list += "<li>Hello</li>";	
+		list += "</ui>";
+		document.getElementById("demo").innerHTML = list;	
+	}
+	function change(){
+	
+		//document.getElementById("demo").innerText = "change";
+		document.getElementById("name").innerHTML = prompt(); //tag도 적용됨.
+	
+	}
+	function name1(){
+		document.getElementById("age").innerHTML = prompt();
+	}
+
+	</script>
+</head>
+
+<body>
+	It works!
+	<span id="demo"></span>
+	<span id="name">name</span>
+	<span id="age">age</span>
+	<br>
+	<input type="button" value="이름" onclick="change()">
+	<input type="button" value="나이" onclick="name1()">
+</body>
+
+</html>
