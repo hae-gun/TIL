@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>The Web HTML CSS JS jQuery</title>
+		
+		<script type="text/javascript">
+		function countincrease(){
+			var spanObj = document.getElementById("countSpan");
+			spanObj.innerHTML = parseInt(spanObj.innerHTML)+1;
+			
+		}
+		
+		function clickNumber(data){ //계산기
+			
+			
+			var monitor = document.getElementById("monitor");
+			/* alert(monitor); */
+			
+			if(data=="clear"){
+				monitor.value='';
+			}else if(data != '='){
+				monitor.value += data;
+			}else{
+				monitor.value = eval(monitor.value);
+			}
+			
+		}
+		
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<span id="countSpan">0</span>번 클릭 &nbsp;
+		<input type="button" value="click" onclick="countincrease()"/>
+		<hr/>
+		<input type="text" id="monitor"/>
+		<br/>		
+		<input type="button" value="1" onclick="clickNumber(this.value)"/>
+		<input type="button" value="2" onclick="clickNumber(this.value)"/>
+		<input type="button" value="3" onclick="clickNumber(this.value)"/>
+		<input type="button" value="+" onclick="clickNumber(this.value)"/>
+		<input type="button" value="-" onclick="clickNumber(this.value)"/>
+		<input type="button" value="*" onclick="clickNumber(this.value)"/>
+		<input type="button"  value="=" onclick="clickNumber(this.value)"/>
+		<input type="button"  value="clear" onclick="clickNumber(this.value)"/>
+		
+	</body>
+
+</html>
