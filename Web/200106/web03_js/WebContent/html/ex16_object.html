@@ -15,7 +15,8 @@
 				info : function() {
 					var list = '';
 					for(var key in this) {
-						if( key != 'info') {
+						if( key != 'info') { // ==, === 3개짜리 권장. 2개는 타입은 비교하지 못한다.
+											//3개짜리는 타입 객체 모두 비교함
 							list += key + " : " + this[key] + "\n";
 						}
 					}// for end
@@ -27,19 +28,19 @@
 		return person;
 	} // makePerson(name, phone, addr) end
 	
-	/* var p = makePerson("강감찬", "0000", "서울시");
+	/*  var p = makePerson("강감찬", "0000", "서울시");
 	var p2 =makePerson("전두환", "8888", "경기");
 
 	var person = [p, p2];   // var 배열명 = [값1, 값2,...];
 	person[0].info();
-	person[1].info(); */
+	person[1].info();  */
 	
-	var person = [];
+	 var person = [];
 	person.push(makePerson("happy", "9999", "seoul"));
 	person.push(makePerson("kingsmile", "8888", "busan"));
 	
 	for(var i in person) {
-		person[i].info();
+		person[i].info(); 
 	}
 </script>
 </head>

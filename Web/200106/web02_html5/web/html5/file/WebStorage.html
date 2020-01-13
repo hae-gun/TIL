@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>À¥ ½ºÅä¸®Áö Å×½ºÆ®</title>
+<meta charset="UTF-8">
+<title>ì›¹ ìŠ¤í† ë¦¬ì§€ í…ŒìŠ¤íŠ¸</title>
 </head>
 <body>
 <textarea id="ta"></textarea>
@@ -10,19 +10,19 @@
 <script type="text/javascript">
 	try{
 		var area = document.querySelector('#ta');
-		//ÆíÁı Àü ÄÁÅÙÃ÷ º¯°æ
+		//í¸ì§‘ ì „ ì»¨í…ì¸  ë³€ê²½
 		if ( !area.value ) {
 			area.value = window.localStorage.getItem('value');
 		}
 		
-		//ÄÁÅÙÃ÷ ·ÎÄÃ ÀúÀå
+		//ì»¨í…ì¸  ë¡œì»¬ ì €ì¥
 		area.addEventListener('keyup', function(){
 			window.localStorage.setItem('value', area.value);
 			window.localStorage.setItem('timestamp', (new Date()).getTime() );
 		}, false );
 		
 	}catch(ex) {
-		alert("ÇöÀç ºê¶ó¿ìÀú´Â ·ÎÄÃ À¥½ºÅä¸®Áö¸¦ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù.");
+		alert("í˜„ì¬ ë¸Œë¼ìš°ì €ëŠ” ë¡œì»¬ ì›¹ìŠ¤í† ë¦¬ì§€ë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 	}
 </script>
 

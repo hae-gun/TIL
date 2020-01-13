@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/style.css" type="text/css" >
+		<title>CDN 방식</title>
+	</head>
+		<!-- <script src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+		<script type="text/javascript" src = "jquery-3.4.1.min.js"></script>
+		<script type="text/javascript">
+	
+			
+			$(document).ready(function(){
+				/* alert("!"); */
+				//$('#h1').hide(); 선택자
+				//$('#id1').hide(); id
+				//$('.c1').hide(); class 선택
+				//$('.c1').css('backgroundColor','#ffccff');
+				//$('h1.c2').css('backgroundColor','#ffccff'); // 2개도 가능. 
+ 				//$('*').css('backgroundColor','#ffccff'); // 전체적용 
+				//$('h1:first').css('backgroundColor','#ffccff'); // 첫번째 h1.
+				//$('h1:last').css('backgroundColor','#ffccff'); // 마지막 h1.
+				//$('h1 p').css('backgroundColor','skyblue'); h1의 p에만 적용]
+				$('h1, p, div').css('backgroundColor','skyblue'); //, 를 사용하면 모두 하나씩 적용
+				$('h1').hover(function() {$(this).css("color", "red");}, function(){$(this).css("color", "blue");});
+				$('h1#id1').hover(function(){
+					$(this).fadeOut(300);
+					$(this).fadeIn(300);
+					});
+			});
+		
+		
+/* 			//jQuery == $	
+		
+			$(document).ready(function(){
+				alert('안녕');
+			});
+		
+			
+			//축약문
+			
+			$(function(){
+				alert('안녕33333');
+			});
+			
+ */			
+			/*  function hi(){
+				
+				alert('안녕');
+			}	 */ 
+			
+		</script>
+	
+	<!-- <body onload="hi()"> -->
+	<body>
+			
+		<h1 id="id1">Hello
+			<p>	포함된 p태그</p>
+		</h1>
+		<h2>123423</h2>
+		<h1 id="2">빅데이터 6기 4반</h1>
+		
+		
+		<div>
+			영역 지정함
+		</div>
+		
+		<h1 class="c1">빅데이터 6기 4반</h1>
+		<h1 class="c2">빅데이터 6기 4반</h1>
+		<h1>빅데이터 6기 4반 반가워요 친구들~</h1>
+		<p>여러 선택자 선택 가능</p>
+	
+	
+	</body>
+
+</html>

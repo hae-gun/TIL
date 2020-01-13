@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>The Web HTML CSS JS jQuery</title>
+		
+		 <style type="text/css">
+		 
+			body{
+				background-color: #ccffcc;
+				font-family	: "휴먼둥근헤드라인";
+				padding-top: 30%;
+			}
+			div.main{
+				padding: 50%;
+			} 
+		 </style>
+	<script type="text/javascript">
+	
+		var timerId1;
+		
+		function setClock(){
+			var now = new Date();
+			var s = now.getHours()+ ":" + now.getMinutes() +':'+ now.getSeconds();
+			document.getElementById('clock').innerHTML = s;
+			
+			
+			
+		timerId1 = setTimeout('setClock()',1000);
+			
+			
+		}	
+		
+			function off(){
+				clearTimeout(timerId1);
+				document.getElementById('clock').innerHTML = "-------";
+				
+			}
+	
+	</script>
+	</head>
+	<body onload="setClock()">
+		
+		<div align="center"  id="main">
+			<h1><div>시간</div>
+			<div id="clock">a</div>
+			<input type="button" value = "time" onclick='setClock()'>
+			<input type="button" value = "off" onclick='off()'>
+			</h1>
+		</div>
+	</body>
+
+</html>

@@ -4,12 +4,23 @@
 <title>th147 web sample</title>
 
 <script type="text/javascript">
+
+/* cf) java
+class Person{
+	String name;
+	int age;
+	public void setName(Strin name){}
+	public string getName(){}
+}
+Person p = new Person(); */
+
+
 	var person = {
 			name: "홍길동",
 			phone: "010-9872-0202",
 			addr: "서울 서대문구 연희동",
 			
-			info : function() {
+			info : function() { // 객체에 메소드 작성법.
 				alert("name : " + this.name + "\n"
 					+ "phone : " + this.phone +"\n"
 					+ "addr : " + this.addr 

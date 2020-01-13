@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/style.css" type="text/css" >
+		<title>The Web HTML CSS JS jQuery</title>
+	
+	<script type="text/javascript">
+	
+	var dab;
+	var input=0;
+	var count=5;
+	var cons = 0;
+	function makeRandom(){
+		dab = Math.floor(Math.random() * 100) + 1;
+		
+	}
+	
+	 function collec(){
+		 
+		input = prompt('맞춰보세요. 남은기회 :'+count,'');
+		
+		return input;
+	}
+	 
+	  function upDown(input){
+		  
+		if((count>=0)&&(this.input<dab)){
+			alert("Up");
+			count--;
+		}
+		else if((count>=0)&&(this.input>dab)){
+			alert("down");
+			count--;
+		}
+		else{
+			cons = 1;
+			alert("정답!");
+			document.write(dab);		
+		}
+		if(count===0){
+			alert("끝.");
+			document.write("실패. 정답:"+dab+"<br><input type=\"button\" value=\"시작\" onclick=\"play()\">");
+		}
+	}  
+	  
+	  
+	function play(){
+		alert("게임시작.");
+		 	
+			makeRandom();
+		
+		 	while ((count>0)&&(cons===0)) {
+			
+			upDown(collec());
+		}
+		 	
+		
+	}
+		
+		
+
+	
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	</head>
+	
+	<body>
+	
+		<input type="button" value="시작" onclick="play()">
+	</body>
+
+</html>

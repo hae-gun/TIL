@@ -3,10 +3,9 @@
 <meta charset="UTF-8">
 <title>DataType</title>
 </head>
-<body>
 <script type="text/javascript">
 	var num = 10;  //숫자형
-	var str ='자바스크립트';  //문자형
+	let str ='자바스크립트';  //문자형
 	var point = { x : 300 , y : 500 }; //객체
 	var arr = [ 1, 2, 3, 4 ];  // 배열
 		
@@ -15,7 +14,13 @@
 		return su1 + su2;
 	}
 	
-	document.writeln('num : ' + num + '<br />');
+	function show(){
+		document.write(`화면 출력 문자열 ${str}`);
+	}
+	
+	
+	
+	/* document.writeln('num : ' + num + '<br />');
 	document.writeln('str : ' + str + '<br />');
 	
 	document.writeln('point.x : '  + point.x + '<br />');
@@ -36,8 +41,9 @@
 	var str = 'sfjsdkjfksdjfkjsdf   rt34535 ,\n 4935893485934rekjtgkjg';  //    \n
 	document.writeln(str);  //  &nbsp;  역할을 한다
 	alert(str);  
-	alert("jfkdsfks1 \n dksfkfkf2 \ndkdkdkd38484 3");
+	alert("jfkdsfks1 \n dksfkfkf2 \ndkdkdkd38484 3"); */
 </script>
+<body onload="show()">
 </body>
 </html>
 
