@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>addClass demo</title>
+  <style>
+  p {
+    margin: 8px;
+    font-size: 16px;
+  }
+  .selected {
+    color: blue;
+  }
+  .highlight {
+    background: yellow;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+ 
+		<p>Hello</p>
+		<p>and</p>
+		<p>Goodbye</p>
+		
+		<div id="target">
+		  Double-click here
+		</div>
+		<div id="other">
+		  Trigger the handler
+		</div>
+ 
+<script>
+	$( "#target" ).dblclick(function() {
+		  alert( "Handler for .dblclick() called." );
+		});
+	 $( "#other" ).click(function() {
+		  $( "#target" ).dblclick();
+		}); 
+	
+	$( "p" ).last().addClass( "selected" );
+	$( "p" ).first().addClass( "highlight" );
+	
+	$(document).ready(function() {      
+	      var resultText = "";
+	      var $searchEles = $('p, span, div.simpletext1');
+	         
+	      resultText+="검색된 엘리먼트 개수 : " + $searchEles.length+"\n";
+	      $searchEles.each(function() {        
+	         resultText+= $(this).text() + "\t";
+	      });
+	      
+	      alert($.trim(resultText));
+	   });
+</script>
+ 
+</body>
+</html>

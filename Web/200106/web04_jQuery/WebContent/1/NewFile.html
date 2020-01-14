@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="../css/style.css" type="text/css" >
+		<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+		<title>The Web HTML CSS JS jQuery</title>
+		<style type="text/css">
+		body{
+			background-color: #000;
+			padding-top: 20%;
+		}
+		
+/* 		.button1 {
+
+    width:100px;
+
+    background-color: #f8585b;
+
+    border: none;
+
+    color:#fff;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+    cursor: pointer;
+
+}
+		.button2 {
+
+    width:100px;
+
+    background-color: yellow;
+
+    border: none;
+
+    color:#000;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+    cursor: pointer;
+
+} */
+	.test_btn1{ 
+		border-top-left-radius: 5px;
+		border-bottom-left-radius: 5px;
+		margin-right:-4px; 
+	}
+	.test_btn2{ 
+		border-top-right-radius: 5px; 
+		border-bottom-right-radius: 5px; 
+		margin-left:-3px; 
+	} 
+	.btn_group button{ 
+		border: 1px solid skyblue; 
+		background-color: rgba(0,0,0,0); 
+		color: skyblue; 
+		padding: 5px; 
+	} 
+	.btn_group button:hover{ 
+		color:white; 
+		background-color: skyblue; 
+	}
+
+
+
+		
+		
+		</style>
+		
+		<script type="text/javascript">
+		
+			$(function(){
+				var msg="";
+				$("#add").click(function(){
+					
+					msg += "이름: " + $("#name").val()+ ", 나이 : " + $("#age").val()+"\n";
+					$("#result").val(msg);
+					$("#name").val("");
+					$("#age").val("");
+				});
+				
+				$("#clear").click(function(){
+					msg = "";
+					$("#result").val(msg);
+				});
+			});
+		
+		
+		</script>
+		
+	</head>
+	
+	<body>
+		<div align="center">
+			<font color="skyblue">
+				이름 : <input type="text" id="name" autocomplete="off" placeholder="강아지 이름"><br>
+				나이 : <input type="number" id="age" autocomplete="off" placeholder="강아지 나이"><br><br>
+			</font>
+			<div class="btn_group">
+			<button id="add" class="test_btn1">Add</button>     <button id="clear" class="test_btn2">Clear</button>
+			</div>
+			<br>
+			<!-- <input type="text" id="result" > --><br>
+			<form>
+				<textarea rows="20" cols="50" id="result"></textarea>
+			</form>
+		</div>
+	</body>
+
+</html>

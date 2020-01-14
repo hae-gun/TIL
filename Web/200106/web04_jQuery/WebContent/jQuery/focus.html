@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #eef;
+        }
+
+        div {
+            padding: 20px;
+        }
+    </style>
+    <title>Page Title</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+                a = 1;
+                // $("#dog").show("slow");
+                // $("#dog").toggle();
+                $('#dog').animate({
+                    left: '100px',
+                    opacity: '0.5',
+                    width: '500px',
+                    height: '500px',
+                });
+            });
+            /* $("#btn2").click(function () {
+                a = 1;
+                // $("#dog").show("slow");
+                // $("#dog").toggle();
+                $('#dog').animate({
+                    left: '100px',
+                    opacity: '1',
+                    width: '240px',
+                    height: '300px',
+                });
+            }); */
+            $('#stop').click(function(){
+                $('#dog').stop();
+            });
+
+        });
+
+        //id값부여
+
+        $(function(){
+            $('p').each(function(index){
+                console.log(this);
+                $(this).attr({"id":"param_"+index});
+            });
+        });
+
+        $('#btns').click(function(){
+            alert($('#param_1').text());
+            $('#param_1').css('background-color','yellow');
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <div id="log">
+        <!-- <script>
+           $(document).click(function(e){
+                $("#log").text("e.pageX: " + e.pageX + ", e.pageY: "+ e.pageY);
+            });    
+           
+            
+        </script> -->
+
+        <button id="btn">show it</button>
+        <!--  <button id="btn2">small</button> -->
+        <button id="stop">stop</button>
+        <div>
+
+        <img src="../Peng.jpg" id="dog" alt="" width="240" height="200" style="position: relative" />
+        
+        </div>
+
+    </div>
+    <input type="button" id="btns" value="click"/>
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</body>
+
+</html>

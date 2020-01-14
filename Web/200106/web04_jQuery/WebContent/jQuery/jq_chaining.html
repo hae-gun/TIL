@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("#peng").show().fadeOut("slow").slideDown("slow");
+            });
+        });
+    
+    </script>
+</head>
+
+<body  style="background-color: teal;">
+    <div align = "center"> 
+        
+        <button>메소드 체이닝 시작</button>
+        <br>펭수
+    </div>
+
+    
+    <div align="center">
+        <img id="peng" src="../Peng.jpg" alt="" width="360" height="300" style="display: none;">
+    </div>
+
+</body>
+</html>

@@ -1,28 +1,41 @@
-const clockContainer = document.querySelector(".js-clock"),
-clockTitle =  clockContainer.querySelector("h1");
-
-
-function getTime(){
-    const date = new Date();
-    const minutes = date.getMinutes();
-    const hour = date.getHours();
-    const second = date.getSeconds();
-
-
-    clockTitle.innerText = underTen(hour)+":"+underTen(minutes)+":"+underTen(second);
-
-}
-
-function underTen(s){
-
-    var S = (s<10 ? `0${s}`:s);
-    return `${S}`;
-}
-
-
-function init(){
-
-    getTime();
-    setInterval(getTime, 1000);
-}
-init();
+var dab;
+	
+	var count = 5;
+	
+	function makeRandom(){
+		dab = Math.floor(Math.random() * 100) + 1;
+		
+	}
+	
+	 function collec(input){
+		this.input = prompt('맞춰보세요. 남은기회 :'+count,'');
+		
+		return this.input;
+	}
+	 
+	  function upDown(input){
+		if(this.input<dab){
+			alert("Up");
+			count--;
+		}
+		else if(this.input>dab){
+			alert("down");
+			count--;
+		}
+		else{
+			alert("정답!");
+			document.write(dab);
+			break;
+		}
+	}  
+	  
+	  
+	function play(){
+		alert("게임시작.");
+		 	makeRandom();
+		while (count>0) {
+			
+			upDown(collec());
+		}
+	}
+		

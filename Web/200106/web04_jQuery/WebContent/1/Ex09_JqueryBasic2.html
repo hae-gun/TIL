@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+		
+		
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			$('#txtname').val('happydoyeon');
+			$('input:radio').val(['F']); //[] 여러개중 하나.
+			$('#isF').val(['java','spring']);
+		
+			$('#btnok').click(function(){
+				var msg = "";
+				msg += $("txtname").val()+"\n";
+				msg += $("input:radio[name=gender]:checked").val()+"\n";
+				msg += $('isF').val().join(" ");
+				alert(msg);
+			});
+		
+			if($('#myForm').children().is('input[type=submit]')){
+				alert("TRUE");
+			}else{
+				alert("FALSE");
+			}// end if
+			
+		});
+	
+	</script>
+	
+		
+</head>
+<body>
+	
+	
+	Textbox:<input type="text" id="txtname" value="미리 넣어뒀어요"><br>
+	RadioButton: <input type="radio" name="gender" value="M" checked="checked">남
+	<input type="radio" name="gender" value="F">여
+	<br>
+	selectList:
+	<select id="isF" multiple="multiple">
+		<option value="jqeury">	웹</option>
+		<option value="java"">	자바</option>
+		<option value="spring">	스프링</option>
+	</select>>
+
+	<button id="btnok">FirstButton</button>
+	<button>SecondButton</button>
+	<button>ThirdButton</button>
+	
+	<hr>
+	<input type="button" id="btnEmpty" value="empty"><br>
+	<input type="button" id="btnRemove" value="remove"><br>
+	<hr>
+	<div id="mydiv">
+		<p>java</p>
+		<p>jquery</p>
+	</div> 
+	<hr>
+	<div id="mydiv2">
+		<input type="button" id="dbbtnclick" value="전송">
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+

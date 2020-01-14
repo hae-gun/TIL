@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+	
+		$(function(){
+			$('button').click(function(){
+				$(this).replaceWith('<div>'+$(this).text() + '</div>');
+			});
+			$('#btnEmpty').click(function(){
+				$('#mydiv').empty();
+				$('#mydiv').append("<b>HELLO</b>");
+			});
+			$('#btnRemove').click(function(){
+				$('#mydiv').remove();
+			});
+
+		});
+
+	</script>
+		
+</head>
+<body>
+	<button>FirstButton</button>
+	<button>SecondButton</button>
+	<button>ThirdButton</button>
+	
+	<hr>
+	<input type="button" id="btnEmpty" value="empty"><br>
+	<input type="button" id="btnRemove" value="remove"><br>
+	<hr>
+	<div id="mydiv">
+		<p>java</p>
+		<p>jquery</p>
+	</div> 
+	<hr>
+	<div id="mydiv2">
+		<input type="button" id="dbbtnclick" value="전송">
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
