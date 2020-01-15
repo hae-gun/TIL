@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Ajax HTML</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#driver").click(function(){
+                $('#stage').load('test.html');
+            });
+        });
+    
+    
+    </script>
+
+</head>
+<body>
+    
+
+
+
+    <p>버튼 클릭시 이곳에 jQuery ajax 실행됩니다.</p>
+    <div id="stage" style="background-color:magenta;">
+
+        STAGE
+
+    </div>
+    <input type="button" id="driver" value="Load Data"><br>
+
+    여기가 재로드 되었나요?
+    <br>확인하세요.
+</body>
+</html>

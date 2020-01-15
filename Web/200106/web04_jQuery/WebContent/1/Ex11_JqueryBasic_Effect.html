@@ -3,17 +3,48 @@
 <head>
 	<meta charset="EUC-KR">
 	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn').click(function(){
+				$('#first').slideToggle('show');
+			});
 		
+			$('span.more').click(function(){
+				$('#moreRegion').animate(
+					{
+					//데이터 처리방식(json 객체 parameter)
+						left: "300px",
+						opacity: '0.3',
+						height: '500px',
+						width: '500px',
+					}, 'slow'
+				);
+			});
+		
+		});
+	
+	</script>
+
 </head>
 <body>
-<input type="button" id="btn" value="슬라이드 토글">
+	<input type="button" id="btn" value="슬라이드 토글">
+	
 	<div id="first" style="display: none;background-color:gold;height: 100px">
 		First
 	</div>
+	
 	<hr>
-	<span class="more">MoreContent</span>
+	
+	<span class="more">Click?!</span>
+	
+	
 	<div id="moreRegion" style="background-color: red ;height: 100px;width: 100px;position: absolute;">
 		First
 	</div>
+	
+	
+	
+	
 </body>
 </html>

@@ -1,0 +1,7 @@
+    req.onreadystatechange = function(){
+                if(req.readyState == 4&&req.status ==200){
+                    document.getElementById("target").innerHTML = req.responseText;
+                }
+            }
+            req.open("GET", "testfile1.txt", true);
+            req.send();
