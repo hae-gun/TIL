@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script  src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script> <!-- jQuery Open latest 는 최신을 받아 오는것.-->
+<script  src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> <!-- ajax 쓰기위해서 사용. jQuery CDM방식으로 받아도 안될 때 사용하기.-->
 <script>
 	/* $(document).ready(function() {
 		$('#btn').click( function() {
@@ -13,7 +13,7 @@
 	}); */
 
 	$(document).ready(function() {
-		// $('button').on("click", function() { 
+		// $('button').on("click", function() {  
 		$('#btn').click( function() {
 			$.ajax({
 				url: 'hello.html',
@@ -28,8 +28,8 @@
 </head>
 <body>
 	<h1>서버에서 받은 메세지</h1>
-	<div id="msgView" style="height: 100px; width: 500px; border: 1px solid black;">
-	</div>
 	<input type="button" id="btn" value="서버에 자료요청" />
+	<div id="msgView" style="height: auto; width: 500px; border: 1px solid black;">
+	</div>
 </body>
 </html>

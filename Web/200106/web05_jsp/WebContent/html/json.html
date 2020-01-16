@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+		
+		<title>JSON</title>
+	</head>
+	
+	<body>
+		<h4>학생 명단</h4>
+		<p style="background-color: yellow">
+				이름 : <span id="name"></span>&nbsp;
+				나이 : <span  id="age"></span>
+		</p>
+		
+		
+		<script type="text/javascript">
+			var s= '[' + '{"name":"Hong","age":"21"},'+
+						 '{"name":"Kim","age":"22"},'+
+						 '{"name":"Park","age":"23"}]';
+			
+			var students = eval("(" + s + ")"); // eval()함수는 자바스크립트 컴파일러를 사용하여 JSON 텍스트를 구문 분석하고
+												// 자바스크립트 객체를 생성한다. 구분 오류를 방지 하려면 텍스트는 괄호 안에 싸여 있어야 한다.
+		</script>
+		
+	</body>
+
+</html>

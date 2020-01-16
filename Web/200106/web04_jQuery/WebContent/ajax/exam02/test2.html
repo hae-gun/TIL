@@ -45,8 +45,9 @@
 			httpRequest.open(method, url + '?' + args, true);
 			httpRequest.send(null); 
 		} else if(method == 'Post') {
+			httpRequest.setContentCharset(charSet);
 			httpRequest.open(method, url, true);
-			httpRequest.setRequestHeader("Content-Type", "application/www-form-urlencoded");
+			httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset="+charSet);
 			httpReequest.send(args);
 		}
 		

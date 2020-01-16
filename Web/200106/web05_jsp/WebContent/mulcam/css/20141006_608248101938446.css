@@ -1,0 +1,93 @@
+.contents table.board-list {width:100%; border-top:2px solid #333333; margin-top:20px; border-spacing: 0;border-collapse: collapse;}
+.contents table.board-list > caption {display:none;}
+.contents table.board-list > thead th {background:#f9f9f9; padding:10px; font-weight:400; color:#333; border-bottom:1px solid #bebebe;}
+.contents table.board-list > thead th img {vertical-align:middle;}
+.contents table.board-list > thead th .file {text-decoration:underline;}
+.contents table.board-list > tbody td {color:#333; padding:10px 0; border-bottom:1px solid #bebebe;}
+.contents table.board-list > tbody td > a {color:#333;}
+.contents table.board-list > tbody td.score {color:#f74a39;}
+.contents table.board-list > tbody td.notice {color:#0068ae;}
+.contents table.board-list > tbody td.notice > a{color:#0068ae;}
+.contents table.board-list > tbody td.contents {margin-top:20px; border:1px solid #bebebe; border-top:none; height:500px;}
+.contents .footer > form{height:24px; text-align:right; margin-top:10px; color:#666666;}
+.contents .footer > form select{width:80px; height:22px; border:1px solid #CCC; color:#f95342; vertical-align:middle;}
+.contents .footer > form input{border:1px solid #0c4da2; height:19px; width:80px; background:#0c4da2; color:#FFF; vertical-align:middle;}
+.contents .footer > div {height:36px; margin:20px 0;}
+.contents .footer a.btn{padding:10px;display:block; color:#333; background:#f8f8f8; border:1px solid #cccccc; height:14px; line-height:14px; text-align:center; width:70px; float:left; margin-left:10px; font-family:"NanumGothic";}
+.contents .footer a.btn:first-child{margin-left:0;}
+.contents table.board-list > tbody td:first-child {text-align:center;}
+.contents .footer input.btn{ font-family:"NanumGothicEXBD"; display:block; color:#FFF; background:#0068ae; border:1px solid #0068ae; height:36px; line-height:36px; *line-height:auto; text-align:center; width:70px; float:left; margin-left:10px;}
+.contents table.board-list > thead th input {border:1px solid #b8b8b8; height:19px; vertical-align:middle;}
+.contents table.board-list > thead th input[type='checkbox'] {border:none;}
+.contents table.board-list > thead th select {width:80px; height:22px; border:1px solid #b8b8b8; vertical-align:middle;}
+.contents .paging {text-align:center; height:28px; line-height:28px; margin-top:10px;}
+.contents .paging a,
+.contents .paging img,
+.contents .paging strong {vertical-align:middle; margin:0 2px;}
+.contents .btn-c {text-align:center; margin-top:10px;}
+.contents .btn-r3 {text-align:right;}
+.contents .btn-r {text-align:right; margin-top:10px;}
+.contents .search2 {clear:both; background:#f5f5f5; /*padding:10px 0;*/ text-align:center;vertical-align:middle;}
+.contents .search2 input {vertical-align:middle;}
+.contents table.board-write {width:100%; border-top:2px solid #333333; margin-top:20px; border-spacing: 0;border-collapse: collapse;}
+.contents table.board-write > caption {display:none;}
+.contents table.board-write > thead th {background:#f9f9f9; padding:10px; font-weight:400; color:#333; border-bottom:1px solid #bebebe;}
+.contents table.board-write > thead th img {vertical-align:middle;}
+.contents table.board-write > thead th .file {text-decoration:underline;}
+.contents table.board-write > tbody th {background:#f9f9f9; padding:10px; font-weight:400; color:#333; border-bottom:1px solid #bebebe;}
+.contents table.board-write > tbody td {color:#333; padding:10px 0; border-bottom:1px solid #bebebe;}
+.contents table.board-write > tbody td > a {color:#333;}
+.contents table.board-write > tbody td.score {color:#f74a39;}
+.contents table.board-write > tbody td.notice {color:#0068ae;}
+.contents table.board-write > tbody td.notice > a{color:#0068ae;}
+.contents table.board-write > tbody td.contents {margin-top:20px; border:1px solid #bebebe; border-top:none; height:500px;}
+.contents table.board-write > tbody td:first-child {text-align:center;}
+.contents table.board-write > thead th input {border:1px solid #b8b8b8; height:19px; vertical-align:middle;}
+.contents table.board-write > thead th input[type='checkbox'] {border:none;}
+.contents table.board-write > thead th select {width:80px; height:22px; border:1px solid #b8b8b8; vertical-align:middle;}
+.contents table.board-view {width:100%; border-top:2px solid #333333; margin-top:20px; border-spacing: 0;border-collapse: collapse;}
+.contents table.board-view > caption {display:none;}
+.contents table.board-view > thead th {background:#f9f9f9; padding:10px; font-weight:400; color:#333; border-bottom:1px solid #bebebe;}
+.contents table.board-view > thead th img {vertical-align:middle;}
+.contents table.board-view > thead th .file {text-decoration:underline;}
+.contents table.board-view > tbody th {background:#f9f9f9; padding:10px; font-weight:400; color:#333; border-bottom:1px solid #bebebe;}
+.contents table.board-view > tbody td {color:#333; padding:10px 0; border-bottom:1px solid #bebebe;}
+.contents table.board-view > tbody td > a {color:#333;}
+.contents table.board-view > tbody td.score {color:#f74a39;}
+.contents table.board-view > tbody td.notice {color:#0068ae;}
+.contents table.board-view > tbody td.notice > a{color:#0068ae;}
+.contents table.board-view > tbody td.contents {margin-top:20px; border:1px solid #bebebe; border-top:none; height:500px;}
+.contents table.board-view > tbody td:first-child {text-align:center;}
+.contents table.board-view > thead th input {border:1px solid #b8b8b8; height:19px; vertical-align:middle;}
+.contents table.board-view > thead th input[type='checkbox'] {border:none;}
+.contents table.board-view > thead th select {width:80px; height:22px; border:1px solid #b8b8b8; vertical-align:middle;}
+.contents .b-contants {padding:15px 5px;}
+
+
+.contents ul.prev-next {border-top:1px solid #333333; padding:5px 0;}
+.contents ul.prev-next li {padding:5px 0;}
+.contents ul.prev-next li:first-child {border-bottom:1px dotted #bebebe;}
+.contents ul.shoplist{ margin-top:10px; }
+.contents ul.shoplist > li {position:relative; float:left; margin:8px; width:182px; height:235px; border:1px solid #d3d3d3; padding:10px;}
+.contents ul.shoplist > li > .img{ display:block; margin:0 auto; width:182px;}
+.contents ul.shoplist > li > .tit {display:block; margin:0 auto; width:182px; text-align:center; font-size:14px; font-family:"NanumGothic"; margin-top:5px;}
+.contents ul.shoplist > li > .price {display:block; margin:0 auto; width:182px; margin-top:5px; font-family:"NanumGothicEXBD"; text-align:center; font-size:15px; color:#e02500;}
+.contents ul.shoplist > li > footer {position:absolute; bottom:0; left:0; width:202px; padding:7px 0; background:#f9f9f9; border-top:1px solid #e8e8e8;}
+.contents ul.shoplist > li > footer > .score {float:left; margin-left:60px;color:#f74a39;}
+.contents ul.shoplist > li > footer > .txt {float:right; margin-right:60px; font-size:11px;}
+div.comment {margin-top:30px;}
+ul.comments {width:100%;border-top:1px solid #f1f1f1;}
+ul.comments li {overflow:hidden;padding:15px 0 16px 0;border-bottom:1px solid #f1f1f1;color:#9b9b9b;position:relative;}
+ul.comments li div {float:left;width:180px;font-family:NANUM;}
+ul.comments li div strong {display:block;}
+ul.comments li p {float:left;width:503px;font-family:NANUM;}
+ul.comments li p em {color:#fe7200;}
+ul.comments li a {position:absolute;top:36px;left:108px;}
+p.common {margin-top:30px;padding-left:20px;background:url('/image/t01/common/icon/icon_comment.gif') no-repeat left 3px;font-family:NANUM;}
+div.common {overflow:hidden;width:660px;margin-top:10px;}
+div.common div {float:left;width:550px;height:80px;border:1px solid #e0e0e0;}
+div.common div textarea {display:block;width:550px;height:65px;margin:0 0 0 0;padding:0;border:0;}
+div.common div span {display:block;padding-right:10px;font:10px/12px NANUM;text-align:right;}
+div.common div span em {color:#ff6600;}
+div.common a {float:left;}
+fieldset.search2 {width:100% !impoartant;}
