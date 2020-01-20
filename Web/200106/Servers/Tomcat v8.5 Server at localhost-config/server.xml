@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="web04_jQuery" path="/web04_jQuery" reloadable="true" source="org.eclipse.jst.jee.server:web04_jQuery"/><Context docBase="web02_html5" path="/web02_html5" reloadable="true" source="org.eclipse.jst.jee.server:web02_html5"/><Context docBase="web05_jsp" path="/web05_jsp" reloadable="true" source="org.eclipse.jst.jee.server:web05_jsp"/><Context docBase="Servlet" path="/Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Servlet"/></Host>
+      <Context docBase="web04_jQuery" path="/web04_jQuery" reloadable="true" source="org.eclipse.jst.jee.server:web04_jQuery"/><Context docBase="web02_html5" path="/web02_html5" reloadable="true" source="org.eclipse.jst.jee.server:web02_html5"/><Context docBase="web05_jsp" path="/web05_jsp" reloadable="true" source="org.eclipse.jst.jee.server:web05_jsp"/><Context docBase="Servlet" path="/Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Servlet"/><Context docBase="web06_jstl_el" path="/web06_jstl_el" reloadable="true" source="org.eclipse.jst.jee.server:web06_jstl_el"/></Host>
     </Engine>
   </Service>
 </Server>

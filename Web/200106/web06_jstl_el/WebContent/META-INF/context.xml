@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<Context reloadable="true"> <!-- reloadable : 자동갱신 -->
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	
+	<Resource 
+			name = "jdbc:dbcpTestDB"
+			auth = "Container"
+			type = "javax.sql.DataSource"
+			username="kingsmile"
+			password="oracle"
+			driverClassName="oracle.jdbc.OracleDriver"
+			url="jdbc:oracle:thin:@localhost:1521:xe"
+			
+			maxActive="20"	
+			maxIdle="10"
+			maxWait="-1"
+	/>
+	
+	
+
+
+</Context>
