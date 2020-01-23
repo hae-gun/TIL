@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 1.생성자함수 이용하기 -->
+	<!-- <bean id = "record" class ="di4.ScoreImp" > <constructor-arg name="kor" 
+		value="90"/> <constructor-arg name="eng" value="90"/> <constructor-arg name="math" 
+		value="90"/> </bean> <bean id = "show" class="di4.ScoreShowImp"> <constructor-arg 
+		name="record" ref="record"/> name 은 생성자의 필드이름. </bean> -->
+	<!-- 2. setter method 이용. -->
+
+	<bean id="soccer" class="di5.PlayerImp">
+		<property name="name" value="박xx" />
+		<property name="position" value="공격수" />
+		<property name="sub" value="축구" />
+	</bean>
+	<bean id="baseball" class="di5.PlayerImp">
+		<property name="name" value="이xx" />
+		<property name="position" value="센터" />
+		<property name="sub" value="야구" />
+	</bean>
+	<bean id="curling" class="di5.PlayerImp">
+		<property name="name" value="박xx" />
+		<property name="position" value="잘모름" />
+		<property name="sub" value="컬링" />
+	</bean>
+	
+	<bean id="show1" class="di5.SprotImp">
+		<property name="player" ref="soccer" />
+	</bean>
+	
+	<bean id="show2" class="di5.SprotImp">
+		<property name="player" ref="baseball" />
+	</bean>
+	
+	<bean id="show3" class="di5.SprotImp">
+		<property name="player" ref="curling" />
+	</bean>
+	
+
+
+	
+
+</beans>

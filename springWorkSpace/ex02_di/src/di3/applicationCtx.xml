@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  applicationCtx.xml -->
+	<bean id = "en" name="m2" class ="di3.MessageBeanimpEn" ></bean>
+	<bean id = "kr" class="di3.MessageBeanimpKor"></bean>
+	<!-- java : new spring = bean -->
+	
+</beans>
