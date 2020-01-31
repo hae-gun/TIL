@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="vo1" class="empspring.EmpVO">	<!-- 생성자함수 -->
+		<property name="name" value="김사원" /> <!-- property = setter 메소드 호출 -->
+		<property name="salary" value="10000" />
+		<property name="deptname" value="교육부" /> <!-- 대소문자 구분 확실하게 하기. -->
+	</bean>
+		
+	<bean id="dao" class="empspring.EmpDAO">
+		<property name="vo" ref="vo1" /> <!-- ref는 객체를 받아올때. 값은 xml 내에 id 값으로 -->
+	</bean>
+
+</beans>

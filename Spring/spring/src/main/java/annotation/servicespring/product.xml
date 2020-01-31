@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<context:component-scan base-package="annotation.servicespring" />
+	
+	<bean id="vo" class="annotation.servicespring.ProductVO">
+		<property name="code" value="100" />
+		<property name="name" value="멀티컴퓨터" />
+		<property name="price" value="1000000" />
+		<property name="sale" value="0.0" />
+		<property name="coupon" value="0" />
+	</bean>
+
+	<!-- <bean id="dao" class="annotation.servicespring.ProductDAO">
+		<property name="vo" ref="vo" />
+	</bean>
+
+	<bean id="service" class="annotation.servicespring.ProductServiceNo">
+		<property name="dao" ref="dao" />
+	</bean>
+	
+	<bean id="service12" class="annotation.servicespring.ProductService12">
+		<property name="dao" ref="dao" />
+	</bean>
+	
+	<bean id="service05" class="annotation.servicespring.ProductService05">
+		<property name="dao" ref="dao" />
+	</bean>
+ -->
+
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 1. <bean> <property> 태그만 사용. -->
+	<bean id="vo" class="servicespring.ProductVO">
+		<property name="code" value="100" />
+		<property name="name" value="멀티컴퓨터" />
+		<property name="price" value="1000000" />
+		<property name="sale" value="0.0" />
+		<property name="coupon" value="0" />
+	</bean>
+
+	<bean id="dao" class="servicespring.ProductDAO">
+		<property name="vo" ref="vo" />
+	</bean>
+
+	<bean id="service" class="servicespring.ProductServiceNo">
+		<property name="dao" ref="dao" />
+	</bean>
+	
+	<bean id="service12" class="servicespring.ProductService12">
+		<property name="dao" ref="dao" />
+	</bean>
+	
+	<bean id="service05" class="servicespring.ProductService05">
+		<property name="dao" ref="dao" />
+	</bean>
+
+
+
+</beans>
