@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	
+	 <!-- @Autowired @Service:서비스단역할. @Repository:dao역할 @Component:그밖에 -->
+	<!-- <bean id="member" class="aop1.Member" />
+	<bean id="board" class="aop1.Board" />
+	<bean id="common" class="aop1.Common" /> -->
+	<context:component-scan base-package="annotation.aop1" />
+	
+
+
+	<!-- @Aspect @PointCut @Around,Before,After 설정 인식 -->
+	<aop:aspectj-autoproxy/>
+	
+	<!-- <aop:config>
+		<aop:pointcut expression= "execution (public * aop1.*.*(..))" id="pc"/>
+		<aop:aspect id="aspect1" ref="common">
+			<aop:before method="a" pointcut-ref="pc"/>
+			<aop:after method="b" pointcut-ref="pc"/>
+			<aop:around method="c" pointcut-ref="pc" />
+		</aop:aspect>
+	</aop:config> -->
+	
+	
+	
+</beans>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="dog" class="aopexam.Dog" />
+	<bean id="cat" class="aopexam.Cat" />
+	<bean id="rabbit" class="aopexam.Rabbit" />
+	<bean id="aspect" class="aopexam.AnimalAspect" />
+
+	<aop:config>
+		<aop:pointcut
+			expression="execution (public String aopexam.*.lunch())" id="pc" />
+		<aop:aspect id="aspect" ref="aspect">
+			<aop:before method="before" pointcut-ref="pc"/>
+			<aop:after-returning method="after" returning="ret" pointcut-ref="pc"/> <!-- 리턴값 저장할 변수 입력해야함.--> 
+		</aop:aspect>
+
+	</aop:config>
+
+
+
+</beans>
