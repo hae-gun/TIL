@@ -30,5 +30,8 @@
 			조회수: ${vo.viewcount}
 		</h3>
 	</c:forEach>
+	
+	<h3><a href="./boardinsert">글 등록하기</a><br><a href="./boarddelete">글 삭제하기</a></h3>
+	
 </body>
 </html>

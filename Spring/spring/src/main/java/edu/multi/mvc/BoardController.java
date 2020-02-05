@@ -29,12 +29,16 @@ public class BoardController  {
 	}
 	
 ////	1개 게시물 조회.
-//	@RequestMapping("/boarddetail")
-//	public ModelAndView boardDetail(@ModelAttribute("vo") BoardVO vo) {
-//		ModelAndView mv = new ModelAndView();
-//		dao.getDetail(vo.getSeq());
-//		return mv;
-//	} 
+	@RequestMapping("/boarddetail")
+	public ModelAndView getBoardDetail(int seq){
+		
+		BoardVO vo = dao.getBoardDetail(seq);
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("detail",vo);
+		
+		return mv;
+	}
 //	1갸 개시물 작성.
 //	1개 게시물 글쓰기 폼 화면
 	@RequestMapping(value = "/boardinsert", method=RequestMethod.GET)

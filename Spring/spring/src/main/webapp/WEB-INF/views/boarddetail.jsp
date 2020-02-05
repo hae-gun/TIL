@@ -4,16 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>boarddetail</title>
+<title></title>
 </head>
 <body>
-	<h3>
-		번호: ${vo.seq}
-		제목: ${vo.title}
-		내용: ${vo.contents} 
-		작성자: ${vo.writer} 
-		작성시간: ${vo.time} 
-		조회수: ${vo.viewcount}
-	</h3>
+			번호 : ${detail.seq} <br>
+			제목 : ${detail.title} <br>
+			작성시간 : ${detail.time} <br>
+			조회수 : ${detail.viewcount} <br>
+			<a href="./boardlist">목록으로</a>
 </body>
 </html>
