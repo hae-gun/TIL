@@ -22,7 +22,7 @@
 	<BoardVO> list = (ArrayList<BoardVO>)request.getAttribute("boardlist"); -->
 	<c:forEach items="${list}" var="vo">
 		<h3>
-			번호: ${vo.seq}<!-- =vo.getSeq() -->
+			번호:  <a href="boarddetail?seq=${vo.seq}">${vo.seq}</a> 
 			제목: ${vo.title} 
 			내용: ${vo.contents} 
 			작성자: ${vo.writer} 

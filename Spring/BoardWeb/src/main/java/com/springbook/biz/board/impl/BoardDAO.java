@@ -31,9 +31,8 @@ public class BoardDAO {
 		try {
 			conn = JDBCUtill.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
-			stmt.setString(1, vo.getTitle());
-			stmt.setString(2, vo.getWriter());
-			stmt.setString(3, vo.getContent());
+			stmt.setString(1, vo.getSeq());
+			
 			stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
