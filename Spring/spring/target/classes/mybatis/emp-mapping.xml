@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+	<!-- crud 기능 : insert select update delete sql -->
+	
+	<select id="allemp" resultType="emp"> <!-- resultType : 1개 레코드 - EmpVO 자바 객체 타입 매핑. -->
+		select * from employees <!--; 있으면 안됨. -->
+	</select>
+	
+	<select id="oneemp" resultType="emp" parameterType="int">  
+		select * from employees where employee_id = #{id}
+	</select>
+	
+	<select id="nameemp" resultType="emp" parameterType="String">  
+		select * from employees where first_name = #{name}
+	</select>
+	
+	<!-- session.selecList("namelikeemp","P%") -->
+
+	<select id="namelikeemp" resultType="emp" parameterType="String">  
+		select * from employees where first_name LIKE #{name}
+	</select>
+
+
+	<select id="idemp" resultType="emp">  <!-- 부등호 사용할때 > 는 상관없으나 <는 테그로 인식함. -->
+		<![CDATA[select employee_id,first_name,
+		to_char(hire_date,'mm/dd/yyyy hh"시"mi"분"ss"초"') as hire_date from employees where employee_id < 150]]>  <!-- xml태그 안에서 문자열로 인식시켜주는 태그.  -->
+	</select>
+	
+		<!-- insert into employees(특정컬럼) values 전달받는 parameter가 객체일떄는 객체의 변수명으로 #{}안에 작성해야한다.-->
+	<insert id="newemp" parameterType="emp">
+		insert into employees(employee_id,first_name,last_name,email,job_id,hire_date)
+		 values (#{employee_id},#{first_name},#{last_name},#{email},#{job_id},sysdate) 
+	</insert>
+	
+	<update id="updateemp" parameterType="emp">
+		update employees set first_name = #{first_name}, email = #{email} where employee_id = #{employee_id}
+	</update>
+	
+	<delete id="deleteemp" parameterType="int">
+		delete employees where employee_id=#{id}
+	</delete>
+	
+	<!-- create sequence emp_sequence;1부터 시작 1씩 증가~
+	sql > select emp_sequence.nextvalfrom dual ->1
+	 -->
+	 
+	 <!-- 총갯수 : 100개  
+	 1페이지 :1-10 출력 
+	 2페이지 : 11-20출력	-->
+	 <select id="pagingemp" resultType="emp" parameterType="int[]">
+		select r,first_name,hire_date 
+			from (select rownum r, first_name,hire_date 
+				from (select * from employees order by hire_date desc)
+				) 
+		where r between #{array[0]} and #{array[1]}	
+	 </select>
+	
+	 
+</mapper>
+
+
+
+
+
+
+
+
