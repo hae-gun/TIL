@@ -65,25 +65,25 @@ public class LoginController {
 //		mv.setViewName("loginsuccess");
 //		return mv;
 //	}
-	@RequestMapping(name = "/login", method = RequestMethod.POST)
-	public ModelAndView loginsuccess(@ModelAttribute("login") LoginVO vo) { 
-		
-		//요청파라미터이름과 컨트롤러 메소드 매개변수 자바객체일때.
-		//객체 내부 멤버변수들 이름 동일 자동 저장.
-		//get메서드 사용.
-//		컨트롤러 메소드 매게변수 객체일 때 자동 모델형태로 사용됨.
-//		 모델 이름("",???) 모델 이름은 자동으로 결정됨. : LoginVO -> loginVO로 생성. (맨 앞글자 대문자를 소문자로 바꾼.)\
-//		 mv.addObject("loginVO", vo);와 같은 의미.
-		ModelAndView mv = new ModelAndView();
-		
-		if (vo.getId().equalsIgnoreCase("spring") && vo.getPw().equalsIgnoreCase("spring")) {
-			mv.addObject("loginresult", true);
-		} else {
-			mv.addObject("loginresult", false);
-		}
-		
-		mv.setViewName("loginsuccess");
-		return mv;
-	}
+//	@RequestMapping(name = "/login", method = RequestMethod.POST)
+//	public ModelAndView loginsuccess(@ModelAttribute("login") LoginVO vo) { 
+//		
+//		//요청파라미터이름과 컨트롤러 메소드 매개변수 자바객체일때.
+//		//객체 내부 멤버변수들 이름 동일 자동 저장.
+//		//get메서드 사용.
+////		컨트롤러 메소드 매게변수 객체일 때 자동 모델형태로 사용됨.
+////		 모델 이름("",???) 모델 이름은 자동으로 결정됨. : LoginVO -> loginVO로 생성. (맨 앞글자 대문자를 소문자로 바꾼.)\
+////		 mv.addObject("loginVO", vo);와 같은 의미.
+//		ModelAndView mv = new ModelAndView();
+//		
+//		if (vo.getId().equalsIgnoreCase("spring") && vo.getPw().equalsIgnoreCase("spring")) {
+//			mv.addObject("loginresult", true);
+//		} else {
+//			mv.addObject("loginresult", false);
+//		}
+//		
+//		mv.setViewName("loginsuccess");
+//		return mv;
+//	}
 
 }
