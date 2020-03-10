@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1583813365963.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D4F9E06",
+    "lastKnownWriteTime" : 1583825855,
+    "last_content_update" : 1583825855505,
+    "path" : "C:/R_Workspace/R_Lecture/chapter_03_문자열처리.R",
+    "project_path" : "chapter_03_문자열처리.R",
+    "properties" : {
+        "cursorPosition" : "206,0",
+        "scrollLine" : "203",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

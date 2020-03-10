@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1583798480930.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "17280432",
+    "id" : "18EC96DB",
+    "lastKnownWriteTime" : 1583813426,
+    "last_content_update" : 1583813426468,
+    "path" : "C:/R_Workspace/R_Lecture/chapter_02.R",
+    "project_path" : "chapter_02.R",
+    "properties" : {
+        "cursorPosition" : "222,0",
+        "scrollLine" : "200",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
