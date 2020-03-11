@@ -1,0 +1,48 @@
+#
+# 데이터 수집(web scraping web crawling)
+
+# 웹사이트 상에서 내가 원하는 위치에 대한 정보를 자동으로 추출해서 수집하는 기능-> web scrapping
+#
+#자동화 봇인 web creawler가 정해진 규칙에 따라서 복수개의 웹페이지를 browsing 하는 행위 -> web crawling
+
+#web scraping => CSS, jQuery(selector)
+#                XPATH를 이용하는 방식
+
+# selector의 표기법 확인.
+
+
+# 네이버영화 댓글 페이지를 이용해서 scraping을 해보기.
+# 필요 package.
+
+install.packages("rvest")
+library(rvest)
+library(stringr)
+# scaping할 페이지의 url을 알아보기.
+url <- "https://movie.naver.com/movie/point/af/list.nhn?&page="
+request_url <- str_c(url,1)
+request_url
+
+page_html <-read_html(request_url, encoding = "CP949")  #저장할 html 문서. 인코딩 신경쓰기.
+page_html # url을 이용하여 결과 HTML 코드를 받아온다.
+
+# selector : td.title > a.movie
+
+# html 중에 selector에 맞는 element가져오기.
+nodes = html_nodes(page_html,"td.title > a.movie")
+# 가져온 element중 text만 추출.
+movie_title <- html_text(nodes)
+nodes = html_nodes(page_html,"div.list_netizen_score > em")
+movie_point <- html_text(nodes)
+
+nodes = html_nodes(page_html,"td.title") 
+
+contents = html_text(nodes) ##텍스트 추출.
+
+contents <- str_remove_all(contents,"[\t\n()]") ## 특수문자 제거.
+contents <- str_remove(contents,movie_title) ## 앞쪽 닉네임 제거.
+contents <- str_remove(contents,"별점 - 총 10점 중") ## 총점 포멧제거.
+contents <- str_remove(contents,movie_point) ## 각 개인의 총점 제거.
+contents <- str_remove_all(contents,"신고") ## 마지막 "신고" 제거.
+
+View(contents)
+

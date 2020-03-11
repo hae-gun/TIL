@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1583899349460.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "AD0485C",
+    "lastKnownWriteTime" : 1583909209,
+    "last_content_update" : 1583909873484,
+    "path" : "C:/R_Workspace/R_Lecture/chapter_04_1_WebCraling.R",
+    "project_path" : "chapter_04_1_WebCraling.R",
+    "properties" : {
+        "cursorPosition" : "47,0",
+        "scrollLine" : "25",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
