@@ -1,46 +1,48 @@
 
 install.packages("pracma")
-library("rvest")
-library("stringr")
-library(dplyr)
-library(pracma)
+library("rvest") # 웹 스크래핑을 위한 라이브러리
+library("stringr") # 문자열 처리를 위한 라이브러리
+library(dplyr) # bind_rows() 함수를 사용하기 위한 라이브러리
+library(pracma) # isEmpty() 함수를 사용하기 위한 라이브러리
 
-url <- "https://www.rottentomatoes.com/top/bestofrt/?year=2019"
-mainUrl <- "https://www.rottentomatoes.com"
-#url_page <- vector(mode = "character",length = 100)
-html <- read_html(url,encodin="UTF-8")
-nodes <- html_nodes(html,"td > a.articleLink")
-url_link<- html_attr(nodes,"href")
+url <- "https://www.rottentomatoes.com/top/bestofrt/?year=2019" # 2019년도 top100 영화 목록
+mainUrl <- "https://www.rottentomatoes.com" # 각 영화별 세부 url context.
 
-full_url <- str_c(mainUrl,url_link)
+html <- read_html(url,encoding="UTF-8") # 목록 페이지의 html 정보를 가져옴. 
+nodes <- html_nodes(html,"td > a.articleLink") # html 정보중 각 제목을 가르키는 부분을 selector를 이용하여 
+url_link<- html_attr(nodes,"href") # tag중 각 이름에 부여한 a tag 안에 href 정보를 가져옴.(각 사이트의 상대경로)
 
-title_set = vector(mode = "character",length = 100)
-point_set = vector(mode = "character",length = 100)
-genre_set = vector(mode = "character",length = 100)
+full_url <- str_c(mainUrl,url_link) # context와 상대경로를 결합시켜 실제 사용할 url을 vector형태로 만듬.
 
-data <- data.frame()
 
+data <- data.frame() # 파일로 저장할 data frame을 비어있는 상태로 선언.
+
+#for 문을 통해 각 페이지의 정보를 data 프레임에 저장.
 for(i in 1:100){
-  page_html <- read_html(full_url[i],"UTF-8")
-  nodes <- html_nodes(page_html,"h1.mop-ratings-wrap__title.mop-ratings-wrap__title--top")
-  title <- html_text(nodes)
-  nodes <- html_nodes(page_html,"#topSection > div.col-sm-17.col-xs-24.score-panel-wrap > div.mop-ratings-wrap.score_panel.js-mop-ratings-wrap > section > section > div.mop-ratings-wrap__half.audience-score > h2 > a > span.mop-ratings-wrap__percentage")
+  page_html <- read_html(full_url[i],"UTF-8") # 각 영화의 detail 페이지의 html 정보를 가져옴.
+  nodes <- html_nodes(page_html,"h1.mop-ratings-wrap__title.mop-ratings-wrap__title--top") #가져온 html 정보중 영화의 제목에 해당하는 노드를 추출.
+  title <- html_text(nodes) # 노드중 text정보만 추출.
+  nodes <- html_nodes(page_html,"#topSection > div.col-sm-17.col-xs-24.score-panel-wrap > div.mop-ratings-wrap.score_panel.js-mop-ratings-wrap > section > section > div.mop-ratings-wrap__half.audience-score > h2 > a > span.mop-ratings-wrap__percentage")#html 내용안에서 평점정보를 추출.
   
-  point <- html_text(nodes)
-  point <- str_remove_all(point,"[\n ]")
-  if(isempty(point))point <- "comming soon"
-  nodes <- html_nodes(page_html,'div.media-body > div.panel-body > ul.info > li.meta-row > div.meta-value > a')
-  genre <- html_text(nodes)
-  
-  
+  point <- html_text(nodes) # 노드중 text정보만 추출.
+  point <- str_remove_all(point,"[\n ]")# 공백제거하여 제목만 남김.
+  if(isempty(point))point <- "comming soon" # 특정영화는 평점이 존재하지 않아 예외처리 진행.
+  nodes <- html_nodes(page_html,xpath = '//*[@id="mainColumn"]//div/div/ul/li[2]/div[2]/a') # html 안에서 장르에 관련된 tag를 xpath를 이용하여 추출.
+  genre <- html_text(nodes) # 위 selector에 맞는 정보가 여러개 존재하여 
+  genre <- str_remove_all(genre,"[\n\t]")
+  if(length(genre)==2)
+    genre[1] <- str_c(genre[1],",",genre[2])
+  else if(length(genre)==3)
+    genre[1] <- str_c(genre[1],",",genre[2],",",genre[3])
+  # 'div.media-body > div.panel-body > ul.info > li.meta-row > div.meta-value > a'
   a <- data.frame(title=title,
                   point=point,
-                  genre=genre)
+                  genre=genre[1])
   data <- bind_rows(data,a)
 }
 
 data
-
+i<-1
 write.table(data,
             file="C:/Users/student/Desktop/TIL/R/result.csv",
             fileEncoding = "UTF-8",

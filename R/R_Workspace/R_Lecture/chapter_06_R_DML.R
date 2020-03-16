@@ -146,7 +146,8 @@ mpg
 df <- mutate(mpg,
              DISPL_DIFF = ifelse(displ <= 4,"Low","High")) %>%
       group_by(DISPL_DIFF) %>%
-      summarise(AVG_DISPL = mean(hwy))
+      summarise(AVG_DISPL = mean(hwy)) %>%
+      arrange(desc(AVG_DISPL))
 df
 
 # 2. 자동차 제조 회사에 따라 도시 연비가 다른지 알아보려고 한다. 
@@ -162,7 +163,6 @@ df
 # 3. "chevrolet", "ford", "honda" 자동차의 고속도로 연비 평균을 알아보려고 한다. 
 # 이 회사들의 데이터를 추출한 후 hwy(고속도로 연비) 전체 평균을 구하세요.
 df <- filter(mpg,manufacturer %in% c("chevrolet","ford","honda")) %>%
-      group_by(manufacturer) %>%
       summarise(HWY_CTY = mean(hwy))
 df
 # 4. "audi"에서 생산한 자동차 중에 어떤 자동차 모델의 hwy(고속도로 연비)가 
@@ -195,7 +195,8 @@ df
 # hwy(고속도로 연비) 평균이 가장 높은 회사 세 곳을 출력하세요.
 df <- group_by(mpg,manufacturer) %>%
       summarise(avg_hwy=mean(hwy)) %>%
-      arrange(desc(avg_hwy)) %>% head(3)
+      arrange(desc(avg_hwy)) %>% 
+      select(manufacturer)%>% head(3)
 df
 # 8. 어떤 회사에서 "compact" 차종을 가장 많이 생산하는지 알아보려고 합니다. 
 # 각 회사별 "compact" 차종 수를 내림차순으로 정렬해 출력하세요.
@@ -204,6 +205,23 @@ df <- group_by(mpg,manufacturer) %>%
       summarise(count=n()) %>%
       arrange(desc(count))
 df
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
