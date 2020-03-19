@@ -23,5 +23,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="02.Event 예제" />
+  <Button
+        android:id="@+id/_03_Event2Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="03.Event처리 예제" />
+  <Button
+        android:id="@+id/_04_ActivityEventBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="04.ActivityEvent처리 예제" />
+    <Button
+        android:id="@+id/_05_SwipeEventBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="05.SwipeEvent처리 예제" />
+    <Button
+        android:id="@+id/_06_SendMessageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="06.Activity애개 Message전달 예제" />
+    <Button
+        android:id="@+id/_07_DataFromBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="07.Activity로부터 Data전달 예제" />
 
 </LinearLayout>

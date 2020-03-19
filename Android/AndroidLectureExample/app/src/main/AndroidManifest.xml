@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Example02_EventActivity"></activity>
+        <activity android:name=".Example07_DataFromActivity"></activity>
+        <activity android:name=".Example06_SendMessageActivity" />
+        <activity android:name=".Example05_SwipeEventActivity" />
+        <activity android:name=".Example04_TouchEventActivity" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".Example03_Event2Activity" />
+        <activity android:name=".Example02_EventActivity" />
         <activity android:name=".Example01_LayoutActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
