@@ -1,52 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorGreen"
-        android:gravity="center_horizontal"
-        android:text="Android 예제 입니다."
-        android:textAlignment="center"
-        android:textSize="10pt" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/_01_linearlayoutBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="01.LinearLayout 예제" />
-   <Button
-        android:id="@+id/_02_EventBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="02.Event 예제" />
-  <Button
-        android:id="@+id/_03_Event2Btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="03.Event처리 예제" />
-  <Button
-        android:id="@+id/_04_ActivityEventBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="04.ActivityEvent처리 예제" />
-    <Button
-        android:id="@+id/_05_SwipeEventBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="05.SwipeEvent처리 예제" />
-    <Button
-        android:id="@+id/_06_SendMessageBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="06.Activity애개 Message전달 예제" />
-    <Button
-        android:id="@+id/_07_DataFromBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="07.Activity로부터 Data전달 예제" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreen"
+            android:gravity="center_horizontal"
+            android:text="Android 예제 입니다."
+            android:textAlignment="center"
+            android:textSize="10pt" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/_01_linearlayoutBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="01.LinearLayout 예제" />
+
+        <Button
+            android:id="@+id/_02_EventBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="02.Event 예제" />
+
+        <Button
+            android:id="@+id/_03_Event2Btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="03.Event처리 예제" />
+
+        <Button
+            android:id="@+id/_04_ActivityEventBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="04.ActivityEvent처리 예제" />
+
+        <Button
+            android:id="@+id/_05_SwipeEventBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="05.SwipeEvent처리 예제" />
+
+        <Button
+            android:id="@+id/_06_SendMessageBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="06.Activity애개 Message전달 예제" />
+
+        <Button
+            android:id="@+id/_07_DataFromBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="07.Activity로부터 Data전달 예제" />
+
+        <Button
+            android:id="@+id/_08_ANRBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="08.Activity ANR 예제" />
+
+        <Button
+            android:id="@+id/_09_CounterLogBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="09.Counter Log 예제(Thread)" />
+
+        <Button
+            android:id="@+id/_10_CounterLogProgressBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10.Counter Log Progress 예제" />
+
+        <Button
+            android:id="@+id/_11_CounterLogHandlerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="11.Counter Log 예제(Handler)" />
+
+    </LinearLayout>
+</ScrollView>

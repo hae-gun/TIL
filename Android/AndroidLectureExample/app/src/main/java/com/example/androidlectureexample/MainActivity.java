@@ -141,8 +141,56 @@ public class MainActivity extends AppCompatActivity {
                 i.setComponent(cname);
                 // 새로 생성되는 Activity로부터 데이터를 받아오기 위한 용도
                 // 두번째 Activity가 finsh되는 순간 데이터를 받아옴.
-                startActivityForResult(i,3000); //(Intent,requestCode) Code는 숫자의미x 유니크한값으로 맘대로 지정.
+                startActivityForResult(i, 3000); //(Intent,requestCode) Code는 숫자의미x 유니크한값으로 맘대로 지정.
                 //requestCode : 호출한 Activity를 판별하기 위한 코드.
+            }
+        });
+        Button _08_ANRBtn =
+                (Button) findViewById(R.id._08_ANRBtn);
+        _08_ANRBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example08_ANRActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _09_CounterLogBtn =
+                (Button) findViewById(R.id._09_CounterLogBtn);
+        _09_CounterLogBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example09_CounterLogActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _10_CounterLogProgressBtn =
+                (Button) findViewById(R.id._10_CounterLogProgressBtn);
+        _10_CounterLogProgressBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example10_CounterLogProgressActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _11_CounterLogHandlerBtn =
+                (Button) findViewById(R.id._11_CounterLogHandlerBtn);
+        _11_CounterLogHandlerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example11_CounterLogHandlerActivity");
+                i.setComponent(cname);
+                startActivity(i);
             }
         });
 
@@ -152,9 +200,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==3000 && resultCode == 7000){
-            String msg = (String)data.getExtras().get("ResultValue");
-            Toast.makeText(this,msg,Toast.LENGTH_SHORT).show();
+        if (requestCode == 3000 && resultCode == 7000) {
+            String msg = (String) data.getExtras().get("ResultValue");
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         }
     }
 }
