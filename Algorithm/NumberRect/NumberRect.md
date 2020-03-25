@@ -208,4 +208,4 @@
 
      * 결과
      
-     ![image-20200325232651078](C:\Users\newch\Desktop\TIL\Algorithm\NumberRect\NumberRect.assets\image-20200325232651078.png)
+     ![image-20200325233048324](NumberRect.assets/image-20200325233048324.png)
