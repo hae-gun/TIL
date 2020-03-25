@@ -50,7 +50,7 @@
 
      * 결과
 
-     ![image-20200325221618128](C:\Users\newch\Desktop\TIL\Algorithm\NumberRect\NumberRect.assets\image-20200325221618128.png)
+     ![image-20200325233236067](NumberRect.assets/image-20200325233236067.png)
 
 2. 입력된 수(N) 만큼 `N행 , N열` 형태로 아래의 결과처럼 출력되는 숫자 사각형을 출력하시오.
 
@@ -103,7 +103,7 @@
 
      * 결과
 
-     ![image-20200325222607098](C:\Users\newch\Desktop\TIL\Algorithm\NumberRect\NumberRect.assets\image-20200325222607098.png)
+     ![image-20200325233212748](NumberRect.assets/image-20200325233212748.png)
 
 3. 입력된 수(N) 만큼 `N행 , N열` 형태로 아래의 결과처럼 출력되는 숫자 사각형을 출력하시오.
 
@@ -154,7 +154,7 @@
 
      * 결과
 
-     ![image-20200325232619882](C:\Users\newch\Desktop\TIL\Algorithm\NumberRect\NumberRect.assets\image-20200325232619882.png)
+     ![image-20200325233150303](NumberRect.assets/image-20200325233150303.png)
 
 4. 입력된 수(N) 만큼 `N행 , N열` 형태로 아래의 결과처럼 출력되는 숫자 사각형을 출력하시오.
 
