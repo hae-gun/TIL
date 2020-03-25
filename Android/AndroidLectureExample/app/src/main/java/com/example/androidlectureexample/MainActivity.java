@@ -194,6 +194,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button _12_BookSearchSimpleBtn =
+                (Button) findViewById(R.id._12_BookSearchSimpleBtn);
+        _12_BookSearchSimpleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example12_SimpleBookSearchActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _13_BookSearchDetailBtn =
+                (Button) findViewById(R.id._13_BookSearchDetailBtn);
+        _13_BookSearchDetailBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example13_DetailBookSearchActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+
     }// end of onCreate()
 
     // Activity 에게 결과값이 도착했을때 실행되는 callback method

@@ -3,8 +3,8 @@ package com.test.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.test.BookVO.BookVO;
 import com.test.dao.BookDAO;
+import com.test.vo.BookVO;
 
 // 이 class는 Service class 이기 때문에 무조건 business logic 처리만 담당한다.
 public class BookService {
@@ -26,6 +26,24 @@ public class BookService {
 	public List<BookVO> getBooks(String keyword) {
 		BookDAO dao = new BookDAO();
 		ArrayList<BookVO> result = dao.selectAll(keyword);
+		
+		return result;
+	}
+
+	// 키워드를 이용해서 책 제목과 책의 고유번호 (ISBN)을 얻어와서 ArrayList 형태로 구해오는 method.
+	public ArrayList<BookVO> getBookInfo(String keyword) {
+		// 크게 다른 로직처리할 것이 없다.
+		// DB처리 -> Database처리는 DAO가 담당.
+		BookDAO dao = new BookDAO();
+		ArrayList<BookVO> result = dao.selectInfo(keyword);
+		
+		return result;
+	}
+
+	public ArrayList<BookVO> getBookDetail(String keyword) {
+
+		BookDAO dao = new BookDAO();
+		ArrayList<BookVO> result = dao.selectAllInfo(keyword);
 		
 		return result;
 	}
