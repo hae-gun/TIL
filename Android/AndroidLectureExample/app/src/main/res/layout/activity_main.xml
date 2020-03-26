@@ -94,6 +94,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="13.도서검색 프로그램(확장)" />
+        <Button
+            android:id="@+id/_14_ImplicitIntentBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="14.Implicit Intent 를 이용한 Activity" />
+        <Button
+            android:id="@+id/_15_ServiceLifecycleBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="15.Service Lifecycle" />
 
     </LinearLayout>
 </ScrollView>

@@ -3,6 +3,7 @@
     package="com.example.androidlectureexample">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Example14_DetailBookInfo"></activity>
+        <service
+            android:name=".Example15Sub_LifeCycleService"
+            android:enabled="true"
+            android:exported="true"></service>
+
+        <activity android:name=".Example15_ServiceLifecycleActivity" />
+        <activity android:name=".Example14Sub_ImplicitIntentActivity">
+            <intent-filter>
+                <action android:name="MY_ACTION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="INTENT_TEST" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Example14_ImplicitIntentActivity" />
+        <activity android:name=".Example14_DetailBookInfo" />
         <activity android:name=".Example13_DetailBookSearchActivity" />
         <activity android:name=".Example12_SimpleBookSearchActivity" />
         <activity android:name=".Example11_CounterLogHandlerActivity" />

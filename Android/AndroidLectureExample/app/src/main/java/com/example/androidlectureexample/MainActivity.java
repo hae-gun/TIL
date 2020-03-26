@@ -218,6 +218,43 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button _14_ImplicitIntentBtn =
+                (Button) findViewById(R.id._14_ImplicitIntentBtn);
+        _14_ImplicitIntentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Explicit Intent (명시적 인텐트)
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example14_ImplicitIntentActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+
+        /*
+        App이 실행되었다고 해서 항상 Activity가 보이는건 아니다. 대표적인 경우
+        카톡, 멜론 ...
+
+        - Activity lifecycle
+        - onCreate() → onStart() → onResume() → onPause → onStop()
+        - Service lifecycle
+        - onCreate() → onStartCommand() → onDestroy()
+
+        */
+        Button _15_ServiceLifecycleBtn =
+                (Button) findViewById(R.id._15_ServiceLifecycleBtn);
+        _15_ServiceLifecycleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Service를 실행.
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example15_ServiceLifecycleActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
 
     }// end of onCreate()
 
