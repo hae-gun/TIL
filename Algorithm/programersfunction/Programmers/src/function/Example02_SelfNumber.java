@@ -17,10 +17,10 @@ public class Example02_SelfNumber {
 		for (int i = 1; i <= 10000; i++) {
 			int startNum = i;
 			do {
-				if (PlusNumber(startNum) < 10000)
+				if (PlusNumber(startNum) <= 10000)
 					checkNum[PlusNumber(startNum)]++;
 				startNum = PlusNumber(startNum);
-			} while (startNum < 10000);
+			} while (startNum <= 10000);
 		}
 
 		for (int i = 1; i < checkNum.length; i++) {

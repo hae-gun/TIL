@@ -255,6 +255,32 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button _16_ActivityServiceDataBtn =
+                (Button) findViewById(R.id._16_ActivityServiceDataBtn);
+        _16_ActivityServiceDataBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Service를 실행.
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example16_ServiceDataTransferActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _17_KAKAOBookSearchBtn =
+                (Button) findViewById(R.id._17_KAKAOBookSearchBtn);
+        _17_KAKAOBookSearchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Service를 실행.
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example17_KAKAOBookSearchActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
 
     }// end of onCreate()
 
