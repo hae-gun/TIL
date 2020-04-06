@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Example20_BRNotiActivity"></activity>
+
+        <receiver
+            android:name=".Example19Sub_SMSBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Example19_BRSMSActivity" />
+        <activity android:name=".Example18_BRTestActivity" />
+
         <service
             android:name=".Example17Sub_KAKAOBookSearchService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".Example17_KAKAOBookSearchActivity" />
 
@@ -53,9 +68,6 @@
         <activity android:name=".Example06_SendMessageActivity" />
         <activity android:name=".Example05_SwipeEventActivity" />
         <activity android:name=".Example04_TouchEventActivity" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login" />
         <activity android:name=".Example03_Event2Activity" />
         <activity android:name=".Example02_EventActivity" />
         <activity android:name=".Example01_LayoutActivity" />
