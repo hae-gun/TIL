@@ -29,19 +29,19 @@ public class CroatiaAlphabet {
 							}
 						}
 					} else if (chk.length() == 3) {
-						if (alphaSet[i + 1] == chkK[0]) {
-							if (alphaSet[i] != alphaSet.length - 2) {
-								break;
-							}
-							if (alphaSet[i + 2] == chkK[1])
-								length -= 2;
-							break;
-						} else if (alphaSet[i + 1] == chkK[2]) {
-							length--;
-							if (i == alphaSet.length - 2) {
-								break;
-							}
-						}
+//						if (alphaSet[i + 1] == chkK[0]) {
+//							if (alphaSet[i] != alphaSet.length - 2) {
+//								break;
+//							}
+//							if (alphaSet[i + 2] == chkK[1])
+//								length -= 2;
+//							break;
+//						} else if (alphaSet[i + 1] == chkK[2]) {
+//							length--;
+//							if (i == alphaSet.length - 2) {
+//								break;
+//							}
+//						}
 					}
 				}
 
