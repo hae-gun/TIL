@@ -329,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        
+
         Button _22_SQLiteHelperBtn =
                 (Button) findViewById(R.id._22_SQLiteHelperBtn);
         _22_SQLiteHelperBtn.setOnClickListener(new View.OnClickListener() {
@@ -350,6 +350,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent();
                 ComponentName cname = new ComponentName("com.example.androidlectureexample",
                         "com.example.androidlectureexample.Example23_CPExamActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _24_contactBtn =
+                (Button) findViewById(R.id._24_contactBtn);
+        _24_contactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example24_ContactActivity");
                 i.setComponent(cname);
                 startActivity(i);
             }

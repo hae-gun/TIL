@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /* Content Provider (내용제공자)
@@ -64,66 +65,75 @@ class PersonDatabaseHelper extends SQLiteOpenHelper {
 }
 
 public class Example23_CPExamActivity extends AppCompatActivity {
-    private Uri uri ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example23_cp_exam);
-
+        final EditText _23_empAgeEt = findViewById(R.id._23_empAgeEt);
+        final EditText _23_empNameEt = findViewById(R.id._23_empNameEt);
+        final EditText _23_empMobileEt = findViewById(R.id._23_empMobileEt);
         Button _23_empInsertBtn = findViewById(R.id._23_empInsertBtn);
         _23_empInsertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 // 원래는 입력된 데이터를 가지고 와서 CP 를 이용해서 입력처리!
                 // CP 를 찾아야 한다.
                 String uriString = "content://com.exam.person.provider/person";
 
                 // 문자를 uri 로 만듬.
-                uri = new Uri.Builder().build().parse(uriString);
+                Uri uri = new Uri.Builder().build().parse(uriString);
 
+                String name = _23_empNameEt.getText().toString();
+                int age = new Integer(_23_empAgeEt.getText().toString()).intValue();
+                String mobile = _23_empMobileEt.getText().toString();
                 // HashMap 형태로 데이터베이스에 입력할 데이터를 저장.
                 ContentValues values = new ContentValues();
-                values.put("name","홍길동");
-                values.put("age",20);
-                values.put("mobile","010-1111-5555");
+                values.put("name", name);
+                values.put("age", age);
+                values.put("mobile", mobile);
 
-                getContentResolver().insert(uri,values); // ContentProvider 과 대응되는 것. ContentProvider 를 찾는다.
-                Log.i("DBTest","데이터 입력 완료");
+                getContentResolver().insert(uri, values); // ContentProvider 과 대응되는 것. ContentProvider 를 찾는다.
+                Log.i("DBTest", "데이터 입력 완료");
             }
         });
+        final TextView _23_resultTv = findViewById(R.id._23_resultTv);
+        Button _23_empSelectBtn = findViewById(R.id._23_empSelectBtn);
 
-        final TextView  _23_resultTv = findViewById(R.id._23_resultTv);
+        _23_empSelectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _23_resultTv.setText("");
+                Log.i("DBTest", "Select 클릭");
+                // 1. DB 처리 기능을 제공하는 Content Provider 를 찾아야 한다.
+                // Content Provider 를 찾기 위한 URI 가 있어야 한다.
+                String uriString = "content://com.exam.person.provider/person";
+                Uri uri = new Uri.Builder().build().parse(uriString);
+                // 2. Uri 를 이용해서 Content Provider 를 찾아서 특정 method 를 호출한다.
+                // column 을 표현하기 위한 String[] 을 생성 (2번째 인자.)
+                // "select name, age, mobile from person where ~~~
+                String[] colums = new String[]{"name", "age", "mobile"};
+                // 3번째 인자는 where 절 조건. 조건이 없으면 null 작성.
+                // 4번째 인자는 조건에 대한 argument. 없으면 null.
+                // 5번째는 정렬방향.
 
 
-//        Button _23_empSelectBtn = findViewById(R.id._23_empSelectBtn);
-//        _23_empSelectBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                _23_resultTv.setText("");
-//                String sql = "SELECT _id, name, age, mobile FROM person";
-//                // JDBC 와 상당히 유사하다.
-//
-//                // execSQL() : select 계열이 아닌 SQL 문장을 실행할때 사용.
-//                // rawQuery() : select 계열의 SQL 문장을 실행할때 사용
-//                // 커서는 위치를 가르키는 포인터 => 컬럼을 가르키는 포인터
-//                String[] mSelctionArgs = {""};
-//                Cursor cursor = getContentResolver().query(uri, null, "WHERE name = '홍길동'",mSelctionArgs,"_id ASC" );
-//
-//                while (cursor.moveToNext()) {
-//                    int id = cursor.getInt(0);
-//                    String name = cursor.getString(1);
-//                    int age = cursor.getInt(2);
-//                    String mobile = cursor.getString(3);
-//
-//                    String result = "레코드 : " + id + ", " + name + ", " + age + ", " + mobile;
-//                    _23_resultTv.append(result+"\n");
-//                }
-//            }
-//        });
+               Cursor cursor =  getContentResolver().query(
+                       uri, colums,null,null,
+                       "name ASC");
+               // 성공하면 Database table 에서 결과 record 의 집합을 가져온다.
+                while(cursor.moveToNext()){
+
+                    String name = cursor.getString(0);
+                    int age = cursor.getInt(1);
+                    String mobile = cursor.getString(2);
+                    String result = "레코드 : " +  name + ", " + age + ", " + mobile;
+                    _23_resultTv.append(result+"\n");
+                }
+            }
+        });
     }
-
-
-
 
 
 }

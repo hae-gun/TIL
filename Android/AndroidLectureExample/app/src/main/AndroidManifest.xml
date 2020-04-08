@@ -5,11 +5,15 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
-    <permission android:name="com.exam.person.provider.READ_DATABASE"
-        android:protectionLevel="normal"/>
-    <permission android:name="com.exam.person.provider.WRITE_DATABASE"
-        android:protectionLevel="normal"/>
+    <permission
+        android:name="com.exam.person.provider.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.exam.person.provider.WRITE_DATABASE"
+        android:protectionLevel="normal" />
 
     <application
         android:allowBackup="true"
@@ -19,13 +23,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Example24_ContactActivity"></activity>
+
         <provider
             android:name=".Example23Sub_PersonContentProvider"
             android:authorities="com.exam.person.provider"
             android:enabled="true"
             android:exported="true"
             android:readPermission="com.exam.person.provider.READ_DATABASE"
-            android:writePermission="com.exam.person.provider.WRITE_DATABASE"/>
+            android:writePermission="com.exam.person.provider.WRITE_DATABASE" />
 
         <activity android:name=".Example23_CPExamActivity" />
         <activity android:name=".Example22_SQLiteHelperActivity" />

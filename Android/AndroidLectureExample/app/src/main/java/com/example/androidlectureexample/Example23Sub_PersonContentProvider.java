@@ -37,7 +37,7 @@ public class Example23Sub_PersonContentProvider extends ContentProvider {
         Log.i("DBTest", "CP 의 insert 호출");
         // database table 에 insert 하는 방법중 하나. SQL 문장을 이용하지 않고.
         // ContentValues values 에 key, value 형태로 입력할 데이터를 묘사.
-        database.insert("person",null,values);
+        database.insert("person", null, values);
         return uri;
     }
 
@@ -56,7 +56,18 @@ public class Example23Sub_PersonContentProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
         // TODO: Implement this to handle query requests from clients.
-        throw new UnsupportedOperationException("Not yet implemented");
+        Log.i("DBTest", "query() 실행");
+        // 1번째 인자 : table 명
+        // 2번째 인자 : projection : select 에서 가져올 컬럼명을 문자배열로 표현.
+        // 3번째 인자 : selection : where 절 조건을 명시.
+        // 4번째 인자 : selection 의 In Parameter 의 값.
+        // 5번째 인자 : Group by 방법
+        // 6번째 인자 : having 절
+        // 7번째 인자 : 정렬방법
+        Cursor cursor = database.query("person",
+                projection, selection, selectionArgs,null,null, sortOrder);
+
+        return cursor;
     }
 
     @Override
