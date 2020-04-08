@@ -114,6 +114,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="17.KAKAO 도서 검색" />
+        <Button
+            android:id="@+id/_18_BRTestBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="18.Broadcast Receiver 실습" />
+        <Button
+            android:id="@+id/_19_BRSMSBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="19.SMS를 받기위한 Broadcast Receiver" />
+        <Button
+            android:id="@+id/_20_BRNotiBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="20.Broadcast Receiver를 이용한 알림" />
+        <Button
+            android:id="@+id/_21_SQLiteBasicBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="21.SQLite basic 실습" />
+
+        <Button
+            android:id="@+id/_22_SQLiteHelperBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="22.SQLite Helper 사용" />
+
+        <Button
+            android:id="@+id/_23_CPExamBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="23.Content Provider 사용" />
+
+        <Button
+            android:id="@+id/_24_contactBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24.주소록 데이터 사용" />
 
     </LinearLayout>
 </ScrollView>

@@ -281,6 +281,91 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button _18_BRTestBtn =
+                (Button) findViewById(R.id._18_BRTestBtn);
+        _18_BRTestBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example18_BRTestActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _19_BRSMSBtn =
+                (Button) findViewById(R.id._19_BRSMSBtn);
+        _19_BRSMSBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example19_BRSMSActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _20_BRNotiBtn =
+                (Button) findViewById(R.id._20_BRNotiBtn);
+        _20_BRNotiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example20_BRNotiActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _21_SQLiteBasicBtn =
+                (Button) findViewById(R.id._21_SQLiteBasicBtn);
+        _21_SQLiteBasicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example21_SQLiteBasicActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+
+        Button _22_SQLiteHelperBtn =
+                (Button) findViewById(R.id._22_SQLiteHelperBtn);
+        _22_SQLiteHelperBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example22_SQLiteHelperActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _23_CPExamBtn =
+                (Button) findViewById(R.id._23_CPExamBtn);
+        _23_CPExamBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example23_CPExamActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _24_contactBtn =
+                (Button) findViewById(R.id._24_contactBtn);
+        _24_contactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example24_ContactActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
 
     }// end of onCreate()
 
