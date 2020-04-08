@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class NSum {
 
+	// 백준 11702번 문제
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int sum = 0;

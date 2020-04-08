@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class CountAlphabet {
 
+	// 백준 10809번 문제
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String S = scan.next();
