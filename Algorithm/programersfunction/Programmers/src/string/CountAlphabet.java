@@ -8,7 +8,14 @@ import java.io.OutputStreamWriter;
 
 public class CountAlphabet {
 
+<<<<<<< HEAD
+	// 백준 10809번 문제
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String S = scan.next();
+=======
 	public static void main(String[] args) throws IOException {
+>>>>>>> 5154994502597b5f61187f668d880d13cb1c78bb
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
