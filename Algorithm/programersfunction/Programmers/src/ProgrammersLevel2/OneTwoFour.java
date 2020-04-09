@@ -23,7 +23,7 @@ public class OneTwoFour {
 	      StringBuffer sb = new StringBuffer();
 	      sb.append(answer);
 	      answer = sb.reverse().toString();
-	      answer.replaceAll("0", "4")
+	      answer.replaceAll("0", "4");
 	      answer.replaceAll("2", "4");
 	      return answer;
 	  }

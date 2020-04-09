@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 // 2. Application이 갖고있는 start() abstract method를 overriding.
 //  
 
-public class Exam00_JAVAFXUITemplate extends Application {
+public class Exam00_JAVAFXUITemplateComment extends Application {
 
 	private TextArea ta;
 	private Button btn;
@@ -47,6 +47,7 @@ public class Exam00_JAVAFXUITemplate extends Application {
 
 			// Thread 를 이용해서 메시지 출력하는 방식으로 이용해야 한다.
 			// Platform 객체를 이용.
+			// Runnable -> Lambda 식으로 표현
 			Platform.runLater( () -> {
 				ta.appendText("버튼이 클릭됨\n");
 			}
