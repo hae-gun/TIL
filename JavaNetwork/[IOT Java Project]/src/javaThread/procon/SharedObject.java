@@ -42,7 +42,7 @@ public class SharedObject {
 			MONITOR.notify();
 		}
 	}
-
+	
 	// 소비자 Thread에 의해서 사용되는 method
 	public String pop() {
 		String result = null;
