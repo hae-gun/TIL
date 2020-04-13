@@ -48,8 +48,7 @@ public class Exam00_JAVAFXUITemplateNone extends Application {
 			System.exit(0);
 		});
 
-		primaryStage.show(); // 화면에 창 띄우기.
-
+		primaryStage.show(); 
 	}
 
 	public static void main(String[] args) {
