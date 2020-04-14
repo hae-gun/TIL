@@ -27,25 +27,39 @@ for(i in 1:100){
   point <- html_text(nodes) # 노드중 text정보만 추출.
   point <- str_remove_all(point,"[\n ]")# 공백제거하여 제목만 남김.
   if(isempty(point))point <- "comming soon" # 특정영화는 평점이 존재하지 않아 예외처리 진행.
-  nodes <- html_nodes(page_html,xpath = '//*[@id="mainColumn"]//div/div/ul/li[2]/div[2]/a') # html 안에서 장르에 관련된 tag를 xpath를 이용하여 추출.
+ 
+   #nodes <- html_nodes(page_html,xpath = '/html/body/div[4]/div[3]/section/div[2]/section[3]/div/div/ul/li[2]/div[2]/text()') # html 안에서 장르에 관련된 tag를 xpath를 이용하여 추출.
+  
+  nodes <- html_nodes(page_html,"div.media-body > div.panel-body > ul.info > li.meta-row")
+  
+
+  
+  
   genre <- html_text(nodes) # 위 selector에 맞는 정보가 여러개 존재하여 
   genre <- str_remove_all(genre,"[\n\t]")
-  if(length(genre)==2)
-    genre[1] <- str_c(genre[1],",",genre[2])
-  else if(length(genre)==3)
-    genre[1] <- str_c(genre[1],",",genre[2],",",genre[3])
+  genre <- genre[2]
+  genre <- str_remove_all(genre,"Genre:")
+  genre <- str_remove_all(genre,"[ ]")
+   
+  
+  
+#  if(length(genre)==2)
+ #   genre[1] <- str_c(genre[1],",",genre[2])
+  #else if(length(genre)==3)
+   # genre[1] <- str_c(genre[1],",",genre[2],",",genre[3])
   # 'div.media-body > div.panel-body > ul.info > li.meta-row > div.meta-value > a'
   a <- data.frame(title=title,
                   point=point,
-                  genre=genre[1])
+                  genre=genre)
+  
   data <- bind_rows(data,a)
 }
 
 data
-i<-1
 write.table(data,
             file="C:/Users/student/Desktop/TIL/R/result.csv",
             fileEncoding = "UTF-8",
-            quote=F)
+            quote=T,
+            row.names = F)
 
 View(data)

@@ -8,29 +8,26 @@ import java.io.OutputStreamWriter;
 
 public class CountAlphabet {
 
-<<<<<<< HEAD
-	// ¹éÁØ 10809¹ø ¹®Á¦
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		String S = scan.next();
-=======
+	// ï¿½ï¿½ï¿½ï¿½ 10809ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+//	public static void main(String[] args) {
+//		Scanner scan = new Scanner(System.in);
+//		String S = scan.next();
 	public static void main(String[] args) throws IOException {
->>>>>>> 5154994502597b5f61187f668d880d13cb1c78bb
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		// Input
 		String input = br.readLine().trim();
 
-		// ¾ËÆÄºª À§Ä¡ Ã¼Å© ¹è¿­.
+		// ï¿½ï¿½ï¿½Äºï¿½ ï¿½ï¿½Ä¡ Ã¼Å© ï¿½è¿­.
 		int[] alphabetIndex = new int[26];
 
-		// ¹è¿­ -1·Î ÃÊ±âÈ­. (-1 ÀÇ¹Ì : ³ª¿ÂÀû ¾ø´Â ¾ËÆÄºª.)
+		// ï¿½è¿­ -1ï¿½ï¿½ ï¿½Ê±ï¿½È­. (-1 ï¿½Ç¹ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Äºï¿½.)
 		for (int i = 0; i < alphabetIndex.length; i++) {
 			alphabetIndex[i] = -1;
 		}
 
-		// input ¿¡¼­ ¾ËÆÄºªÀÌ ³ª¿Â Ã¹¹øÂ° index Ã£±â.
+		// input ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° index Ã£ï¿½ï¿½.
 		for (int i = 0; i < input.length(); i++) {
 			
 			

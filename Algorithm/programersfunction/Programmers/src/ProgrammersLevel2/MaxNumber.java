@@ -20,7 +20,7 @@ public class MaxNumber {
 	
 	public int[] allNumber(int[] numbers, int count) {
 		
-		return
+		return null;
 	}
 	
 	

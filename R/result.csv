@@ -1,101 +1,101 @@
-title point genre
-1 Parasite (Gisaengchung) 90% Art House & International
-2 Avengers: Endgame 90% Action & Adventure
-3 Us 59% Horror
-4 Toy Story 4 94% Animation
-5 Knives Out 92% Drama
-6 The Irishman 86% Drama
-7 The Farewell 87% Comedy
-8 Booksmart 77% Comedy
-9 Little Women 92% Drama
-10 Marriage Story 85% Drama
-11 Spider-Man: Far From Home 95% Action & Adventure
-12 If Beale Street Could Talk 70% Drama
-13 A Beautiful Day in the Neighborhood 92% Drama
-14 Once Upon a Time In Hollywood 70% Comedy
-15 Pain and Glory (Dolor y gloria) 91% Drama
-16 Shazam! 83% Action & Adventure
-17 Ford v Ferrari 98% Action & Adventure
-18 Apollo 11 90% Documentary
-19 Dolemite Is My Name 91% Drama
-20 Uncut Gems 52% Drama
-21 They Shall Not Grow Old 91% Art House & International
-22 The Lighthouse 72% Drama
-23 Rocketman 88% Drama
-24 Amazing Grace 82% Documentary
-25 Ash Is Purest White 67% Drama
-26 John Wick: Chapter 3 - Parabellum 86% Action & Adventure
-27 The Peanut Butter Falcon 96% Action & Adventure
-28 Honeyland 87% Documentary
-29 Knock Down the House 18% Documentary
-30 Honey Boy 92% Drama
-31 Fighting with My Family 82% Comedy
-32 One Cut of the Dead (Kamera o tomeru na!) 82% Art House & International
-33 Birds of Passage (Pajaros de verano) 87% Drama
-34 Maiden 97% Documentary
-35 For Sama 93% Documentary
-36 How to Train Your Dragon: The Hidden World 86% Action & Adventure
-37 Varda by Agnes 86% Documentary
-38 Stan & Ollie 84% Comedy
-39 Atlantics 84% Drama
-40 Hustlers 65% Drama
-41 3 Faces 66% Art House & International
-42 One Child Nation 85% Documentary
-43 The Last Black Man in San Francisco 84% Drama
-44 Woman at War (Kona fer i strið) 89% Action & Adventure
-45 Captain Marvel 48% Action & Adventure
-46 Midnight Family 79% Documentary
-47 Deadwood: The Movie 80% Drama
-48 Transit 64% Art House & International
-49 First Love (Hatsukoi) 88% Action & Adventure
-50 Midnight Traveler 84% Documentary
-51 Tigers Are Not Afraid (Vuelven) 85% Art House & International
-52 Mickey and the Bear 82% Drama
-53 Hail Satan? 85% Documentary
-54 Ready or Not 78% Horror
-55 Toni Morrison: The Pieces I Am 96% Documentary
-56 Ad Astra 40% Mystery & Suspense
-57 The Chambermaid (La camarista) 61% Art House & International
-58 Midsommar 63% Horror
-59 The Heiresses (Las Herederas) 70% Drama
-60 Wild Rose 87% Comedy
-61 Blinded by the Light 91% Comedy
-62 63 Up 93% Documentary
-63 Too Late to Die Young (Tarde para morir joven) 45% Art House & International
-64 Homecoming: A Film by Beyonce 87% Documentary
-65 Little Woods 53% Drama
-66 Rojo 46% Drama
-67 By the Grace of God (Grace a Dieu) 76% Drama
-68 Gloria Bell 45% Comedy
-69 Chained for Life 65% Drama
-70 Rosie 76% Drama
-71 Working Woman 100% Drama
-72 American Factory 79% Documentary
-73 Making Waves: The Art of Cinematic Sound 91% Documentary
-74 Fiddler: A Miracle of Miracles 98% Documentary
-75 Be Natural: The Untold Story of Alice Guy-Blache 96% Documentary
-76 The Mustang 74% Drama
-77 The Cave 80% Documentary
-78 The Garden Left Behind comming soon Drama
-79 The Kingmaker 90% Documentary
-80 Dark Waters 95% Drama
-81 Monos 85% Drama
-82 I Lost My Body comming soon Animation
-83 Shadow 79% Action & Adventure
-84 Ray & Liz comming soon Art House & International
-85 High Flying Bird 42% Drama
-86 Jojo Rabbit 94% Comedy
-87 In Fabric 48% Comedy
-88 The Two Popes 88% Drama
-89 Love, Antosha 94% Documentary
-90 The LEGO Movie 2: The Second Part 68% Animation
-91 Harpoon 61% Art House & International
-92 An Elephant Sitting Still (Da xiang xi di er zuo) 74% Art House & International
-93 Luce 77% Drama
-94 Mike Wallace Is Here 86% Documentary
-95 The Souvenir 36% Drama
-96 The Kid Who Would Be King 57% Action & Adventure
-97 The Nightingale 73% Drama
-98 Ask Dr. Ruth 95% Documentary
-99 The Wild Pear Tree (Ahlat agaci) 81% Drama
-100 Citizen K 38% Documentary
+"title" "point" "genre"
+"Parasite (Gisaengchung)" "90%" "ArtHouse&International,Drama"
+"Avengers: Endgame" "90%" "Action&Adventure,Drama,ScienceFiction&Fantasy"
+"Us" "59%" "Horror,Mystery&Suspense"
+"Knives Out" "92%" "Drama,Mystery&Suspense"
+"Toy Story 4" "94%" "Animation,Comedy,Kids&Family,ScienceFiction&Fantasy"
+"The Irishman" "86%" "Drama,Mystery&Suspense"
+"Little Women" "92%" "Drama"
+"Booksmart" "77%" "Comedy"
+"The Farewell" "87%" "Comedy,Drama"
+"Marriage Story" "85%" "Drama"
+"A Beautiful Day in the Neighborhood" "92%" "Drama"
+"Spider-Man: Far From Home" "95%" "Action&Adventure,ScienceFiction&Fantasy"
+"If Beale Street Could Talk" "70%" "Drama,Romance"
+"Once Upon a Time In Hollywood" "70%" "Comedy,Drama"
+"Pain and Glory (Dolor y gloria)" "91%" "Drama"
+"Shazam!" "82%" "Action&Adventure,ScienceFiction&Fantasy"
+"Ford v Ferrari" "98%" "Action&Adventure,Drama"
+"Apollo 11" "90%" "Documentary"
+"Dolemite Is My Name" "91%" "Drama"
+"Uncut Gems" "52%" "Drama"
+"They Shall Not Grow Old" "91%" "ArtHouse&International,Documentary"
+"The Lighthouse" "72%" "Drama,Horror,ScienceFiction&Fantasy"
+"Rocketman" "88%" "Drama"
+"Amazing Grace" "81%" "Documentary,Musical&PerformingArts"
+"Ash Is Purest White" "66%" "Drama,Romance"
+"John Wick: Chapter 3 - Parabellum" "86%" "Action&Adventure,Drama"
+"The Peanut Butter Falcon" "96%" "Action&Adventure,Drama"
+"Honeyland" "87%" "Documentary"
+"Knock Down the House" "18%" "Documentary"
+"Honey Boy" "92%" "Drama"
+"Fighting with My Family" "82%" "Comedy"
+"One Cut of the Dead (Kamera o tomeru na!)" "81%" "ArtHouse&International,Comedy,Horror"
+"Birds of Passage (Pajaros de verano)" "87%" "Drama"
+"Maiden" "97%" "Documentary"
+"For Sama" "93%" "Documentary"
+"How to Train Your Dragon: The Hidden World" "86%" "Action&Adventure,Animation,Kids&Family"
+"Varda by Agnes" "87%" "Documentary"
+"Stan & Ollie" "84%" "Comedy,Drama"
+"Hustlers" "65%" "Drama"
+"Atlantics" "81%" "Drama,Romance"
+"One Child Nation" "84%" "Documentary"
+"3 Faces" "67%" "ArtHouse&International,Drama"
+"The Last Black Man in San Francisco" "84%" "Drama"
+"Woman at War (Kona fer i strið)" "89%" "Action&Adventure,ArtHouse&International,Mystery&Suspense"
+"Chained for Life" "63%" "Drama"
+"Captain Marvel" "48%" "Action&Adventure,ScienceFiction&Fantasy"
+"Midnight Family" "78%" "Documentary"
+"First Love (Hatsukoi)" "88%" "Action&Adventure,Drama,Mystery&Suspense"
+"The Chambermaid (La camarista)" "60%" "ArtHouse&International,Drama"
+"Deadwood: The Movie" "79%" "Drama,Western"
+"Midnight Traveler" "84%" "Documentary"
+"Transit" "64%" "ArtHouse&International,Drama"
+"Mickey and the Bear" "79%" "Drama"
+"Tigers Are Not Afraid (Vuelven)" "86%" "ArtHouse&International,Drama,Horror,ScienceFiction&Fantasy"
+"Hail Satan?" "85%" "Documentary"
+"Toni Morrison: The Pieces I Am" "96%" "Documentary"
+"Ready or Not" "78%" "Horror,Mystery&Suspense"
+"Ad Astra" "40%" "Mystery&Suspense,ScienceFiction&Fantasy"
+"Midsommar" "63%" "Horror"
+"The Heiresses (Las Herederas)" "70%" "Drama"
+"Wild Rose" "87%" "Comedy,Drama"
+"Blinded by the Light" "91%" "Comedy,Drama"
+"63 Up" "93%" "Documentary"
+"Too Late to Die Young (Tarde para morir joven)" "54%" "ArtHouse&International,Drama"
+"Homecoming: A Film by Beyonce" "87%" "Documentary,Musical&PerformingArts"
+"By the Grace of God (Grace a Dieu)" "77%" "Drama"
+"Little Woods" "54%" "Drama"
+"Rojo" "48%" "Drama,Mystery&Suspense"
+"Gloria Bell" "45%" "Comedy,Romance"
+"Dark Waters" "95%" "Drama"
+"Rosie" "77%" "Drama"
+"The Mustang" "74%" "Drama"
+"The Garden Left Behind" "comming soon" "Drama,Gay&Lesbian"
+"Working Woman" "100%" "Drama"
+"American Factory" "79%" "Documentary"
+"Making Waves: The Art of Cinematic Sound" "92%" "Documentary"
+"Fiddler: A Miracle of Miracles" "98%" "Documentary"
+"The Cave" "81%" "Documentary"
+"The Kingmaker" "90%" "Documentary"
+"I Lost My Body" "comming soon" "Animation,Drama,ScienceFiction&Fantasy"
+"Shadow" "80%" "Action&Adventure,ArtHouse&International,Drama"
+"Ray & Liz" "comming soon" "ArtHouse&International,Drama"
+"In Fabric" "48%" "Comedy,Horror"
+"The Two Popes" "88%" "Drama"
+"High Flying Bird" "42%" "Drama"
+"Be Natural: The Untold Story of Alice Guy-Blache" "96%" "Documentary"
+"Love, Antosha" "94%" "Documentary"
+"Monos" "85%" "Drama"
+"Harpoon" "62%" "ArtHouse&International,Comedy,Horror"
+"The LEGO Movie 2: The Second Part" "68%" "Animation,Comedy"
+"An Elephant Sitting Still (Da xiang xi di er zuo)" "75%" "ArtHouse&International,Drama"
+"Luce" "77%" "Drama,Mystery&Suspense"
+"Mike Wallace Is Here" "86%" "Documentary"
+"Jojo Rabbit" "94%" "Comedy,Drama"
+"The Souvenir" "36%" "Drama"
+"The Kid Who Would Be King" "56%" "Action&Adventure,Kids&Family,ScienceFiction&Fantasy"
+"Ask Dr. Ruth" "95%" "Documentary"
+"The Wild Pear Tree (Ahlat agaci)" "81%" "Drama"
+"Citizen K" "38%" "Documentary"
+"Diane" "69%" "Drama"
