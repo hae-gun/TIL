@@ -1,18 +1,14 @@
 package string;
 
 import java.util.Scanner;
-<<<<<<< HEAD
-=======
 
-public class MaxCountAlp {
->>>>>>> 5154994502597b5f61187f668d880d13cb1c78bb
+//public class MaxCountAlp {
 
 public class MaxCountAlp {
 	// 백준 1157번 문제
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String S = scan.next();
-<<<<<<< HEAD
 		// 받은 문자열 모두 대문자로 변경.
 		S = S.toUpperCase();
 		int index = 0;
@@ -62,8 +58,6 @@ public class MaxCountAlp {
 			System.out.println("?");
 		}
 
-=======
->>>>>>> 5154994502597b5f61187f668d880d13cb1c78bb
 	}
 
 }
