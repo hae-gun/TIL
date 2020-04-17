@@ -5,14 +5,14 @@ import java.util.Scanner;
 public class AsciiCode {
 
 	
-	// ¹éÁØ 	11654 ¹ø ¹®Á¦
+	// ë°±ì¤€ 	11654 ë²ˆ ë¬¸ì œ
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		// ÀÔ·Â°ªÀ» ½ºÆ®¸µÀ¸·Î ¹ŞÀ½.
+		// ì…ë ¥ê°’ì„ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë°›ìŒ.
 		String ascii = scan.next();
-		// ¹ŞÀº String ¹®ÀÚ¿­Áß Ã¹¹øÂ° ¿ä¼Ò¸¦ ²¨³» char ÇüÅÂ·Î ÀúÀå.
+		// ë°›ì€ String ë¬¸ìì—´ì¤‘ ì²«ë²ˆì§¸ ìš”ì†Œë¥¼ êº¼ë‚´ char í˜•íƒœë¡œ ì €ì¥.
 		char Asc = ascii.charAt(0);
-		// int casting À» ÅëÇØ ¾Æ½ºÅ° code Ãâ·Â
+		// int casting ì„ í†µí•´ ì•„ìŠ¤í‚¤ code ì¶œë ¥
 		System.out.println((int)Asc);
 		scan.close();
 	}

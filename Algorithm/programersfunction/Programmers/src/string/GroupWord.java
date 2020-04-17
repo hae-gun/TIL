@@ -13,7 +13,7 @@ public class GroupWord {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		// ±×·ì´Ü¾î : ÇöÀçÀ§Ä¡ÀÇ ±ÛÀÚ°¡ ¾Õ ¹®ÀÚ¿Í °°Áö ¾ÊÀºµ¥ µÚ¿¡ ¹®ÀÚ¿Í °°Àº°æ¿ì ÇØ´ç ´Ü¾î´Â
+		// ê·¸ë£¹ë‹¨ì–´ : í˜„ì¬ìœ„ì¹˜ì˜ ê¸€ìê°€ ì• ë¬¸ìì™€ ê°™ì§€ ì•Šì€ë° ë’¤ì— ë¬¸ìì™€ ê°™ì€ê²½ìš° í•´ë‹¹ ë‹¨ì–´ëŠ”
 
 		int tcase = Integer.valueOf(br.readLine());
 		String input;
@@ -34,14 +34,14 @@ public class GroupWord {
 	}
 
 	public static boolean checkGroup(String input) {
-		boolean[] alphabet = new boolean[26]; // °¢ ¹øÈ£´Â ¾ËÆÄºªÀ» ÀÇ¹Ì. ÇØ´ç Ä­ÀÌ trueÀÎ °æ¿ì : ÇØ´ç¹®ÀÚ°¡ ´Ù½Ã ³ª¿Â°æ¿ì.
+		boolean[] alphabet = new boolean[26]; // ê° ë²ˆí˜¸ëŠ” ì•ŒíŒŒë²³ì„ ì˜ë¯¸. í•´ë‹¹ ì¹¸ì´ trueì¸ ê²½ìš° : í•´ë‹¹ë¬¸ìê°€ ë‹¤ì‹œ ë‚˜ì˜¨ê²½ìš°.
 
 		for (int i = 0; i < input.length(); i++) {
 			char temp = input.charAt(i);
 			if (alphabet[temp - 'a']) {
 				return false;
-			} else { // ÇØ´ç ´Ü¾î°¡ °è¼Ó ¿¬¼ÓµÇ¸é ±× ÇØ´ç ´Ü¾îÀÇ alphabet ¹è¿­°ªÀº falseÀÌ´Ù. ±×·¯´Ù°¡ µÚ¿¡ ´Ù¸¥´Ü¾î°¡ ³ªÅ¸³ª¸é true·Î º¯°æµÊ.
-						// ±×ÈÄ ÇØ´ç ´Ü¾î°¡ ´Ù½Ã ³ªÅ¸³ª°Ô µÇ¸é ±× ´Ü¾î´Â ±×·ì´Ü¾î°¡ ¾Æ´Ô. µû¶ó¼­ À§¿¡ if ¹® ·ÎÁ÷¿¡ °É·Á false ¸¦ ¸®ÅÏ.
+			} else { // í•´ë‹¹ ë‹¨ì–´ê°€ ê³„ì† ì—°ì†ë˜ë©´ ê·¸ í•´ë‹¹ ë‹¨ì–´ì˜ alphabet ë°°ì—´ê°’ì€ falseì´ë‹¤. ê·¸ëŸ¬ë‹¤ê°€ ë’¤ì— ë‹¤ë¥¸ë‹¨ì–´ê°€ ë‚˜íƒ€ë‚˜ë©´ trueë¡œ ë³€ê²½ë¨.
+						// ê·¸í›„ í•´ë‹¹ ë‹¨ì–´ê°€ ë‹¤ì‹œ ë‚˜íƒ€ë‚˜ê²Œ ë˜ë©´ ê·¸ ë‹¨ì–´ëŠ” ê·¸ë£¹ë‹¨ì–´ê°€ ì•„ë‹˜. ë”°ë¼ì„œ ìœ„ì— if ë¬¸ ë¡œì§ì— ê±¸ë ¤ false ë¥¼ ë¦¬í„´.
 				if (i < input.length() - 1 && temp != input.charAt(i + 1)) {
 					alphabet[temp - 'a'] = true;
 				}

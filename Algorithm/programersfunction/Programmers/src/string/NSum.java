@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class NSum {
 
-	// ¹éÁØ 11702¹ø ¹®Á¦
+	// ë°±ì¤€ 11702ë²ˆ ë¬¸ì œ
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int sum = 0;

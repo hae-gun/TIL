@@ -2,19 +2,11 @@ package string;
 
 import java.util.Scanner;
 
-<<<<<<< HEAD
-//public class MaxCountAlp {
-=======
 public class MaxCountAlp {
->>>>>>> 17e96aada5ca3e1af0b58d64d6fa181bffc904d6
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String S = scan.next();
-<<<<<<< HEAD
-		// ¹ŞÀº ¹®ÀÚ¿­ ¸ğµÎ ´ë¹®ÀÚ·Î º¯°æ.
-=======
->>>>>>> 17e96aada5ca3e1af0b58d64d6fa181bffc904d6
 		S = S.toUpperCase();
 		int index = 0;
 		int maxCount = 0;
@@ -45,8 +37,8 @@ public class MaxCountAlp {
 			}
 		}
 
-		System.out.println("ï¿½Ö°ï¿½ ï¿½İºï¿½ È½ï¿½ï¿½ : " + maxCount);
-		System.out.println("ï¿½Ö°ï¿½ ï¿½ï¿½Ä¡ : " + index);
+		System.out.println("ìµœë‹¤ ë¹ˆë„ìˆ˜ : " + maxCount);
+		System.out.println("Index : " + index);
 		if (count == 1) {
 			System.out.println((char) (index + 65));
 		} else {
