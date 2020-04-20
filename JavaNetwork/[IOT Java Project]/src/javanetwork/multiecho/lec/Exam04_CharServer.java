@@ -40,6 +40,8 @@ class ChatSharedobject {
 
 	// 클라이언트가 데이터를 보내줬을 때 채팅메시지를 Broadcast하는 method
 	public void broadcast(String msg) {
+		
+		
 		for (ChatRunnable client : clients) {
 			client.getPr().println(msg);
 			client.getPr().flush();

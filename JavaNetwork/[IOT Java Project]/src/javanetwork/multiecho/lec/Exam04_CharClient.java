@@ -35,16 +35,17 @@ public class Exam04_CharClient extends Application {
 	class ReceiveRunnable implements Runnable {
 
 		private BufferedReader br;
-
-		ReceiveRunnable(BufferedReader br) {
+		String roomName;
+		ReceiveRunnable(BufferedReader br, String roomName) {
 			this.br = br;
+			this.roomName = roomName;
 		}
 
 		@Override
 		public void run() {
 			String msg = "";
 			try {
-
+				
 				while ((msg = br.readLine()) != null) {
 					printMSG(msg);
 				}
@@ -87,13 +88,14 @@ public class Exam04_CharClient extends Application {
 				br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 				pr = new PrintWriter(s.getOutputStream());
 				// 접속 성공후 입력상자 활성화
-
+				
 				String user = id.getText() + " 님이 접속하였습니다.";
 				pr.println(user);
 				pr.flush();
 				onComponent();
+				String room = "2";
 				// 입력을 받기위한 Thread를 생성하고 실행.
-				ReceiveRunnable r = new ReceiveRunnable(br);
+				ReceiveRunnable r = new ReceiveRunnable(br,room);
 				executorService.execute(r);
 
 				connectBtn.setDisable(true);
