@@ -25,7 +25,7 @@ public class Top {
 		sb.append("[");
 		for(int i : result) {
 			sb.append(i);
-			sb.append(",");
+		0	sb.append(",");
 		}
 		
 		sb.deleteCharAt(sb.length()-1);

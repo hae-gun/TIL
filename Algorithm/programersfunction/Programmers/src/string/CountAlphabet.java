@@ -9,18 +9,15 @@ import java.util.Scanner;
 
 public class CountAlphabet {
 
-<<<<<<< HEAD
 	// ¹éÁØ 10809¹ø ¹®Á¦
 //	public static void main(String[] args) {
 //		Scanner scan = new Scanner(System.in);
 //		String S = scan.next();
 //		}
-=======
 	// ï¿½ï¿½ï¿½ï¿½ 10809ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //	public static void main(String[] args) {
 //		Scanner scan = new Scanner(System.in);
 //		String S = scan.next();
->>>>>>> 17e96aada5ca3e1af0b58d64d6fa181bffc904d6
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
