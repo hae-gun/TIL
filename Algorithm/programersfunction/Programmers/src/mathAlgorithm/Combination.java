@@ -16,50 +16,50 @@ public class Combination {
 }
 
 class MyCombination{
-	private String[] arr; // ±âÁØ ¹è¿­.
-	private Stack<String> st; // Á¶ÇÕÀ» ÀúÀåÇÒ ½ºÅÃ.
+	private String[] arr; // ê¸°ì¤€ ë°°ì—´.
+	private Stack<String> st; // ì¡°í•©ì„ ì €ì¥í•  ìŠ¤íƒ.
 	
 		
 	
 
 	public MyCombination(String[] arr) {
-		this.arr = arr;				// ¹è¿­À» ¹Ş¾Æ °´Ã¼¿¡ ÁÖÀÔ.
-		st = new Stack<String>();	// ½ºÅÃ¿¡ ¸Ş¸ğ¸®¸¦ ÇÒ´çÇÑ´Ù.
+		this.arr = arr;				// ë°°ì—´ì„ ë°›ì•„ ê°ì²´ì— ì£¼ì….
+		st = new Stack<String>();	// ìŠ¤íƒì— ë©”ëª¨ë¦¬ë¥¼ í• ë‹¹í•œë‹¤.
 	}
 	
-	// stack À» Ãâ·ÂÇÏ±â À§ÇÑ ¸Å¼­µå
+	// stack ì„ ì¶œë ¥í•˜ê¸° ìœ„í•œ ë§¤ì„œë“œ
 	public void showStack() {
 		for(int i = 0 ; i < st.size() ; i++) {
 			System.out.println(st.get(i)+" ");
 		}
-		System.out.println(""); // °³Çà
+		System.out.println(""); // ê°œí–‰
 	}
 	
 	public void doCombination(int n, int r, int index) {
-		// n : ÀüÃ¼ ¿ø¼ÒÀÇ °³¼ö.
-		// r : »ÌÀ» ¿ø¼ÒÀÇ °³¼ö.
-		// index : ¹è¿­À» ´Ù·ç±â À§ÇÑ ¼ıÀÚ.
-		if(r==0) // ´õÀÌ»ó »ÌÀ» °ÍÀÌ ¾ø´Ù´Â ÀÇ¹ÌÀÌ´Ù. ½ºÅÃÀ» Ãâ·Â½ÃÅ²´Ù.
+		// n : ì „ì²´ ì›ì†Œì˜ ê°œìˆ˜.
+		// r : ë½‘ì„ ì›ì†Œì˜ ê°œìˆ˜.
+		// index : ë°°ì—´ì„ ë‹¤ë£¨ê¸° ìœ„í•œ ìˆ«ì.
+		if(r==0) // ë”ì´ìƒ ë½‘ì„ ê²ƒì´ ì—†ë‹¤ëŠ” ì˜ë¯¸ì´ë‹¤. ìŠ¤íƒì„ ì¶œë ¥ì‹œí‚¨ë‹¤.
 		{
 			showStack();
 			return;
-		}else if(n==r) { // nCn : n°³Áß n °³¸¦ »Ì´ÂÀÇ¹Ì´Â ¸ğµç°ÍÀ» ´Ù »Ì´Â´Ù´Â ÀÇ¹ÌÀÌ´Ù.
+		}else if(n==r) { // nCn : nê°œì¤‘ n ê°œë¥¼ ë½‘ëŠ”ì˜ë¯¸ëŠ” ëª¨ë“ ê²ƒì„ ë‹¤ ë½‘ëŠ”ë‹¤ëŠ” ì˜ë¯¸ì´ë‹¤.
 			for(int i = 0 ; i <n ; i++) {
-				st.add(arr[index+i]); // stackÀ» Ã¤¿ö³ÖÀ½
+				st.add(arr[index+i]); // stackì„ ì±„ì›Œë„£ìŒ
 			}
 			for(int i = 0 ; i<n; i++) {
-				st.pop(); // stack À» ºñ¿öÁÜ.
+				st.pop(); // stack ì„ ë¹„ì›Œì¤Œ.
 			}
 		}else {
-			// À§¿¡ µÎ °æ¿ì¿¡ °É¸®Áö ¾Ê´Â°æ¿ì Á¡È­½Ä´ë·Î ÁøÇàÇÑ´Ù.
+			// ìœ„ì— ë‘ ê²½ìš°ì— ê±¸ë¦¬ì§€ ì•ŠëŠ”ê²½ìš° ì í™”ì‹ëŒ€ë¡œ ì§„í–‰í•œë‹¤.
 			
-			// index ¸¦ Æ÷ÇÔÇÏ´Â °æ¿ì.
+			// index ë¥¼ í¬í•¨í•˜ëŠ” ê²½ìš°.
 			st.add(arr[index]);
-			// index¸¦ stack¿¡ ³ÖÀº»óÅÂ·Î ´ÙÀ½ Á¡È­½Ä ÁøÇà
+			// indexë¥¼ stackì— ë„£ì€ìƒíƒœë¡œ ë‹¤ìŒ ì í™”ì‹ ì§„í–‰
 			doCombination(n-1, r-1, index+1); 
 			
-			//index¸¦ Æ÷ÇÔÇÏÁö ¾Ê´Â °æ¿ì
-			st.pop(); // index °æ¿ì¸¦ Áö¿î »óÅÂ¿¡¼­
+			//indexë¥¼ í¬í•¨í•˜ì§€ ì•ŠëŠ” ê²½ìš°
+			st.pop(); // index ê²½ìš°ë¥¼ ì§€ìš´ ìƒíƒœì—ì„œ
 			doCombination(n-1,r,index+1);
 			
 			

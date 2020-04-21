@@ -37,8 +37,8 @@ public class MaxCountAlp {
 			}
 		}
 
-		System.out.println("�ְ� �ݺ� Ƚ�� : " + maxCount);
-		System.out.println("�ְ� ��ġ : " + index);
+		System.out.println("최다 빈도수 : " + maxCount);
+		System.out.println("Index : " + index);
 		if (count == 1) {
 			System.out.println((char) (index + 65));
 		} else {

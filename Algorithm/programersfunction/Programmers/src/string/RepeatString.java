@@ -3,7 +3,7 @@ package string;
 import java.util.Scanner;
 
 public class RepeatString {
-	// ¹éÁØ 2675¹ø ¹®Á¦
+	// ë°±ì¤€ 2675ë²ˆ ë¬¸ì œ
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int Case = scan.nextInt();

@@ -6,14 +6,14 @@ public class Example02_SelfNumber {
 
 		int result = PlusNumber(9999);
 
-		// PlusNumber ¸¦ ÅëÇØ °á°ú°¡ ³ª¿Â°ªÀº ¼¿ÇÁ¼ýÀÚ°¡ ¾Æ´Ô.
+		// PlusNumber ë¥¼ í†µí•´ ê²°ê³¼ê°€ ë‚˜ì˜¨ê°’ì€ ì…€í”„ìˆ«ìžê°€ ì•„ë‹˜.
 		int checkNum[] = new int[10001];
 
-		// ¼ýÀÚ ¹è¿­À» ÅëÇØ PlusNumber °á°ú°¡ ³ª¿ÔÀ» ¶§ ÇØ´ç ¼ö¿¡ ÇØ´çÇÏ´Â ÀÎµ¦½ºÀÇ ¼ö¸¦ 1¾¿ Áõ°¡.
-		// ¼ýÀÚ¹è¿­À» °Ë»öÇÏ¿© ¹è¿­ÀÇ °ªÀÌ 0ÀÎ indexÀÇ ¼ýÀÚ´Â »øÇÁ ¼ýÀÚ¸¦ ÀÇ¹ÌÇÔ.
+		// ìˆ«ìž ë°°ì—´ì„ í†µí•´ PlusNumber ê²°ê³¼ê°€ ë‚˜ì™”ì„ ë•Œ í•´ë‹¹ ìˆ˜ì— í•´ë‹¹í•˜ëŠ” ì¸ë±ìŠ¤ì˜ ìˆ˜ë¥¼ 1ì”© ì¦ê°€.
+		// ìˆ«ìžë°°ì—´ì„ ê²€ìƒ‰í•˜ì—¬ ë°°ì—´ì˜ ê°’ì´ 0ì¸ indexì˜ ìˆ«ìžëŠ” ìƒí”„ ìˆ«ìžë¥¼ ì˜ë¯¸í•¨.
 
-		// for¹®À» ÅëÇØ ½ÃÀÛ ¼ýÀÚ¸¦ Áõ°¡½ÃÅ°¸ç ÇØ´ç ¼ö¸¦ PlusNumber¸¦ °è¼Ó ÁøÇà½ÃÅ°¸ç
-		// °á°ú°¡ 10000º¸´Ù ÀÛÀº¼ö ÀÏ¶§±îÁö ·çÇÁ¸¦ ÁøÇà
+		// forë¬¸ì„ í†µí•´ ì‹œìž‘ ìˆ«ìžë¥¼ ì¦ê°€ì‹œí‚¤ë©° í•´ë‹¹ ìˆ˜ë¥¼ PlusNumberë¥¼ ê³„ì† ì§„í–‰ì‹œí‚¤ë©°
+		// ê²°ê³¼ê°€ 10000ë³´ë‹¤ ìž‘ì€ìˆ˜ ì¼ë•Œê¹Œì§€ ë£¨í”„ë¥¼ ì§„í–‰
 		for (int i = 1; i <= 10000; i++) {
 			int startNum = i;
 			do {
@@ -33,7 +33,7 @@ public class Example02_SelfNumber {
 
 	public static int PlusNumber(int Number) {
 		int result = Number;
-		// ÀÚ½Å°ú °¢ ÀÚ¸´¼ö¸¦ ´õÇÏ±â.
+		// ìžì‹ ê³¼ ê° ìžë¦¿ìˆ˜ë¥¼ ë”í•˜ê¸°.
 		while (Number != 0) {
 			result += (Number % 10);
 			Number /= 10;
@@ -41,19 +41,19 @@ public class Example02_SelfNumber {
 		return result;
 	}
 
-	// 10000º¸´Ù ÀÛ°Å³ª °°Àº »øÇÁ¼ýÀÚ Ã£±â.
+	// 10000ë³´ë‹¤ ìž‘ê±°ë‚˜ ê°™ì€ ìƒí”„ìˆ«ìž ì°¾ê¸°.
 
-	// »øÇÁ ¼ýÀÚ : 1~10000 ±îÁö °¢°¢ ÀÚ½Å°ú °¢ ÀÚ¸®¼ýÀÚ¸¦ ´õÇÏ¿© ³ª¿Â ¼ýÀÚ°¡ ´Ü ÇÏ³ªÀÇ ¼ýÀÚ·Î¸¸ ³ª¿À´Â ¼ö.
+	// ìƒí”„ ìˆ«ìž : 1~10000 ê¹Œì§€ ê°ê° ìžì‹ ê³¼ ê° ìžë¦¬ìˆ«ìžë¥¼ ë”í•˜ì—¬ ë‚˜ì˜¨ ìˆ«ìžê°€ ë‹¨ í•˜ë‚˜ì˜ ìˆ«ìžë¡œë§Œ ë‚˜ì˜¤ëŠ” ìˆ˜.
 
 	/*
-	 * ¿¹) ½ÃÀÛ¼ö 1 -> 1 + 1 = 2 2 + 2 = 4 4 + 4 = 8 8 + 8 = 16 16 + 1 + 6 = 23 ....
+	 * ì˜ˆ) ì‹œìž‘ìˆ˜ 1 -> 1 + 1 = 2 2 + 2 = 4 4 + 4 = 8 8 + 8 = 16 16 + 1 + 6 = 23 ....
 	 * 
-	 * 1 Àº 2 ÀÇ »ý¼ºÀÚ. 2 ´Â 4 ÀÇ »ý¼ºÀÚ. ...
+	 * 1 ì€ 2 ì˜ ìƒì„±ìž. 2 ëŠ” 4 ì˜ ìƒì„±ìž. ...
 	 * 
-	 * ¼ºÀÚ°¡ ¾ø´Â ¼ö = ¼¿ÇÁ¼ýÀÚ. ¿¹) 3Àº »ý¼ºÀÚ°¡ ¾ø´Ù. 3 + 3 = 6 3Àº 6ÀÇ »ý¼ºÀÚ. 6 + 6 = 12
+	 * ì„±ìžê°€ ì—†ëŠ” ìˆ˜ = ì…€í”„ìˆ«ìž. ì˜ˆ) 3ì€ ìƒì„±ìžê°€ ì—†ë‹¤. 3 + 3 = 6 3ì€ 6ì˜ ìƒì„±ìž. 6 + 6 = 12
 	 * 
 	 */
 
-	// ¸ÕÀú ÀÚ±â ÀÚ½Å°ú °¢ ÀÚ¸®¼ö¸¦ ´õÇÏ´Â ·ÎÁ÷ »ý¼º.
+	// ë¨¼ì € ìžê¸° ìžì‹ ê³¼ ê° ìžë¦¬ìˆ˜ë¥¼ ë”í•˜ëŠ” ë¡œì§ ìƒì„±.
 
 }
