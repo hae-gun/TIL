@@ -27,8 +27,11 @@ public class Exam05_MyMultiRoomServer extends Application {
 	private Button startBtn, stopBtn;
 	private ExecutorService executorService = Executors.newCachedThreadPool();
 	ServerSocket server;
-	private List<Room> roomList = new ArrayList<Room>();
+	
 	private ChatSharedObj shared = new ChatSharedObj();
+
+	
+	
 	private void printMSG(String msg) {
 		Platform.runLater(() -> {
 			ta.appendText(msg + "\n");
@@ -56,12 +59,15 @@ public class Exam05_MyMultiRoomServer extends Application {
 						// 서버와 클라이언트 연결.
 						// 룸 리스트 전송
 						// 룸 리스트 들어오면 실행되는 Thread 실행
-						RoomRunnable roomList = new ChatRunnable(s, shared);
+						ChatRunnable r = new ChatRunnable(s, shared);
+						shared.add(r);
+						executorService.execute(r);
 					}
 				} catch (Exception e1) {
 					e1.printStackTrace();
 				}
 			};
+			executorService.execute(runnable);
 
 		});
 		FlowPane flowpane = new FlowPane();
@@ -84,36 +90,7 @@ public class Exam05_MyMultiRoomServer extends Application {
 	}
 }
 
-class MyChatRunnable implements Runnable {
 
-	private ArrayList<Room> roomList = new ArrayList<Room>();
-	private Socket s;
-	private ChatSharedObj shared;
-	private BufferedReader br;
-	private PrintWriter pr;
-
-	public MyChatRunnable(Socket s, ChatSharedObj shared) {
-		this.s = s;
-		this.shared = shared;
-		try {
-			this.br = new BufferedReader(new InputStreamReader(s.getInputStream()));
-			this.pr = new PrintWriter(s.getOutputStream());
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
-	public void addRoom(Room newRoom) {
-		roomList.add(newRoom);
-	}
-
-	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-
-	}
-
-}
 
 class Room {
 	private String name;
@@ -132,45 +109,13 @@ class Room {
 	public void removeUser(String userName) {
 		userList.remove(userName);
 	}
-
-}
-
-class ChatSharedObj {
-	List<ChatRunnable> clients = new ArrayList<ChatRunnable>();
-	Room inRoom;
-
-	public void inRoom(Room inRoom) {
-		this.inRoom = inRoom;
-	}
-
-	public void outRoom() {
-		this.inRoom = null;
-	}
-
-	public void add(ChatRunnable runnable) {
-		// TODO Auto-generated method stub
-		clients.add(runnable);
-
-	}
-
-	public void remove(ChatRunnable runnable) {
-		// TODO Auto-generated method stub
-		clients.remove(runnable);
-
-	}
-
-	public void broadcast(String msg, Room thisRoom) {
-		// TODO Auto-generated method stub
-		if (inRoom.equals(thisRoom)) {
-			for (ChatRunnable client : clients) {
-				client.getPr().println(msg);
-				client.getPr().flush();
-			}
-		}
-
+	public String getName() {
+		return this.name;
 	}
 
 }
+
+
 
 class ChatRunnable implements Runnable {
 	private Socket s;
@@ -178,7 +123,6 @@ class ChatRunnable implements Runnable {
 	private BufferedReader br;
 	private PrintWriter pr;
 	private Room inRoom;
-
 	ChatRunnable(Socket s, ChatSharedObj shared) {
 		this.s = s;
 		this.shared = shared;
@@ -194,6 +138,10 @@ class ChatRunnable implements Runnable {
 		this.inRoom = inRoom;
 	}
 
+	public void removeRoom() {
+		this.inRoom = null;
+	}
+
 	public PrintWriter getPr() {
 		return this.pr;
 	}
@@ -203,16 +151,7 @@ class ChatRunnable implements Runnable {
 		try {
 
 			while ((line = br.readLine()) != null) {
-				if (line.equals("@EXIT")) {
-					shared.remove(this);
-					break;
-				}
-
-				// 자신과 연결된 클라이언트만 문자열 전송하는 코드
-//				pr.println(line);
-//				pr.flush();
-				// 모든 클라이언트에게 문자열을 전달하기위해 공용객체를 활용.
-				shared.broadcast(line, this.inRoom);
+				shared.broadcast(line, inRoom);
 			}
 
 		} catch (Exception e) {

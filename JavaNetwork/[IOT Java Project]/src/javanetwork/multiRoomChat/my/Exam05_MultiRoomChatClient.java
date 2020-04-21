@@ -2,6 +2,7 @@ package javanetwork.multiRoomChat.my;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Optional;
@@ -122,6 +123,8 @@ public class Exam05_MultiRoomChatClient extends Application {
 			
 			try {
 				s = new Socket("localhost",9898);
+				br=new BufferedReader(new InputStreamReader(s.getInputStream()));
+				pr = new PrintWriter(s.getOutputStream());
 				printMSG("채팅서버에 접속완료");
 				printMSG(entered+" 님 환영합니다.");
 				userID = entered;
@@ -171,6 +174,12 @@ public class Exam05_MultiRoomChatClient extends Application {
 			participantsListView.getItems().add("유관순");
 			participantsListView.getItems().add("신사임당");
 			participantsListView.getItems().add(userID);
+			Room myRoom = new Room("테스트",1);
+			try {
+				ReceiveRunnable r = new ReceiveRunnable(br,myRoom);
+				executorService.execute(r);
+			}catch (Exception e1) {
+			}
 			
 			// 밑 부분의 메뉴를 채팅을 입력할 수 있는 화면으로 전환.
 			FlowPane inputFlow = new FlowPane();
@@ -182,7 +191,10 @@ public class Exam05_MultiRoomChatClient extends Application {
 			inputTF.setPrefSize(400, 40);
 			inputFlow.getChildren().add(inputTF);
 			inputTF.setOnAction(v->{
-				printMSG(userID + ": "+inputTF.getText());
+				String msg = userID + ": "+inputTF.getText();
+				printMSG(msg);
+				pr.println(msg);
+				pr.flush();
 				inputTF.clear();
 			});
 			root.setBottom(inputFlow);
