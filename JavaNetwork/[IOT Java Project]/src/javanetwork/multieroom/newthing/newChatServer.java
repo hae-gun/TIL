@@ -21,19 +21,27 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+import javanetwork.multiRoomChat.my.RoomRunnable;
 
 // Thread에 의해서 공유되는 공용객체를 만들기 위한 class를 정의
 class ChatSharedobject {
 	// Thread에 의해서 공유되어야 하는 데이터.
 	// 모든 클라이언트에 대한 Thread를 만들기위해 필요한 Runnable 객체 저장.
 	List<ChatRunnable> clients = new ArrayList<ChatRunnable>();
-	HashMap<String,ArrayList<String>> rooms = new HashMap();
+	HashMap<String, ArrayList<String>> rooms = new HashMap();
+	
+	ArrayList<String> users = new ArrayList<String>();
+	
 	String broadRoom = "";
+//	ChatSharedobject(){
+//		rooms.put("#MAIN", new ArrayList<String>());
+//	}
 	// 이 데이터를 제어하기 위해서 필요한 method
 	// 새로운 사용자가 접속했을때 clients안에 새로한 사용자에 대한 Runnable 객체를 저장.
 	public void setBroadRoom(String broadRoom) {
 		this.broadRoom = broadRoom;
 	}
+
 	public void add(ChatRunnable runnable) {
 		clients.add(runnable);
 	}
@@ -42,7 +50,6 @@ class ChatSharedobject {
 	public void remove(ChatRunnable runnable) {
 		clients.remove(runnable);
 	}
-	
 
 	// 클라이언트가 데이터를 보내줬을 때 채팅메시지를 Broadcast하는 method
 	public void broadcast(String msg) {
@@ -52,52 +59,106 @@ class ChatSharedobject {
 			client.getPr().flush();
 		}
 	}
-	
+
 	public HashMap getroomList() {
 		return this.rooms;
 	}
+
 	public void addRoomList(String rName) {
-		rooms.put(rName, null);
+		rooms.put(rName, new ArrayList<String>());
 	}
-	public void addUser(String userName,String roomName) {
-		rooms.get(roomName).add(userName);
+
+	public void addUser(String userName, String roomName) {
+		if (!rooms.get(roomName).contains(userName)) {
+			rooms.get(roomName).add(userName);
+		}
 	}
-	public ArrayList<String> getUser(String rName){
-		return rooms.get(rName);
-	} 
-	
+
+	public void deleteUser(String userName, String roomName) {
+		System.out.println("??"+roomName+"??");
+		System.out.println(rooms.containsKey(roomName));
+		if (rooms.containsKey(roomName)) {
+			System.out.println(rooms.get(roomName).isEmpty());
+			if (rooms.get(roomName).contains(userName)) {
+				rooms.get(roomName).remove(userName);
+			}
+		}
+	}
+
+	public String getUsers(String roomName) {
+		String result = "";
+		ArrayList<String> list = rooms.get(roomName);
+
+		for (String member : list) {
+			result += (member + ",");
+		}
+
+		return result;
+	}
+
 	public String roomList() {
 		return this.rooms.keySet().toString();
 	}
+
 	public void roomBroadcast() {
-		
-		String rName =rooms.keySet().toString()+"@roomList";
+
+		String rName = rooms.keySet().toString() + "@roomList";
 		System.out.println(rooms.keySet().toString());
-		for(ChatRunnable client : clients) {
+		for (ChatRunnable client : clients) {
 			client.getPr().println(rName);
 			client.getPr().flush();
 		}
 	}
+
 	public void roomMemberBroadcast(String rName) {
 		String result = "";
-		
-		result = getUser(rName).toString()+"@userList";
-		for(ChatRunnable client : clients) {
+		result = getUsers(rName) + "@userList@@"+rName+"@roomName";
+		for (ChatRunnable client : clients) {
 			client.getPr().println(result);
 			client.getPr().flush();
 		}
-				
+
 	}
 	
+	public void connUser(String userName) {
+		if(!users.contains(userName)) {
+			users.add(userName);
+		}
+//		int i =userList.put(userName, 1);
+//		System.out.println(i+"뭐가 나오냐");
+	}
 	
+	public void disconnUser(String userName) {
+//		if(userList.containsKey(userName)) {
+//			userList.put(userName, 0);
+//		}
+		if(users.contains(userName)) {
+			users.remove(userName);
+		}
+		
+	}
+	public void currentUser() {
+		for(String s : users) {
+			System.out.println(s);
+		}
+	}
+	public boolean checkUser(String userName) {
+		if(users.contains(userName)) {
+			return false;
+		}
+		return true;
+	}
+	
+
 }
+
 class ChatRunnable implements Runnable {
 	private Socket s;
 	private ChatSharedobject shared;
 	private BufferedReader br;
 	private PrintWriter pr;
 	private TextArea ta;
-	
+
 	ChatRunnable(Socket s, ChatSharedobject shared, TextArea ta) {
 		this.s = s;
 		this.shared = shared;
@@ -119,77 +180,104 @@ class ChatRunnable implements Runnable {
 		
 		try {
 			
-			
 			while ((line = br.readLine()) != null) {
-				
-				if (line.equals("@EXIT")) {
+				System.out.println("접속중인 유저");
+				shared.currentUser();
+				if (line.contains("@EXIT")) {
 					break;
 				}
 
-				// 자신과 연결된 클라이언트만 문자열 전송하는 코드
-//				pr.println(line);
-//				pr.flush();
-				// 모든 클라이언트에게 문자열을 전달하기위해 공용객체를 활용.
-				
 				printMSG(line);
-				
-				if(line.contains("@chat")) {
-					
-					if(line.split("@").length==3) {
+
+				if (line.contains("@connUser")) {
+					String user = line.split("@")[0];
+					if(shared.checkUser(user)) {
+						shared.connUser(user);
+					}else {
+						shared.broadcast("@overlap");
+					}
+					System.out.println(line.split("@")[0]);
+					shared.roomBroadcast();
+				}
+				if (line.contains("@chat")) {
+
+					if (line.contains("@chat@")) {
 						String room = line.split("@")[2];
 						printMSG(room);
 					}
-					
-					
+
 					shared.broadcast(line);
-				}else if(line.contains("@create")) {
+				} else if (line.contains("@create")) {
 					String rName = line.split("@")[0];
-					
+
 					shared.addRoomList(rName);
 					shared.broadcast(line);
-					if(!shared.getroomList().containsKey(rName)) {
+					if (!shared.getroomList().containsKey(rName)) {
 						shared.addRoomList(rName);
-						
+
+					}
+					shared.roomBroadcast();
+
+				} else if (line.contains("@roomList")) {
+					shared.roomBroadcast();
+				} else if (line.contains("@connRoom")) {
+					String rname = line.split("@")[0];
+					printMSG(rname + "에 들어 간다.");
+
+					if (line.contains("@addUser")) {
+
+						String user = line.split(",")[1].split("@")[0];
+						String roomName = line.split(",")[0].split("@")[0];
+						printMSG(user + ":" + roomName + "입장");
+						shared.addUser(user, roomName);
 					}
 					
 					
-				}else if(line.contains("@roomList")) {
-					shared.roomBroadcast();
-				}else if(line.contains("@connRoom")) {
 					
+					shared.roomMemberBroadcast(rname);
+
 					shared.setBroadRoom(line);
 //					line += "@userList:"+shared.getUser(rName);
 					shared.broadcast(line);
-				}else if(line.contains("@room")) {
+				} else if (line.contains("@room")) {
 					shared.setBroadRoom(line);
 					shared.broadcast(line);
-				}
-				
-				if(line.contains("@addUser")) {
+				} else if (line.contains("@deleteMem")) {
+					String user = line.split(",")[0].split("@")[0];
+					String roomName = line.split(",")[1].split("@")[0];
+					printMSG(user + "님이 " + roomName + " 방에서 나갔습니다.");
+					printMSG(line+"이거 보자...");
+					shared.deleteUser(user, roomName);
 					
-					String user = line.split(",")[1].split("@")[0];
-					String roomName = line.split(",")[0].split("@")[0];
-					printMSG(user + ":"+roomName+"입장");
-					shared.addUser(user, roomName);
-					System.out.println("이거 안뜬다.");
-				
+					shared.broadcast(line+"@refresh");
+					
+					
+					
+//					shared.roomMemberBroadcast(roomName);					
+//					System.out.println(list+"!@#$!@#$!@#$");
+//					shared.broadcast(list);
 				}
-				
+
+				if(line.contains("@CLOSE")) {
+					System.out.println("여기..");
+					shared.broadcast("@CLOSE");
+				}
 			}
 
 		} catch (Exception e) {
 		}
 	}
+
 	private void printMSG(String msg) {
 		Platform.runLater(() -> {
 			ta.appendText(msg + "\n");
 		});
-		
+
 	}
 }
 
 public class newChatServer extends Application {
-	
+
 	private TextArea ta;
 	private Button startBtn, stopBtn;
 	private ExecutorService excutorService = Executors.newCachedThreadPool();
@@ -231,7 +319,7 @@ public class newChatServer extends Application {
 					server = new ServerSocket(9999);
 					while (true) {
 						Socket s = server.accept();
-						ChatRunnable chat = new ChatRunnable(s, shared,ta);
+						ChatRunnable chat = new ChatRunnable(s, shared, ta);
 						// 새로운 사용자 추가.
 						shared.add(chat);
 						excutorService.execute(chat);
