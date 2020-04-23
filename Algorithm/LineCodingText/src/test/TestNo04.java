@@ -60,15 +60,14 @@ class Solution4 {
 		String[][] answer;
 		Object[] keys = Client.keySet().toArray();
 		Object[] values = Client.values().toArray();
-		
-	
+
 		answer = new String[keys.length][2];
 		for (int i = 0; i < keys.length; i++) {
 			answer[i][0] = (String) keys[i];
 			answer[i][1] = values[i].toString();
 			System.out.println(answer[i][0] + " " + answer[i][1]);
 		}
-		
+
 		return answer;
 	}
 }
