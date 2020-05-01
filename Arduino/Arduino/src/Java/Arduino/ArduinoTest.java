@@ -12,5 +12,13 @@ package Java.Arduino;
 // 아두이노 : Micro-Controller.
 // 이식된 코드를 수행하는 단순한 기계가 아두이노.
 public class ArduinoTest {
-
+	public static void main(String[] args) {
+		
+		
+				
+		StringBuffer s = new StringBuffer("27.58\n");
+		
+		System.out.println(s);
+		
+	}
 }
