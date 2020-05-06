@@ -1,6 +1,8 @@
 package Java.Arduino;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 import gnu.io.CommPort;
@@ -13,9 +15,11 @@ import gnu.io.SerialPortEventListener;
 class SerialListener implements SerialPortEventListener{
 	
 	private InputStream in;
+	private BufferedReader br;
 	
 	SerialListener(InputStream in) {
 		this.in = in;
+		br = new BufferedReader(new InputStreamReader(in));
 	}
 	
 	@Override
@@ -24,16 +28,19 @@ class SerialListener implements SerialPortEventListener{
 		if( arg0.getEventType()==SerialPortEvent.DATA_AVAILABLE ) {
 			try {
 				// 전달되는 데이터의 크기가 리턴되어 k에 저장됨.
-				int k = in.available();
-				byte[] data = new byte[k];
-				// 읽어서 byte 배열에 저장
-				in.read(data,0,k);
 				
-				System.out.print("받은 메세지: " +new String(data) );
+//				int k = in.available();
+//				byte[] data = new byte[k];
+				// 읽어서 byte 배열에 저장
+//				in.read(data,0,k);
+				
+				String data= br.readLine();
+				if(data!=null)
+					System.out.println("받은 메세지: " +data );
 				
 				
 			} catch (Exception e) {
-				System.out.println(e);
+				//System.out.println(e);
 			}
 		}
 	}
@@ -43,12 +50,14 @@ class SerialListener implements SerialPortEventListener{
 public class Exam02_ArduinoSerialUsingEvent {
 	
 	public static void main(String[] args) {
+		
+		
 		CommPortIdentifier portIdentifier = null;
 		try {
 			// 1. Serial 통신을 하기 위한 COM 포트 설정.
 			// 아두이노의 포트번호를 가져옴.
 			portIdentifier = 
-					CommPortIdentifier.getPortIdentifier("COM8");
+					CommPortIdentifier.getPortIdentifier("COM10");
 
 			// 2. 포트가 사용되고 있는지 확인해야 한다.
 			if (portIdentifier.isCurrentlyOwned()) {

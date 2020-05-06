@@ -19,8 +19,9 @@ public class MyServer {
 	public static void main(String[] args) {
 
 		String msg = "";
+		CommPortIdentifier portIdentifier = null;
 		try {
-			CommPortIdentifier portIdentifier = CommPortIdentifier.getPortIdentifier("COM8");// 2. 포트가 사용되고 있는지 확인해야 한다.
+			portIdentifier = CommPortIdentifier.getPortIdentifier("COM8");// 2. 포트가 사용되고 있는지 확인해야 한다.
 			if (portIdentifier.isCurrentlyOwned()) {
 				System.out.println("포트가 사용중입니다...");
 			} else {
