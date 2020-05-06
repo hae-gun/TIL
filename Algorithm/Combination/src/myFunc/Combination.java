@@ -8,7 +8,12 @@ public class Combination {
 		int n = arr.length;
 		int r = 2;
 		int[] combArr = new int[n];
-		doCombination(combArr,n,r,0,0,arr);
+//		doCombination(combArr,n,r,0,0,arr);
+		
+		for(int i=0; i<3 ;i++) {
+			
+		} 
+		
 	}
 	
 	public static void doCombination(int[] combArr, int n, int r, int index, int target, int[] arr) {

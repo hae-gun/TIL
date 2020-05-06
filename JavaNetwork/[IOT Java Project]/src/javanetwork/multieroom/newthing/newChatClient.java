@@ -158,7 +158,7 @@ public class newChatClient extends Application {
 					if(msg.contains("@refresh")) {
 						String refreshRoom = msg.split(",")[1].split("@")[0];
 						String deleteUser = msg.split(",")[0].split("@")[0];
-						printMSG(msg);
+//						printMSG(msg);
 						if(inRoom.equals(refreshRoom)) {
 							deleteUser(deleteUser);
 						}
