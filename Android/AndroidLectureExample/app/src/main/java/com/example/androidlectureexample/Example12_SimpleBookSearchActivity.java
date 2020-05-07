@@ -86,16 +86,15 @@ public class Example12_SimpleBookSearchActivity extends AppCompatActivity {
                         String Title = bookList[position];
                         Log.i("title", Title);
 
-//                        Intent i = new Intent();
+//                        Intent i = new Intent();e);i.setComponent(cname);
+//////                        Thread t = new Thread(runnable);//                        i.putExtra("title",
 //
-////                        BookDetailSearchRunnable runnable = new BookDetailSearchRunnable(handler2,Title);
-////                        Thread t = new Thread(runnable);
+////                        BookDetailSearchRunnable runnable = new BookDetailSearchRunnable(handler2,Titl Title);
+////                        ComponentName cname = new ComponentName("com.example.androidlectureexample",
+////                                "com.example.androidlectureexample.Example13_DetailBookSearchActivity");
+////
 ////                        t.start();
 //
-//                        i.putExtra("title", Title);
-//                        ComponentName cname = new ComponentName("com.example.androidlectureexample",
-//                                "com.example.androidlectureexample.Example13_DetailBookSearchActivity");
-//                        i.setComponent(cname);
 //                        startActivity(i);
 
 

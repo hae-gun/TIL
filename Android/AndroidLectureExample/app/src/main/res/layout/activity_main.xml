@@ -18,14 +18,31 @@
             android:textSize="10pt" />
 
         <Button
-            android:id="@+id/_01_linearlayoutBtn"
+            android:id="@+id/ServerActivityBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="전등켜기" />
+
+        <Button
+            android:id="@+id/_25_ArduinoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25.Arduino LED 제어" />
+        <Button
+            android:id="@+id/_26_ArduinoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="26.Arduino LED Analog 제어" />
+
+        <Button
+        android:id="@+id/_01_linearlayoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
             android:text="01.LinearLayout 예제" />
 
         <Button
-            android:id="@+id/_02_EventBtn"
-            android:layout_width="match_parent"
+        android:id="@+id/_02_EventBtn"
+        android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="02.Event 예제" />
 

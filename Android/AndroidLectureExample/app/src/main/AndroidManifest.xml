@@ -23,7 +23,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Example24_ContactActivity"></activity>
+        <activity android:name=".Example26_ArduinoAnalogActivity"></activity>
+        <activity android:name=".Example25_ArduinoActivity" />
+
+        <service
+            android:name=".JavaNetworkService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ServerNetwork" />
+        <activity android:name=".Example24_ContactActivity" />
 
         <provider
             android:name=".Example23Sub_PersonContentProvider"

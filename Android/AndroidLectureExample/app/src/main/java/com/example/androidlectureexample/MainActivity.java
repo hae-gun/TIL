@@ -366,6 +366,45 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        Button ServerActivityBtn =
+                (Button) findViewById(R.id.ServerActivityBtn);
+        ServerActivityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.ServerNetwork");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _25_ArduinoBtn =
+                (Button) findViewById(R.id._25_ArduinoBtn);
+        _25_ArduinoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example25_ArduinoActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+        Button _26_ArduinoBtn =
+                (Button) findViewById(R.id._26_ArduinoBtn);
+        _26_ArduinoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                ComponentName cname = new ComponentName("com.example.androidlectureexample",
+                        "com.example.androidlectureexample.Example26_ArduinoAnalogActivity");
+                i.setComponent(cname);
+                startActivity(i);
+            }
+        });
+
+
+
 
     }// end of onCreate()
 
