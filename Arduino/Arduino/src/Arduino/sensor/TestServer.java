@@ -34,7 +34,7 @@ public class TestServer {
 									while (true) {
 										String msg = br.readLine();
 										String[] machine = msg.split(",");
-										System.out.println(machine[0] + "에서 값이 온다.");
+										System.out.println(msg);
 									}
 								} catch (Exception e) {
 									System.out.println();

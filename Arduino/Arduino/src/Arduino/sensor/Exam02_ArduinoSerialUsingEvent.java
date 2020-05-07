@@ -8,11 +8,11 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import com.google.gson.Gson;
+
 import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
-import gnu.io.SerialPortEvent;
-import gnu.io.SerialPortEventListener;
 
 // 이벤트를 처리하는 리스너 객체를 만들기위한 class를 정의.
 
@@ -121,6 +121,8 @@ class FromArduino implements Runnable {
 	// 받은 정보를 메인서버로 보낼 스트림 : serverPr
 	private BufferedReader arduinoBr;
 	private PrintWriter serverPr;
+	private Thermomete myTher;
+	private Gson gson = new Gson();
 //	private InputStream in;
 
 	FromArduino(BufferedReader arduinoBr, PrintWriter serverPr) {
@@ -132,20 +134,27 @@ class FromArduino implements Runnable {
 
 	@Override
 	public void run() {
-			System.out.println("Runnable 시작");
-			String msg = "";
-			while (true) {
+		System.out.println("Runnable 시작");
+		String msg = "";
+		while (true) {
 
-				try {
+			try {
 //				System.out.println("while 시작");
 				msg = arduinoBr.readLine();
+				
+				
+//				if (myTher != null) {
+//
+//					myTher = new Thermomete();
+//				}
+
 //				System.out.println("받아오기 완료 시작");
-				System.out.println(msg);
+//				System.out.println(msg);
 				serverPr.println(msg);
 				serverPr.flush();
-				} catch (Exception e) {
-				}
+			} catch (Exception e) {
 			}
+		}
 
 	}
 }
@@ -170,11 +179,39 @@ class ToArduino implements Runnable {
 			try {
 				msg = serverBr.readLine();
 				System.out.println(msg);
-				arduinoPr.println(msg);
+				arduinoPr.println(msg+'\n');
 				arduinoPr.flush();
 			} catch (Exception e) {
 			}
 		}
 
 	}
+}
+
+class Thermomete {
+	private String type;
+	private float temperature;
+
+	public Thermomete(String type, float temperature) {
+		super();
+		this.type = type;
+		this.temperature = temperature;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public float getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(float temperature) {
+		this.temperature = temperature;
+	}
+
 }
