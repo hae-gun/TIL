@@ -95,9 +95,13 @@ public class Example26_ArduinoAnalogActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    socket = new Socket("70.12.60.97", 1234);
+                    socket = new Socket("70.12.60.94", 55566);
                     br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                     pr = new PrintWriter(socket.getOutputStream());
+                    Getdata2 r2 = new Getdata2(br,reTv);
+                    Thread t2 = new Thread(r2);
+                    t2.start();
+
                     Log.i("ArduinoTest", "서버에 접속 성공!");
                     while (true) {
                         // 공용객체의 메세지를 계속 받기!
@@ -122,9 +126,7 @@ public class Example26_ArduinoAnalogActivity extends AppCompatActivity {
         Thread t = new Thread(r);
         t.start();
 
-        Getdata2 r2 = new Getdata2(br,reTv);
-        Thread t2 = new Thread(r2);
-        t2.start();
+
 
 
 
@@ -182,6 +184,18 @@ public class Example26_ArduinoAnalogActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try{
+        pr.close();
+        br.close();
+        socket.close();
+        }catch (IOException e){
+
+        }
+    }
 }
 
 class Getdata2 implements Runnable {
@@ -209,11 +223,11 @@ class Getdata2 implements Runnable {
 
 
                 bundle.putString("result", result);
+                tv.setText("희망온도 : " + result.toString());
 
 
-
-                Message msg = new Message();
-                msg.setData(bundle);
+//                Message msg = new Message();
+//                msg.setData(bundle);
 //                handler.sendMessage(msg);
                 Log.i("result",result);
 
