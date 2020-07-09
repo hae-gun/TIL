@@ -6,11 +6,11 @@
 
    * File - New - Other - Spring Boot - Spring Starter Project 로 프로젝트 생성.
 
-     <img src="C:\Users\newch\AppData\Roaming\Typora\typora-user-images\image-20200709142224090.png" alt="image-20200709142224090" style="zoom: 67%;" />
+     ![image-20200709151736386](image-20200709151736386.png)
 
-     <img src="C:\Users\newch\AppData\Roaming\Typora\typora-user-images\image-20200709142312106.png" alt="image-20200709142312106" style="zoom:67%;" />
+     ![image-20200709151746339](image-20200709151746339.png)
 
-     <img src="C:\Users\newch\AppData\Roaming\Typora\typora-user-images\image-20200709142424176.png" alt="image-20200709142424176" style="zoom:67%;" />
+     ![image-20200709151752512](image-20200709151752512.png)
 
 2. Demo Controller 사용해보기.
 
