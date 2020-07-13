@@ -117,3 +117,7 @@
 >   spring.datasource.password=비밀번호
 >   ```
 
+## 3. JSP 설정하기!
+
+* 저번 포스트에서 말했듯... Spring Boot 는 기본적으로 JSP 설정이 되어있지 않다.
+* 그러므로 저번 [포스트](https://github.com/Hae-gun/TIL/blob/master/Spring boot/Spring Boot day03.md) 에서 했던 방식 그대로 JSP 설정을 진행할 예정.
