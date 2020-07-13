@@ -121,3 +121,35 @@
 
 * 저번 포스트에서 말했듯... Spring Boot 는 기본적으로 JSP 설정이 되어있지 않다.
 * 그러므로 저번 [포스트](https://github.com/Hae-gun/TIL/blob/master/Spring boot/Spring Boot day03.md) 에서 했던 방식 그대로 JSP 설정을 진행할 예정.
+
+1. `porm.xml` 설정
+
+   ```xml
+   <dependency>
+       <groupId>javax.servlet</groupId>
+       <artifactId>jstl</artifactId>
+   </dependency>
+    
+   <dependency>
+       <groupId>org.apache.tomcat.embed</groupId>
+       <artifactId>tomcat-embed-jasper</artifactId>
+   </dependency>
+   ```
+
+2. `application.properties` 에 아래 내용 추가.
+
+   ```properties
+   spring.mvc.view.prefix=/WEB-INF/jsp/
+   spring.mvc.view.suffix=.jsp
+   ```
+
+3. 폴더 생성하기 `/webapp/WEB-INF/jsp` (프로젝트 이름에서)
+
+   ![image-20200713202133903](image-20200713202133903.png)
+
+4. 그러고 나서 jsp 파일에 jsp 파일을 만드......려고 했는데..
+
+   ![image-20200713202408542](image-20200713202408542.png)
+
+   * jsp 가 없다...........
+   * 너무 당황스러워서 구글링을 해보았다!
