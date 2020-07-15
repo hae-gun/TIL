@@ -5,4 +5,4 @@
   * 2
   * 3
 * Software Architecture
-  * [REST](https://github.com/Hae-gun/TIL/blob/master/CS/Software Architecture/REST.md)
+  * [REST](https://github.com/Hae-gun/TIL/tree/master/CS/Software%Architecture)
