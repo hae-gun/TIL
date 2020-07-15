@@ -1,4 +1,4 @@
-# TIL (Today I Learn)
+# TIL (Today I Learned)
 
 * Repository
   * [Language](https://github.com/Hae-gun/TIL/tree/master/Language)
