@@ -56,7 +56,7 @@
 
 * 이메일, 문서 공유 및 은행 등의 온라인 애플리케이션
 
-  ![image-20200716185459878](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716185459878.png)
+  ![image-20200716194723433](ArchitecturalPatterns.assets/image-20200716194723433.png)
 
 ### 3. 마스터-슬레이브 패턴 (Master-slave pattern)
 
@@ -69,7 +69,7 @@
 * 데이터베이스 복제에서, 마스터 데이터베이스는 신뢰할 수 있는 데이터 소스로 간주되며 슬레이브 데이터베이스는 마스터 데이터베이스와 동기화된다.
 * 컴퓨터 시스템에서 버스와 연결된 주변장치 (마스터 드라이버와 슬레이브 드라이버)
 
-![image-20200716190807956](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716190807956.png)
+![image-20200716194731148](ArchitecturalPatterns.assets/image-20200716194731148.png)
 
 ### 4. 파이프-필터 패턴 (Pipe-filter pattern)
 
@@ -81,7 +81,7 @@
 
 * 생물정보학에서의 워크플로우
 
-  ![image-20200716191134992](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716191134992.png)
+  ![image-20200716194737597](ArchitecturalPatterns.assets/image-20200716194737597.png)
 
 ### 5. 브로커 패턴 (Broker pattern)
 
@@ -93,7 +93,7 @@
 
 * [Apache ActiveMQ](https://en.wikipedia.org/wiki/Apache_ActiveMQ), [Apache kafka](https://en.wikipedia.org/wiki/Apache_Kafka), [RabbitMQ](https://en.wikipedia.org/wiki/RabbitMQ) 및 [JBoss Messaging](https://en.wikipedia.org/wiki/JBoss_Messaging)와 같은 메시지 브로커 소프트웨어
 
-  ![image-20200716191533693](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716191533693.png)
+  ![image-20200716194744183](ArchitecturalPatterns.assets/image-20200716194744183.png)
 
 ### 6. 피어 투 피어 패턴 (Peer-to-peer pattern)
 
@@ -107,7 +107,7 @@
 
 * [Spotify](https://en.wikipedia.org/wiki/Spotify) 와 같은 독점적 멀티미디어 애플리케이션
 
-  ![image-20200716192015902](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716192015902.png)
+  ![image-20200716194751592](ArchitecturalPatterns.assets/image-20200716194751592.png)
 
 ### 7. 이벤트-버스 패턴 (Events-bus pattern)
 
@@ -119,7 +119,7 @@
 
 * 알림 서비스
 
-  ![image-20200716192416134](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716192416134.png)
+  ![image-20200716194759848](ArchitecturalPatterns.assets/image-20200716194759848.png)
 
 ### 8. 모델-뷰-컨트롤러 패턴 (Model-view-controller pattern)
 
@@ -137,7 +137,7 @@ MVC 패턴이라고도 하는 이 패턴은 대화형 애플리케이션 (intera
 
 * [Django](https://en.wikipedia.org/wiki/Django_(web_framework))나 [Spring](https://en.wikipedia.org/wiki/Spring_Framework), [Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails)와 같은 웹 프레임워크
 
-  ![image-20200716193034973](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716193034973.png)
+  ![image-20200716194805824](ArchitecturalPatterns.assets/image-20200716194805824.png)
 
 ### 9. 블랙보드 패턴 (Blackboard pattern)
 
@@ -157,7 +157,7 @@ MVC 패턴이라고도 하는 이 패턴은 대화형 애플리케이션 (intera
 
 * 수중 음파 탐지기 신호 해석
 
-  ![image-20200716193251808](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716193251808.png)
+  ![image-20200716194814851](ArchitecturalPatterns.assets/image-20200716194814851.png)
 
 ### 10. 인터프리터 패턴 (Interpreter pattern)
 
@@ -169,7 +169,7 @@ MVC 패턴이라고도 하는 이 패턴은 대화형 애플리케이션 (intera
 
 * 통신 프로토콜을 정의하기 위한 언어
 
-  ![image-20200716193501577](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716193501577.png)
+  ![image-20200716194820225](ArchitecturalPatterns.assets/image-20200716194820225.png)
 
 ## 각 패턴의 장단점
 
