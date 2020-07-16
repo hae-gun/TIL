@@ -6,3 +6,4 @@
   * 3
 * Software Architecture
   * [REST](https://github.com/Hae-gun/TIL/blob/master/CS/SoftwareArchitecture/REST.md)
+  * [Architecure Patterns](https://github.com/Hae-gun/TIL/blob/master/CS/SoftwareArchitecture/ArchitecturalPatterns.md)
