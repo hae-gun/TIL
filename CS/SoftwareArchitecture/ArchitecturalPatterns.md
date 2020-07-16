@@ -44,7 +44,7 @@
 
 * E-commerce 웹 애플리케이션
 
-  ![image-20200716185323801](F:\TIL\CS\SoftwareArchitecture\ArchitecturalPatterns.assets\image-20200716185323801.png)
+  ![image-20200716194642817](ArchitecturalPatterns.assets/image-20200716194642817.png)
 
 
 
