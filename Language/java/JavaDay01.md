@@ -2,18 +2,18 @@
 
 ## jdk download
 
-![image-20200720132110428](Java Day01.assets/image-20200720132110428.png)
+![image-20200720132110428](JavaDay01.assets/image-20200720132110428.png)
 
 * java JDK (Java Development Kit) - Library
 * java JRE - Java로 만든 프로그램을 돌게 만들어주는 것.
 
-![image-20200720132524550](Java Day01.assets/image-20200720132524550.png)
+![image-20200720132524550](JavaDay01.assets/image-20200720132524550.png)
 
 ## Install
 
 * 설치 위치 잘 확인하기
 
-  ![image-20200720133910814](Java Day01.assets/image-20200720133910814.png)
+  ![image-20200720133910814](JavaDay01.assets/image-20200720133910814.png)
 
 * 설치완료
 
@@ -23,25 +23,25 @@
 
 * 자바 Vm을 만들어 주는 프로그램(Java를 컴파일 해주는 프로그램) : `javac.exe`
 
-  ![image-20200720141145202](Java Day01.assets/image-20200720141145202.png)
+  ![image-20200720141145202](JavaDay01.assets/image-20200720141145202.png)
 
 * 환경 변수 클릭
 
 * 시스템 환경을 설정하는 창
 
-  ![image-20200720141213909](Java Day01.assets/image-20200720141213909.png)
+  ![image-20200720141213909](JavaDay01.assets/image-20200720141213909.png)
 
 * `JAVA_HOME` 시스템 변수와 경로 지정.
 
-  ![image-20200720141317649](Java Day01.assets/image-20200720141317649.png)
+  ![image-20200720141317649](JavaDay01.assets/image-20200720141317649.png)
 
 * Path 변수에 `%JAVA_HOME%\bin` 추가
 
-  ![image-20200720141525990](Java Day01.assets/image-20200720141525990.png)
+  ![image-20200720141525990](JavaDay01.assets/image-20200720141525990.png)
 
 * 위와 같이 설정하면 `javac`의 경로를 확인 할 수 있다.
 
-  ![image-20200720141630813](Java Day01.assets/image-20200720141630813.png)
+  ![image-20200720141630813](JavaDay01.assets/image-20200720141630813.png)
 
 
 
@@ -49,17 +49,17 @@
 
 * cmd 창에서 해당 폴더로 이동한 후 `javac 파일명.java` 로 명령어를 입력 해 준다.
 
-  ![image-20200720144440378](Java Day01.assets/image-20200720144440378.png)
+  ![image-20200720144440378](JavaDay01.assets/image-20200720144440378.png)
 
 * `javac` 명령어를 실행하면 `해당파일.class` 파일이 생성된다.
 
 * 실행은 `java 파일명` 으로 실행해 준다.
 
-  ![image-20200720144532861](Java Day01.assets/image-20200720144532861.png)
+  ![image-20200720144532861](JavaDay01.assets/image-20200720144532861.png)
 
 * 한글 입력시 깨질때는 저장 인코딩을 ANSI로 저장해 준다.
 
-  ![image-20200720150535236](Java Day01.assets/image-20200720150535236.png)
+  ![image-20200720150535236](JavaDay01.assets/image-20200720150535236.png)
 
 * 메모장에 여러 클래스가 있을때!
 
@@ -85,11 +85,11 @@
 
   * 컴파일하기
 
-    ![image-20200720152046812](Java Day01.assets/image-20200720152046812.png)
+    ![image-20200720152046812](JavaDay01.assets/image-20200720152046812.png)
 
   * 해당폴더 (`Greet.class` 와 `Hi.class` 두개가 생성됨)
 
-    ![image-20200720152058616](Java Day01.assets/image-20200720152058616.png)
+    ![image-20200720152058616](JavaDay01.assets/image-20200720152058616.png)
 
 ## args 의 의미
 
@@ -107,7 +107,7 @@
 
 * cmd
 
-  ![image-20200720153035204](Java Day01.assets/image-20200720153035204.png)
+  ![image-20200720153035204](JavaDay01.assets/image-20200720153035204.png)
 
 
 
@@ -117,7 +117,7 @@
 
 * java 폴더 설정
 
-  ![image-20200720162311308](Java Day01.assets/image-20200720162311308.png)
+  ![image-20200720162311308](JavaDay01.assets/image-20200720162311308.png)
 
 * 자동으로 해준다 여기 건드리면 큰일남~!
 
