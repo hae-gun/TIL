@@ -2,6 +2,14 @@
 
 ## [Language](https://github.com/Hae-gun/TIL/tree/master/Language)
 
+* Java
+
+  * [day01 - jdk 설치 및 환경변수 설정 & Eclipse 설치](https://github.com/Hae-gun/TIL/blob/master/Language/java/Java Day01.md)
+
+  * [day02 - 변수 & 연산자](https://github.com/Hae-gun/TIL/blob/master/Language/java/Java Day02.md)
+
+    
+
 ## [Framework](https://github.com/Hae-gun/TIL/tree/master/Framework)
 ## [CS(Computer Science)](https://github.com/Hae-gun/TIL/tree/master/CS)
 
