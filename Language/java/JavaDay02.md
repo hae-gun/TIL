@@ -437,4 +437,446 @@ public class Op01 {
 ### 3. 논리 연산자
 
 * 좌항 우항을 비교하여 논리값(boolean)반환.
+
 * `&& (and), || (or), ! (not), ^ (xor)`
+
+  ```java
+  public class Op03 {
+  	public static void main(String[] args) {
+  		
+  		// 논리 연산자: boolean 반환
+  		// &&(and), ||(or), !(not), ^(xor)
+  		
+  		int n1 = 10, n2 = 4, n3 = 7, n4 = 15;
+  		// && 연산자
+  		
+  		// &&: 좌항, 우항이 모두 참일 경우에만 참
+  		// ||: 좌항, 우항 중 어느 한쪽이라도 참이면 참
+  		
+  		// &&는 회로상 직렬회로.
+  		System.out.println(n1 > n2 && n3 < n4); // true && true => true
+  		System.out.println(n1 > n2 && n3 > n4); // true && false => false
+  		System.out.println(n1 < n2 && n3 < n4); // false && true => false
+  		System.out.println(n1 < n2 && n3 > n4); // false && false => false
+  		System.out.println("------------------------");
+  		
+  		// ||는 회로상 병렬회로
+  		System.out.println(n1 > n2 || n3 < n4); // true || true => true
+  		System.out.println(n1 > n2 || n3 > n4); // true || false => true
+  		System.out.println(n1 < n2 || n3 < n4); // false || true => true
+  		System.out.println(n1 < n2 || n3 > n4); // false || false => false
+  		System.out.println("------------------------");
+  		
+  		// ^ : 좌항 우항의 값이 같으면 flase 다르면 true
+  		System.out.println(n1 > n2 ^ n3 < n4); // true ^ true => false
+  		System.out.println(n1 > n2 ^ n3 > n4); // true ^ false => true
+  		System.out.println(n1 < n2 ^ n3 < n4); // false ^ true => true
+  		System.out.println(n1 < n2 ^ n3 > n4); // false ^ false => false
+  		System.out.println("------------------------");
+  		
+  		// ! : 우항의 반대값(boolean) 반환
+  		System.out.printf("!%b = %b\n",true,!true);
+  		System.out.printf("!%b = %b\n",false,!false);
+  		
+  		// 작성할 때 먼저 확인하고 싶은것이 앞에 나와야 한다.
+  		// && 연산은 좌항값이 false 이면 뒤값을 보지 않는다.
+  		// || 연산은 좌항값이 true 이면 뒤값을 보지 않는다.
+  	}
+  }
+  ```
+
+
+
+### 4. 증감 연산자
+
+* `++, --` : 해당 변수를 1 증가(++)/감소(--) 시킨다.
+
+* 증감 연산자에서는 전위,후위 증감이 중요하다.
+
+  * 후위증감 연산자는 대입연산자 보다 연산 순위가 낮기 때문에 대입 후에 해당 연산이 진행된다.
+
+  ```java
+  public class Op04 {
+  	
+  	public static void main(String[] args) {
+  		// 전위증감, 후위증감 : 연산 우선순위 차이
+  		// 후위증감 : 대입 연산자보다 순위가 낮다.
+  		int num2 = 10;
+  		int num3 = num2++;
+  		System.out.printf("num2:%d, num3:%d",num2,num3);
+          int tmp = 10;
+  		System.out.printf("%d %d %d %d %d\n",tmp++,++tmp,tmp--,++tmp,tmp++);
+  		System.out.println(tmp);
+  	}
+  }
+  ```
+
+  ![image-20200722111637843](JavaDay02.assets/image-20200722111637843.png)
+
+  ![image-20200722112528722](JavaDay02.assets/image-20200722112528722.png)
+
+### 5. 대입 연산자
+
+* 우황의 결과를 좌항에 대입
+
+* 종류 : `=, +=, -=, *=, /=, %=`
+
+  ```java
+  public class Op05 {
+  
+  	public static void main(String[] args) {
+  		// 대입연산자 : 우항의 결과를 좌항에 대입
+  		// =, +=, -=, *=, /=, %=
+  		int n1 = 10;
+  		
+  		n1 *= 3; // n1 = n1 * 3
+  		System.out.println(n1);
+  		
+  		n1 /= 4;
+  		System.out.println(n1);
+  		
+  		n1 %= 2;
+  		System.out.println(n1);
+  		
+  	}
+  
+  }
+  ```
+
+  ![image-20200722113414266](JavaDay02.assets/image-20200722113414266.png)
+
+### 6. 비트 연산자
+
+* 두 변수를 비트로 변환하여 연산.
+
+  ```java
+  
+  public class Op06 {
+  	public static void main(String[] args) {
+  		//비트 연산자
+  		// &, |, ^, !
+  		
+  		int n1 = 10;
+  		int n2 = 5;
+  		int result = n1 & n2;
+  		System.out.println(result);
+  		
+  //		10 : 0000 1010
+  //		 5 : 0000 0101
+  //	    ---------------
+  //	   &연산: 0000 0000
+  		
+  		result = n1 | n2;
+  		System.out.println(result);
+  		
+  //		10 : 0000 1010
+  //		 5 : 0000 0101
+  //	    ---------------
+  //	   |연산: 0000 1111
+  		
+  		result = n1 ^ n2;
+  		System.out.println(result);
+  		
+  //		10 : 0000 1010
+  //		 5 : 0000 0101
+  //	    ---------------
+  //	   ^연산: 0000 1111
+  		
+  	}
+  }
+  
+  ```
+
+  ![image-20200722113716945](JavaDay02.assets/image-20200722113716945.png)
+
+### 7. 쉬프트(Shift) 연산자
+
+* `<<, >>` : 해당 변수의비트를 이동시킴.
+
+* `<<`(left 연산자) : 좌항 변수값에 2의 n승을 곱한 결과
+
+* `>>`(right 연산자) : 좌항 변수값에 2의 n승을 나눈 결과
+
+  ```java
+  public class Op07 {
+  
+  	public static void main(String[] args) {
+  		// shift 연산자
+  		// <<: left 연산자
+  		// >>: right 연산자
+  		int n1 = 5;
+  		
+  		System.out.println(n1<<1);
+  //		 5 : 0000 0101
+  //		<<1: 0000 1010
+  //		빈 칸에는 0이 들어온다.
+  //		left 연산자: 좌항 변수값에 2의 n승을 곱한 결과
+  		
+  		System.out.println(n1>>2);
+  //		right 연산자: 좌항 변수값에 2의 n승을 나눈 결과
+  //		 5 : 0000 0101
+  //		>>2: 0000 0001
+  		
+  	}
+  
+  }
+  ```
+
+  ![image-20200722114427499](JavaDay02.assets/image-20200722114427499.png)
+
+### 8. 3항 조건식
+
+* 문법 : `조건식 ? true일 때의 실행문 : false일 때의 실행문`
+
+#### 예제
+
+> 주민등록번호를 입력받아 8번째 자리 문자를 뽑아내어 홀수이면 남자, 짝수이면 여자를 출력하기.
+
+```java
+public class Op09 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		String str = "";
+		int gender = 0;
+		
+		System.out.println("주민번호 입력(123456-1234567)>>>");
+		String idNo = scan.nextLine();
+		
+		gender = idNo.charAt(7)-'0';
+		
+		str = gender%2 == 0 ? "여자" : "남자"; 
+		
+		System.out.println(str);
+	}
+}
+```
+
+![image-20200722131655209](JavaDay02.assets/image-20200722131655209.png)
+
+![image-20200722131713610](JavaDay02.assets/image-20200722131713610.png)
+
+
+
+### 9. 문자열 연산
+
+* 문자열 연산은 + 연산이 가능하다.
+
+* +한 두 문자열을 붙인다.
+
+* 숫자 + 문자열 연산시 문자열로 반환된다.
+
+  ```java
+  public class Op12 {
+  	public static void main(String[] args) {
+  		// String 연산 - 덧셈만 가능
+  		String a = "I ";
+  		String b = "love ";
+  		String c = "you";
+  		System.out.println(a+b+c);
+  		
+  		// 문자열 + 숫자 => 문자열
+  		String e = "JAVA";
+  		
+  		System.out.println(e + 8.0);
+  		
+  		// String 의 내용 비교는 equals 메소드 사용
+  		String str1 = "today";
+  		String str2 = "today";
+  		
+  		
+  		if(str1 == "today") {
+  			System.out.println("yes");
+  		}else {
+  			System.out.println("no");
+  		}
+  	
+  		if(str1 == str2) {
+  			System.out.println("yes");
+  		}else {
+  			System.out.println("no");
+  		}
+  		
+  		String str3 = new String("today");
+  		
+  		System.out.println("str3: " + str3);
+  		
+  		if(str1.equals(str3)) {
+  			System.out.println("yes");
+  		}else {
+  			System.out.println("no");
+  		}
+  		// `==`은 메모리 주소를 비교하라는 부호이다.
+  	}
+  }
+  ```
+
+### 10. Infinity / NaN
+
+* 정수를 0 으로 나누면 이론상 무한대 이지만 자바는 Exception 이 나타남.
+
+* 그러나 여기서 0.0(double) 로 나누게 되면 다음과 같이 나타난다.
+
+  ```java
+  public class Op13 {
+  	public static void main(String[] args) {
+  		// NaN - Infinity
+  		int a = 5;
+  		int b = 0;
+  
+  		double c = 0.0;
+  
+  		System.out.println(b / a);
+  
+  		try {
+  			System.out.println(a / b);
+  		} catch (ArithmeticException e) {
+  			e.printStackTrace();
+  		}
+  		
+  		System.out.println(a / c); // Infinity
+  		System.out.println(a % c); // NaN
+  	}
+  }
+  ```
+
+  ![image-20200722144100345](JavaDay02.assets/image-20200722144100345.png)
+
+* 0.0 으로 나누면 Infinity가 나오게 되고, 나머지를 구하면 NaN(Not a number) 가 나오게 된다.
+
+* Infinity 와 NaN 은 Double객체가 갖고있다.
+
+  ```java
+  double d = 5* a/c;
+  		System.out.println(d);
+  		
+  		System.out.println(Double.isInfinite(d));
+  		
+  		if(Double.isFinite(d)) {
+  			System.out.println(5*a/c);
+  		}else {
+  			System.out.println("무한대가 입력되어 처리할 수 없습니다.");
+  		}
+  ```
+
+  ![image-20200722144523384](JavaDay02.assets/image-20200722144523384.png)
+
+
+
+
+
+
+
+
+
+
+
+> 유용한 기능
+>
+> File Search
+>
+> Ctrl + h 를 누르면 프로젝트 내에서 찾고 싶은 단어를 찾아낼 수 있다.
+>
+> ![image-20200722133454859](JavaDay02.assets/image-20200722133454859.png)
+>
+> //TODO -> 할일을 기록 남기는 것. 
+>
+> Tasks 에서 확인 가능하다.
+>
+> ![image-20200722133418933](JavaDay02.assets/image-20200722133418933.png)
+>
+> ![image-20200722133438286](JavaDay02.assets/image-20200722133438286.png)
+
+
+
+> 참고
+>
+> 부동소 수점 오류
+>
+> 다음 코드를 실행해보자.
+>
+> ```java
+> 		int apple = 1; // 사과 1개
+> 		double pieceUnit = 0.1; // 사과를 10개로 쪼갠 조각 중 1개
+> 		
+> 		int num = 7;
+> 		double result = apple - pieceUnit*num;
+> 		System.out.println(result);
+> ```
+>
+> 사람이라면 단순에 1 - 0.1*7 로 계산하여 0.3이 나오는 것을 알 수 있으나 프로그램을 실행하게 되면..
+>
+> ![image-20200722133002005](JavaDay02.assets/image-20200722133002005.png)
+>
+> 같이 나온다..
+>
+> 그 이유는 **실수 변수는 절대 정확한 값을 가지고 있지 않다**는 것이다.
+>
+> 
+>
+> 모든 실수를 8byte, 혹은 12~16byte의 변수에 모두 담을 수 있다고 생각하시는 분은 없겠죠.
+>
+> 변수에 실수를 저장할 때는 어느 정도의 정보 손실이 일어날 수밖에 없습니다.
+>
+> 절대 잊어서는 안되는 것은, 실수 변수는 절대 정확한 값을 가지고 있지 않다는 것입니다.
+>
+> ## 1) 문제를 풀 때는 float보다는 double형 변수를 쓰는게 좋습니다.
+>
+> double형 변수까지는 하드웨어로 계산되기 때문에 많이 느려지지 않지만, 정확도가 엄청나게 높아지기 때문입니다.
+>
+> (float의 상대오차는 약 10^-7 정도이고, double의 상대 오차는 약 10^-15 정도입니다)
+>
+> long double (12bit 혹은 16bit)는 소프트웨어의 도움을 받기 때문에 꽤 많이 느려지기 때문에 쓴다고 꼭 좋은 것은 아닙니다.
+>
+> 
+>
+> ## 2) 정수가 들어있는 실수형 변수를 정수로 바로 캐스팅하면 안됩니다.
+>
+> 1을 double 변수에 대입하면 0.9999... 같은 이상한 숫자가 됩니다. 이 변수를 그대로 정수로 캐스팅한다면 0이 되겠죠.
+>
+> 보통의 경우에는 1e-6 ~ 1e-9 정도를 더해서 캐스팅을 하거나,
+>
+> 정수형 변수만을 사용하여 연산을 하기도 합니다.
+>
+> ( scanf("%d.%d")으로 입력을 받고, printf("%d.%02d", a/100, a%100)으로 출력하는 식으로.
+>
+> 반올림이 필요하다면 나머지 연산을 사용해야 합니다.)
+>
+> 
+>
+> ## 3) 비교 연산을 할 때는 등호를 사용하시면 안됩니다.
+>
+> 실수형 변수는 오차가 있기 때문에 같은 값을 가져야만 하는 상황에서도 다른 값일 때가 매우 많습니다.
+>
+> 보통의 경우에는 abs(A-B) < EPS, EPS는 1e-6~1e-9 정도로 정합니다.
+>
+> 
+>
+> ## 4) 큰 수를 다룰 때, 매우 작은 상수값을 사용하는 것은 위험할 수 있습니다.
+>
+> double형의 상대 오차는 10^-15입니다. 즉, 10^15를 double형 변수에 대입하면 오차가 1의 자리에서 발생할 수 있습니다.
+>
+> 즉, 조건문으로 (A-B) < 1e-6 을 사용했는데, A, B가 10^11 크기 정도라면,
+>
+> (A-B) < 1e-6과 A == B는 똑같은 결과를 만들게 됩니다.
+>
+> double형 변수를 가지고 넓은 범위의 이진탐색을 돌릴 때 자주 발생하는 문제이고,
+>
+> 100~200번 정도만 반복한다던가, 상대오차가 몇 이하일 때 반복문을 빠져나오는 식으로 해결합니다.
+>
+> 
+>
+> ## 5) 큰 수에 작은 수를 더할 때 조심해야 합니다.
+>
+> 예를 들어, 10^20 정도 되는 double형 변수에 1을 10^20번 더해도 값이 변하지 않습니다.
+>
+> 또는, 큰 수에 작은 수를 더할 때 작은 수의 정밀한 부분이 사라지기 때문에 오차가 커질 수 있습니다.
+>
+> 보통은 작은 수끼리 더한 뒤에 큰 수에 더하는 방법으로 해결이 가능하나,
+>
+> 이런 것 때문에 틀리는 문제는 극히 드뭅니다.
+>
+> 
+>
+> [출처-블로그](https://www.acmicpc.net/blog/view/37)
+
