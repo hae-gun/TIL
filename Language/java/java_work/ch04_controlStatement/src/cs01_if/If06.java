@@ -1,14 +1,18 @@
-package ch01_if;
+package cs01_if;
 
-public class if03 {
+import java.util.Scanner;
+
+public class If06 {
+
 	public static void main(String[] args) {
-		// random 으로 점수 (score) 를 받아서 학점처리
-		// 0~59 : F / 60~69: D / 70~79 : C / 80~89 : B / 90~100: A
 		int score;
 		String grade = "";
+		Scanner sc = new Scanner(System.in);
 		
-		score = (int)(Math.random()*100)+1;
+		System.out.println("점수입력: ");
+		score = sc.nextInt();
 		
+		//7보다 크면 +, 4보다 작으면 -, 둘다 아니면 0
 		
 		if(score>=0&&score<=59) {
 			grade = "F";
@@ -21,9 +25,23 @@ public class if03 {
 		}else if(score>=90&&score<=100){
 			grade = "A";
 		}
+
+		
+		if(!grade.equals("F")) {
+			
+			int checkScore = score%10;
+			
+			if(checkScore<4) {
+				grade += "-";
+			}else if(checkScore>7) {
+				grade += "+";
+			}else {
+				grade +="0";
+			}
+		}
 		
 		
 		System.out.printf("성적은 %d 점이고, 학점은 %s 입니다.",score,grade);
-		
 	}
+
 }

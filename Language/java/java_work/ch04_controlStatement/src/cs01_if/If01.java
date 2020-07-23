@@ -1,4 +1,4 @@
-package ch01_if;
+package cs01_if;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ch01_sw;
+package cs02_sw;
 /*
  * switch(판별식/값)
  * case 1(정수): ~~~~~ break;

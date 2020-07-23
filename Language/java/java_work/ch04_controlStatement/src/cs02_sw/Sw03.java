@@ -1,4 +1,4 @@
-package ch01_sw;
+package cs02_sw;
 
 public class Sw03 {
 

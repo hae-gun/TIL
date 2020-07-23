@@ -1,9 +1,8 @@
-package ch01_if;
+package cs01_if;
 
 import java.util.Scanner;
 
-public class If06 {
-
+public class If05 {
 	public static void main(String[] args) {
 		int score;
 		String grade = "";
@@ -25,12 +24,9 @@ public class If06 {
 		}else if(score>=90&&score<=100){
 			grade = "A";
 		}
-
 		
 		if(!grade.equals("F")) {
-			
-			int checkScore = score%10;
-			
+			int checkScore = score - (score/10*10);
 			if(checkScore<4) {
 				grade += "-";
 			}else if(checkScore>7) {
@@ -43,5 +39,4 @@ public class If06 {
 		
 		System.out.printf("성적은 %d 점이고, 학점은 %s 입니다.",score,grade);
 	}
-
 }

@@ -1,4 +1,4 @@
-package ch01_if;
+package cs01_if;
 
 public class If02 {
 	public static void main(String[] args) {
