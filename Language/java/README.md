@@ -5,3 +5,5 @@
 [day02 - 변수 & 연산자](https://github.com/Hae-gun/TIL/blob/master/Language/java/JavaDay02.md)
 
 [day03 - 제어문](https://github.com/Hae-gun/TIL/blob/master/Language/java/JavaDay03.md)
+
+[day04 - 반복문](https://github.com/Hae-gun/TIL/blob/master/Language/java/JavaDay04.md)
