@@ -16,9 +16,8 @@ public class Arr10 {
 				}
 			}
 		}
-
+		
 		System.out.println(Arrays.toString(lotto));
-
 		
 		int times=0;
 		//selection sort
