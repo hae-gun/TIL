@@ -3,11 +3,11 @@ package basic;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 public class Tomato {
 
 	public static void main(String[] args) throws IOException {
-
 		int[] dx = { 1, 0, -1, 0 };
 		int[] dy = { 0, 1, 0, -1 };
 
