@@ -12,6 +12,7 @@ class Car {
 	int door;
 	Tire[] tires; // 포함관계 차는 타이어를 갖고 있다.
 
+	
 	void drive() {
 		System.out.println("차가 달려간다.");
 	}
@@ -55,6 +56,7 @@ class FireEngine extends Car{
 	void extinguish() {
 		System.out.println("물 뿌려");
 	}
+	
 }
 
 public class In02 {

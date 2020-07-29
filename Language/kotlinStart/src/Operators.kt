@@ -1,7 +1,4 @@
-import java.util.*
 
-import java.util.*
-import kotlin.math.max
 
 fun main() {
     var a = 1

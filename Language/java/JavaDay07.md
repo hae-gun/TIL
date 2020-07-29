@@ -613,3 +613,91 @@
   ```
 
   ![image-20200728172753010](JavaDay07.assets/image-20200728172753010.png)
+
+## 상수 이용
+
+```java
+package class09_inheritance;
+
+class Airplane{
+	void fly() {
+		System.out.println("normal flying");
+	}
+	void takeOff(){
+		System.out.println("take off!!!");
+	}
+	void land() {
+		System.out.println("landing");
+	}
+}
+
+class Supersonic extends Airplane{
+	static final int NORMAL = 0;
+	static final int SUPERSONIC = 1;
+	
+	int flymode = NORMAL;
+	
+	@Override
+	void fly() {
+		if(flymode == SUPERSONIC) {
+			System.out.println("sonic boom! supersonic power!!!");
+		}else {
+			super.fly();
+		}
+	}
+	
+	@Override
+	public String toString() {
+		String[] mode = {"NORMAL", "SUPERSONIC"};
+		return "현재 비행모드: " + mode[flymode];
+	}
+	
+}
+public class In05 {
+	public static void main(String[] args) {
+		Supersonic ss = new Supersonic();
+		ss.takeOff();
+		ss.fly();
+		System.out.println(ss);
+		ss.flymode = Supersonic.SUPERSONIC;
+		ss.fly();
+		System.out.println(ss);
+		ss.flymode = 0;//Supersonic.NORMAL
+		ss.fly();
+		ss.land();
+	}
+}
+```
+
+
+
+### 상수 클래스 (final class)
+
+* 상수 클래스는 상속 불가능.
+
+  ![image-20200729105051497](JavaDay07.assets/image-20200729105051497.png)
+
+### 상수 매서드 (final method)
+
+* 상수 매서드는 Override 불가능.
+
+  ![image-20200729110010340](JavaDay07.assets/image-20200729110010340.png)
+
+
+
+### 매서드 상속시 주의점
+
+* `@Override` 를 통해 재정의한 매서드는 반환타입, 메소드 이름, 매개변수의 타입과 수가 다를수 없다.
+
+* 또한 해당 메서드의 접근제한자를 축소할 수 없다. (변경 불가능)
+
+* Exception의 경우 없는 Exception 발생 불가능.
+
+  ![image-20200729111206048](JavaDay07.assets/image-20200729111206048.png)
+
+### 상속 장점
+
+
+
+
+
