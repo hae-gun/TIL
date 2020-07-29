@@ -4,7 +4,6 @@ public class Op11 {
 
 	// main start
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 
 		char ch = ' ';
