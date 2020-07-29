@@ -121,5 +121,175 @@
 
 ## Filtering a list
 
+```kotlin
+val positives = list.filter { x -> x > 0 } // list 변수에서 0 이상인 숫자만 받아서 positives에 리스트로 저장.
+
+val positives = list.filter { it > 0 }
+```
 
 
+
+
+
+## Checking element presence in a collection.
+
+```kotlin
+if ("john@example.com" in emailsList) { ... }
+
+if ("jane@example.com" !in emailsList) { ... }
+```
+
+* 문자열 체크할 때는 비교될 객채는 뒤쪽으로 내가 체크해 보고 싶은 문자열은 앞쪽으로 사용
+*  java 에서도 문자열객체.equals("문자열") 보단 "문자열"
+
+.equals(문자열객체) 로 사용하는 것이 더 가독성이 좋고, `NullPorintException` 을 피할수 있다.
+
+
+
+## String Interpolation
+
+```kotlin
+println("Name $name")
+```
+
+* 문자열 블록 `""` 안에서 변수를 사용할 때는 `$변수명` 으로 사용할 수 있다. 
+* 위 문자는 `"Name " + name`와 같은의미이다.
+
+## Instance Checks..?
+
+* 객체의 인스턴스를 확인할 때 `is` 연산자를 이용하며 다음과 같이 사용 가능함.
+
+* lambda식을 이용할 수 있다.
+
+  ```kotlin
+  when (x) {
+      is Foo -> ...
+      is Bar -> ...
+      else   -> ...
+  }
+  ```
+
+## Traversing a map/list of pairs
+
+* map 객체 전체를 출력할 때
+
+  ```kotlin
+  for ((k, v) in map) {
+      println("$k -> $v")
+  }
+  ```
+
+  
+
+## Using ranges
+
+* `in` 을 이용하여 루프 또는 조건문의 범위를 설정가능.
+
+  ```kotlin
+  for (i in 1..100) { ... }  // closed range: includes 100
+  for (i in 1 until 100) { ... } // half-open range: does not include 100
+  for (x in 2..10 step 2) { ... }
+  for (x in 10 downTo 1) { ... }
+  if (x in 1..10) { ... }
+  ```
+
+
+
+## Read-only list
+
+* 읽기만 가능한 List - python 에서의 튜플?
+
+  ```kotlin
+  val list = listOf("a", "b", "c")
+  ```
+
+## Read-only map
+
+* 읽기전용 Map
+
+```kotlin
+val map = mapOf("a" to 1, "b" to 2, "c" to 3)
+```
+
+## Accessing a map
+
+* Map 객체에 Key값 출력, value 값 설정.
+
+```kotlin
+println(map["key"])
+map["key"] = value
+```
+
+
+
+## Lazy property
+
+* 문자열을 블록 형태로 만들어 넣는 방법.
+
+  ```kotlin
+  fun main(){
+  
+      val p: String by lazy {
+          "asdf" + 
+          "aabcd"
+      }
+      println(p)
+  }
+  ```
+
+  ![image-20200729163250437](KotlinDay02.assets/image-20200729163250437.png)
+
+## Extension Functions
+
+* 기본 타입(객체) 에 함수를 만들어 주는 형태
+
+  ```kotlin
+  fun main(){
+  
+      val p: String by lazy {
+          "asdf" +
+          "aabcd"
+      }
+      println(p)
+      p.potPot()
+  }
+  
+  //Extension Functions
+  fun String.potPot() {
+      println("!!")
+  }
+  ```
+
+  
+
+## Creating a singleton
+
+* Singleton 객체로 객체 만드는 방법!
+
+* object로 생성시 Singleton 객체로 생성됨.
+
+  ```kotlin
+  object Resource {
+      val name = "Name"
+  }
+  
+  object Singleton{
+      var a=0
+      var b=0
+  
+      fun getInstance():Singleton{
+          return this
+      }
+  }
+  
+  fun main(){
+       var single1 = Singleton.getInstance()
+      var single2 = Singleton.getInstance()
+      single1.a++
+      println(single2.a)
+  }
+  ```
+
+  ![image-20200729172411509](KotlinDay02.assets/image-20200729172411509.png)
+
+* 

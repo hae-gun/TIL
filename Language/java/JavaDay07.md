@@ -683,8 +683,6 @@ public class In05 {
 
   ![image-20200729110010340](JavaDay07.assets/image-20200729110010340.png)
 
-
-
 ### 매서드 상속시 주의점
 
 * `@Override` 를 통해 재정의한 매서드는 반환타입, 메소드 이름, 매개변수의 타입과 수가 다를수 없다.
@@ -697,7 +695,195 @@ public class In05 {
 
 ### 상속 장점
 
+*  부모 객체로 만든 배열에 자식배열을 넣어서 한번에 처리가 가능하다.
 
 
 
+##  Enumeration
 
+* 상수를 관리하는  class
+
+*  열거형 클래스
+
+  * 특정 개수의 변수값을 나열하여 사용함으로써 오타를 방지함.(데이터 무결성)
+
+  ```java
+  enum Season{
+  	SPRING,
+  	SUMMER,
+  	AUTUMN,
+  	WINTER
+  }
+  ```
+
+  ```java
+  package class11_Enumeration;
+  // 모든 필드가 상소, 상수는 단어 사이를 _로 표기
+  public enum LoginResult {
+  	LOGIN_SUCCESS,
+  	LOGIN_FAILED
+  }
+  ```
+
+* 요일관리
+
+  ``` java
+  package class11_Enumeration;
+  
+  import java.util.Calendar;
+  
+  public class WeekEx {
+  	public static void main(String[] args) {
+  		
+  		Week today = null;
+  		
+  		Calendar cal = Calendar.getInstance();
+  		System.out.println(cal);
+  		
+  		int weekday = cal.get(Calendar.DAY_OF_WEEK);
+  		switch(weekday) {
+  		case 1:
+  			today = Week.SUNDAY;
+  			break;
+  		case 2:
+  			today = Week.MONDAY;
+  			break;
+  		case 3:
+  			today = Week.TUESDAY;
+  			break;
+  		case 4:
+  			today = Week.WEDNESDAY;
+  			break;
+  		case 5:
+  			today = Week.THURSDAY;
+  			break;
+  		case 6:
+  			today = Week.FRIDAY;
+  			break;
+  		case 7:
+  			today = Week.SATURDAY;
+  		}
+  		System.out.println("오늘 요일: " + today);
+  		if(today == Week.WEDNESDAY) {
+  			System.out.println("공부하는 날");
+  		}else {
+  			System.out.println("더 많이 공부하는 날");
+  		}
+  	}
+  }
+  
+  
+  public enum Week {
+  	MONDAY,
+  	TUESDAY,
+  	WEDNESDAY,
+  	THURSDAY,
+  	FRIDAY,
+  	SATURDAY,
+  	SUNDAY
+  }
+  ```
+
+
+
+## 추상클래스
+
+* 추상 클래스: 상속 받은 자식클래스들에게 추상 메소드들을 재정하도록 강요하는 클래스이다.
+
+  ```java
+  package abstract01;
+  
+  // 추상 클래스는 생성 불가능.
+  public abstract class Phone {
+  	String owner;
+  	
+  	public Phone(String owner) {
+  		this.owner = owner;
+  	}
+  	
+  	void turnOn() {
+  		System.out.println("Power On");
+  	}
+  	
+  	void turnOff() {
+  		System.out.println("Power Off");
+  	}
+  	
+  	abstract void connectInternet();
+  }
+  
+  class TwoGPhone extends Phone{
+  	
+  	public TwoGPhone(String owner) {
+  		super(owner);
+  	}
+  	
+  	@Override
+  	void connectInternet() {
+  		
+  		System.out.println("can not connect");
+  	}
+  }
+  class ThreeGPhone extends Phone{
+  	
+  	public ThreeGPhone(String owner) {
+  		super(owner);
+  	}
+  	
+  	@Override
+  	void connectInternet() {
+  		
+  		System.out.println("3G ~~~~");
+  	}
+  }
+  class FiveGPhone extends Phone{
+  	
+  	public FiveGPhone(String owner) {
+  		super(owner);
+  	}
+  	
+  	@Override
+  	void connectInternet() {
+  		
+  		System.out.println("5G ~~~~");
+  	}
+  }
+  
+  
+  ```
+
+* 실행
+
+  ```java
+  package abstract01;
+  
+  public class PhoneEx {
+  	public static void main(String[] args) {
+  		
+  		// abstract class inner class형태로 선언
+  		Phone phone = new Phone("jane") {
+  			@Override
+  			void connectInternet() {
+  				System.out.println("?????");
+  			}
+  		};
+  		
+  		TwoGPhone twoGPhone = new TwoGPhone("ace");
+  		System.out.println(twoGPhone.owner + "의 전화기");
+  		twoGPhone.turnOn();
+  		twoGPhone.turnOff();
+  		System.out.println("------------------------------");
+  		Phone[] ph = {twoGPhone, new ThreeGPhone("tom"),new FiveGPhone("bc")};
+  		for(Phone p : ph) {
+  			System.out.println(p.owner + "의 전화기");
+  			p.turnOn();
+  			p.connectInternet();
+  			p.turnOff();
+  			System.out.println("------------------------------");
+  		}
+  		
+  	}
+  }
+  ```
+
+  

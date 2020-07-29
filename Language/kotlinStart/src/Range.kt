@@ -63,8 +63,28 @@ fun main() {
     val d = C("a","b")
 
     val customer = Customer()
-    var
-    val positives = list.filter { x -> x > 0 }
+    var list = listOf(1,2,3,4,-1)
+    var positives = list.filter { x -> x > 0 }
+    println(positives)
+    positives = list.filter { it < 0 }
+    println(positives)
+    var x = 1
+//    when (x) {
+////        is Int -> println("Integer")
+//        is String -> println("String")
+//        else   -> println("???")
+//    }
+    var set = hashMapOf<String,String>()
+    set.put("a","a")
+    set.put("B","a")
+    set.put("X","a")
+    set.put("D","a")
+
+    for ((k, v) in set) {
+        println("$k -> $v")
+    }
+
+
 }
 
 data class Customer(val name: String="", val email: String=""){
@@ -74,3 +94,4 @@ data class Customer(val name: String="", val email: String=""){
     }
 }
 data class C(val name: String, val email: String)
+
