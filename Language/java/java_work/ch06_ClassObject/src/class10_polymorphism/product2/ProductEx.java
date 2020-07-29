@@ -1,11 +1,13 @@
-package class10_polymorphism.product;
+package class10_polymorphism.product2;
 
 public class ProductEx {
 	public static void main(String[] args) {
 		Customer ct = new Customer();
+		ct.purchaseList();
 		ct.buy(new TV());
-		System.out.println(ct.money + " : "+ ct.bonuspoint);
 		ct.buy(new Computer());
-		System.out.println(ct.money + " : "+ ct.bonuspoint);
+		ct.buy(new TV());
+		ct.buy(new SmartPhone());
+		ct.purchaseList();
 	}
 }

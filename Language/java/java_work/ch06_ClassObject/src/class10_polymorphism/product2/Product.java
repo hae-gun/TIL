@@ -1,4 +1,4 @@
-package class10_polymorphism.product;
+package class10_polymorphism.product2;
 
 class Product {
 	int price;
@@ -28,5 +28,15 @@ class Computer extends Product{
 	}
 }
 
+class SmartPhone extends Product{
+	public SmartPhone() {
+		super(400);
+	}
+	
+	@Override
+	public String toString() {
+		return "SmartPhone";
+	}
+}
 
 
