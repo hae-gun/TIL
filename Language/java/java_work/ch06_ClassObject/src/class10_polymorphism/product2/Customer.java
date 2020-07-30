@@ -31,10 +31,10 @@ class Customer {
 		System.out.println("-----구매기록 종료-------");
 	}
 
-	int sum = 0, count = 0;
 
 	// 구매 목록
 	void purchaseList() {
+		int sum = 0, count = 0;
 		System.out.println("===========구매 목록===========");
 		for (Product p : pdList) {
 			if (p == null) {
@@ -95,8 +95,10 @@ class Customer {
 		Product product = findProduct(p);
 		if (product != null) {
 			for (int i = 0; i < pdList.length; i++) {
-				if (pdList[i] != null) {
-
+				if (pdList[i] != null && pdList[i].equals(product)) {
+					money += product.price;
+					pdList[i] = null;
+					System.out.printf("%s 제품 반품완료.\n",product);
 				}
 
 			}
