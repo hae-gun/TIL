@@ -443,7 +443,7 @@
 
 #### clone() 매서드
 
-
+* 
 
 #### finalized() 매서드 의미
 
@@ -504,4 +504,88 @@
 * `Class.newInstance()` 사용시 앞에 원하는 객체를 캐스팅 해주면 해당 객체로 객체를 새로 생성해 준다. `new` 생성자와 같은 의미이다.
 
 
+
+### String class
+
+* 문자열 객체.
+
+* 여러 매서드 존재함.
+
+* 스트링 객체를 사용할 때 Encoding에 따라 값이 달라진다.
+
+  ```java
+  package api02_String;
+  
+  import java.io.UnsupportedEncodingException;
+  import java.util.Arrays;
+  
+  public class String02 {
+  	public static void main(String[] args) {
+  		//String -> byte[]  -> String (data 전달 과정)
+  		String str = "안녕하세요";
+  		byte[] b1 = str.getBytes();
+  		System.out.println(Arrays.toString(b1));
+  		System.out.println("b1.length: "+ b1.length); // 한글은 3byte로 처리되고 있다.
+  		String str2 = new String(b1);
+  		System.out.println("byte -> String: " + str2);
+  		
+  		byte[] b2,b3;
+  		try {
+  			b2 = str.getBytes("euckr");
+  			System.out.println("b2.length: "+ b2.length); // 한글은 3byte로 처리되고 있다.
+  			String str3 = new String(b2);
+  			System.out.println("byte -> String: " + str3);
+  			
+  		} catch (UnsupportedEncodingException e) {
+  			e.printStackTrace();
+  		}
+  		
+  	}
+  	
+  }
+  
+  ```
+
+  ![image-20200730171631205](JavaDay08.assets/image-20200730171631205.png)
+
+  
+
+* 스트링 객체는 문자열, 바이트 배열, 문자 배열(char[]) 로 객체를 생성할 수 있다.
+* 실제 물리적인 통신을 (네트워크) 할때는 문자열을 byte 형태로 전송함.
+
+  ```java
+  package api02_String;
+  
+  import java.io.IOException;
+  
+  public class String01 {
+  	public static void main(String[] args) throws IOException {
+  		String tom = "tom";
+  		String tom2 = new String("tom");
+  		
+  		byte[] bytes = {72,101,108,108,111,32,74,97,118,97};
+  		String str = new String(bytes);
+  		System.out.println(str);
+  		
+  		String str2 = new String(bytes,6,4);
+  		System.out.println(str2);
+  		
+  		byte[] bytes2 = new byte[100];
+  		System.out.println("값 입력>>>");
+  		int readByteNo = System.in.read(bytes2); // 읽은 byte길이를 int로 읽어줌.
+  		System.out.println(readByteNo);
+  		
+  //		String str3 = new String(bytes2,0,readByteNo); // 엔터 입력값 \r\n두개 포함됨
+  		String str3 = new String(bytes2,0,readByteNo-2); // -2 : \r \n 포함 안됨
+  		System.out.println(str3);
+  		
+  		char[] greet = {'h','e','l','l','o'};
+  		String hi = new String(greet);
+  		System.out.println(hi);
+  	}
+  }
+  
+  ```
+
+  ![image-20200730171643890](JavaDay08.assets/image-20200730171643890.png)
 

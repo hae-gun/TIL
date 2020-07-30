@@ -7,3 +7,9 @@
 [day03 - 제어문](https://github.com/Hae-gun/TIL/blob/master/Language/java/JavaDay03.md)
 
 [day04 - 반복문](https://github.com/Hae-gun/TIL/blob/master/Language/java/JavaDay04.md)
+
+[day06 - 객체]()
+
+[day07 -  상속]()
+
+[day08 - interface, Java API(class) ]()
