@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fun main(){
     // 1~10 -> 1..10
     for(i in 1..10){
@@ -45,4 +46,18 @@ fun main(){
         println("현재 값은 ${current++} 입니다.")
     }
 
+=======
+fun  main(){
+    val items = listOf("apple", "banana", "kiwifruit")
+    for (item in items) {
+        println(item)
+    }
+
+    var a = 5
+    while(a>0) {
+        println(a--)
+    }
+
+
+>>>>>>> 07b86526c57575bd5e6f6f590fd13eb3bd119c0a
 }
