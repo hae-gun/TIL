@@ -10,6 +10,8 @@ public class Reference {
 		test.changeAddr(test);
 		System.out.println(test);
 		
+		
+		
 	}
 	
 }
