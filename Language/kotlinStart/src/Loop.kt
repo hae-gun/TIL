@@ -1,32 +1,31 @@
-<<<<<<< HEAD
-fun main(){
+fun main() {
     // 1~10 -> 1..10
-    for(i in 1..10){
-        if(i==10){
+    for (i in 1..10) {
+        if (i == 10) {
             println("$i")
-        }else{
+        } else {
             print("$i..")
         }
     }
     // 1~9 1 until 10
-    for(i in 1 until 10){
-        if(i==10){
+    for (i in 1 until 10) {
+        if (i == 10) {
             println("$i")
-        }else{
+        } else {
             print("$i..")
         }
     }
     //until 활용
-    var set = arrayOf("JAN","FEB","MAR","APR","MAY","JUN")
-    for(index in 0 until set.size){
+    var set = arrayOf("JAN", "FEB", "MAR", "APR", "MAY", "JUN")
+    for (index in 0 until set.size) {
         println("index: $index 값은 ${set.get(index)} 입니다.")
     }
     // step : 해당 수만큼 증가!
-    for(i in 1 until 10 step 2){
+    for (i in 1 until 10 step 2) {
         println("$i !!!!")
     }
     // 숫자 감소 : downTo
-    for (index in 10 downTo 0){
+    for (index in 10 downTo 0) {
         println("현재 숫자: $index")
     }
 
@@ -36,28 +35,24 @@ fun main(){
     }*/
     var current = 1
     var until = 12
-    while (current < 12){
-        if(current==7){
+    while (current < 12) {
+        if (current == 7) {
             current++
             continue
-        }
-        else if(current==10)
+        } else if (current == 10)
             break;
         println("현재 값은 ${current++} 입니다.")
     }
 
-=======
-fun  main(){
-    val items = listOf("apple", "banana", "kiwifruit")
-    for (item in items) {
-        println(item)
+    fun main() {
+        val items = listOf("apple", "banana", "kiwifruit")
+        for (item in items) {
+            println(item)
+        }
+
+        var a = 5
+        while (a > 0) {
+            println(a--)
+        }
     }
-
-    var a = 5
-    while(a>0) {
-        println(a--)
-    }
-
-
->>>>>>> 07b86526c57575bd5e6f6f590fd13eb3bd119c0a
 }
