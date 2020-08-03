@@ -131,7 +131,7 @@
   }
   ```
 
-  ![image-20200721132612535](Java Day02.assets/image-20200721132612535.png)
+  ![image-20200721132612535](JavaDay02.assets/image-20200721132612535.png)
 
 ​	
 

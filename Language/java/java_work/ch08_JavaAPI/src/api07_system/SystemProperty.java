@@ -22,9 +22,12 @@ public class SystemProperty {
 		Properties props = System.getProperties();
 		
 		Set set = props.keySet();
+		
 		for(Object s : set) {
 			String k = (String)s;
 			System.out.println(k);
 		}
+		
+		
 	}
 }

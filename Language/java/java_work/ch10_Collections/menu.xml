@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>오늘메뉴</comment>
+<entry key="점심">도미회</entry>
+<entry key="저녁">티본스테이크</entry>
+<entry key="야식">지중해식 셀러드</entry>
+<entry key="아침">갈비탕</entry>
+</properties>
