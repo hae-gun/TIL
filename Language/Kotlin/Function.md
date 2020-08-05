@@ -20,10 +20,32 @@
       println("PI 값은 $PI 입니다.")
   }
   
-  fun getPi(): Any {
+  fun getPi(): Double {
       return Math.PI
   }
   ```
 
-  ![image-20200805230226205](/Users/choehyegeun/Library/Application Support/typora-user-images/image-20200805230226205.png)
+  ![image-20200805230805149](Function.assets/image-20200805230805149.png)
+
+## 함수의 기본값 정의와 호출
+
+* 파라미터를 정의할 때 default 값을 `=` 을 통해 설정할 수 있다.
+
+  ```kotlin
+  fun main(){
+    newFunction("최혜근")
+    newFunction("김철수",30)
+    newFunction("홍길동",30,80.0)
+  }
+  // 파라미터 정의
+  fun newFunction(name:String,age:Int = 27, weight:Double = 72.5){
+      println("$name 의 나이는 $age 이며 몸무게는 $weight 입니다.")
+}
+  ```
+  
+  ![image-20200805231607754](Function.assets/image-20200805231607754.png)
+  
+  
+  
+  
 
