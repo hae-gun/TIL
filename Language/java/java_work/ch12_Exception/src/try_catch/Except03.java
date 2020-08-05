@@ -35,13 +35,14 @@ public class Except03 {
 			System.out.println(e.getMessage());
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}finally {
-			try {
-				fr.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		} finally {
+			if (fr != null)
+				try {
+					fr.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 		}
 		// 범위가 넓은 Exception을 뒤에서 잡아야 한다.
 

@@ -44,15 +44,15 @@ public class LibraryTest {
 		
 		Stream<Book> stream = bookList.stream();
 		
-		System.out.println(stream
-							.mapToInt(s->s.getPrice())
-							.sum());
+		System.out.println(stream.mapToInt(s->s.getPrice())
+								 .sum());
 		
 		Stream<Book> stream2 = bookList.stream();
+		
 		stream2.filter(c->c.getPrice()>20000)
-				.map(c->c.getName())
-				.sorted()
-				.forEach(s->System.out.println(s));
+			   .map(c->c.getName())
+			   .sorted()
+			   .forEach(s->System.out.println(s));
 								 
 	}
 }

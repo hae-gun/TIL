@@ -4,14 +4,12 @@ public class LoginEx {
 	public static void main(String[] args) {
 		
 		try {
-			Login("bluq"
-					+ "e","2134");
+			Login("bluqe","2134");
 		} catch (NoSuchIDException e) {
 			System.out.println(e.getMessage());
 		} catch (WrongPWException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println("login success");
 	}
 
 	private static void Login(String id, String pw) throws NoSuchIDException, WrongPWException{

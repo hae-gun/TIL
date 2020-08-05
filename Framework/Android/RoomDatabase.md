@@ -2,7 +2,19 @@
 
 [Android Docs](https://developer.android.com/training/data-storage/room?hl=ko)
 
+## Room Database?
+
+* Room은 SQLite에 대한 추상화 레이어를 제공하여 원활한 데이터베이스 액세스를 지원하는 동시에 SQLite를 완벽히 활용하는 라이브러리이다. ( 일명 ORM )
+
+* 많은 양의 구조화된 데이터를 처리하는 앱은 데이터를 로컬로 유지하여 많은 이점을 얻을 수 있다. 가장 일반적인 사용 사례는 관련 데이터를 캐싱하는 것이다. 이런 방식으로 기기가 네트워크에 액세스할 수 없을 때 오프라인 상태인 동안에도 사용자가 여전히 콘텐츠를 탐색할 수 있다. 나중에 기기가 다시 온라인 상태가 되면 사용자가 시작한 콘텐츠 변경사항이 서버에 동기화 시킬 수 있다.
+
+* Room은 이러한 문제를 자동으로 처리하므로 SQLite 대신 Room을 사용할 것을 **적극적으로 권장**한다. 
+
+
+
 ## 종속 추가
+
+* `build.gradle`
 
 ```groovy
     dependencies {
@@ -108,3 +120,29 @@
                                           AppDatabase.class, "database-name").build();  
   ```
 
+
+
+
+
+## Room 항목을 사용하여 데이터 정의
+
+* 개체(Entity) 정의 
+
+  ```java
+      @Entity
+      public class User {
+          @PrimaryKey
+          public int id;
+  
+          public String firstName;
+          public String lastName;
+      }
+  ```
+
+  * 개체의 필드 유지를 위해서는 Room 에서 필드에 접근할 수 있어야 한다.
+  * 필드를 public 으로 정의 하거나 getter & setter 를 이용하여 접근이 가능하게 설계한다.
+
+* 기본키(Primary Key) 사용
+
+  * 개체(Entity)는 하나 이상의 필드를 기본키로 정의해야 한다.
+  * 필드가 1개인 경우에도 `@PrimaryKey` 를 이용하여 설정한다.
