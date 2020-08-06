@@ -8,6 +8,7 @@ public class NumbersEx extends Numbers implements Runnable {
 		
 		Thread t = new Thread(new NumbersEx());
 		t.start();
+		
 		Thread t2 = new Thread(new Runnable() {
 
 			@Override
