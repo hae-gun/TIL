@@ -21,7 +21,7 @@ public class Market implements Serializable{
 	private long income = 0;
 	private long outcome = 0;
 
-	private Map<Product, Integer> productList = new HashMap<>();
+	private Map<Integer,Product> productList = new HashMap<>();
 	private List<Customer> connectingUser = new ArrayList<>();
 
 	public Market(Seller master, String marketName) {
@@ -69,11 +69,11 @@ public class Market implements Serializable{
 		this.outcome = outcome;
 	}
 
-	public Map<Product, Integer> getProductList() {
+	public Map<Integer,Product> getProductList() {
 		return productList;
 	}
 
-	public void setProductList(Map<Product, Integer> productList) {
+	public void setProductList(Map<Integer,Product> productList) {
 		this.productList = productList;
 	}
 

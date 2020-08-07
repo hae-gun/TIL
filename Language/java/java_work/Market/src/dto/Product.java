@@ -2,12 +2,13 @@ package dto;
 
 import java.io.Serializable;
 
-public class Product implements Serializable{
+public class Product implements Serializable {
 
 	private int nsn;
 	private String type;
 	private String name;
 	private int price;
+	private int count = 0;
 
 	public Product(int nsn, String type, String name, int price) {
 		super();
@@ -49,6 +50,16 @@ public class Product implements Serializable{
 		this.price = price;
 	}
 
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		if (count > 0) {
+			this.count += count;
+		}
+	}
+
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
@@ -58,18 +69,18 @@ public class Product implements Serializable{
 	@Override
 	public boolean equals(Object obj) {
 		Product product = (Product) obj;
-		
+
 		if (product.getNsn() == this.getNsn()) {
-			if(product.getName().equals(this.getName()))
+			if (product.getName().equals(this.getName()))
 				return true;
 		}
-		
+
 		return false;
 	}
 
 	@Override
 	public String toString() {
-		return "제품명: "+name+", 타입: "+type;
+		return "Product [nsn=" + nsn + ", type=" + type + ", name=" + name + ", price=" + price + "]";
 	}
-	
+
 }
