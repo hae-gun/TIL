@@ -60,7 +60,7 @@ class myClass2 (name: String, age: Int) {
 
 data class myDataClass(var name:String,var age:Int ){
 
-    
+
 
     override fun toString(): String {
         return "이름은 $name 이요 나이는 $age 올시다."
