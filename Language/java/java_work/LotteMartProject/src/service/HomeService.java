@@ -68,7 +68,7 @@ public class HomeService implements marketService {
 
 		boolean flag = true;
 		while (flag) {
-			System.out.println("\n\n\n\n\n\n\n\n\n\n===========================================================================");
+			System.out.println("\n\n===========================================================================");
 			System.out.println("===========                    Lotte Mart                      ============");
 			System.out.println("===========================================================================");
 			System.out.println("=======  1.물건리스트  2.물건구매  3.내정보  4.포인트충전  5.구매내역  6.로그아웃 =======");
@@ -100,7 +100,7 @@ public class HomeService implements marketService {
 				break;
 			}
 		}
-
+		saveData();
 		System.out.println("Logout 성공");
 	}
 
@@ -108,11 +108,11 @@ public class HomeService implements marketService {
 
 		boolean flag = true;
 		while (flag) {
-			System.out.println("\n\n\n\n\n\n\n\n\n\n=====================================================================");
-			System.out.println("=========================  매장 관리 시스템  ============================");
-			System.out.println("=====================================================================");
-			System.out.println("=======  1.재고정보  2.물건등록  3.회원리스트  4.창고업데이트  5.로그아웃  =======");
-			System.out.println("=====================================================================");
+			System.out.println("\n\n======================================================================");
+			System.out.println("=========================  매장 관리 시스템  =============================");
+			System.out.println("======================================================================");
+			System.out.println("=======  1.재고목록   2.물건등록   3.물건주문   4.회원리스트   5.로그아웃  =======");
+			System.out.println("======================================================================");
 			System.out.print(">>>");
 			int menu = Integer.parseInt(scan.nextLine());
 			switch (menu) {
@@ -123,9 +123,10 @@ public class HomeService implements marketService {
 				lotteMartService.registerProduct((Seller) user);
 				break;
 			case 3:
-				loginService.getCustomers();
+				lotteMartService.autoOrder();
 				break;
 			case 4:
+				loginService.getCustomers();
 				break;
 			case 5:
 				flag = !flag;
@@ -136,6 +137,7 @@ public class HomeService implements marketService {
 				break;
 			}
 		}
+		saveData();
 		System.out.println("Logout 성공");
 	}
 

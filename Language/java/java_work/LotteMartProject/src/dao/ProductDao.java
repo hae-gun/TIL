@@ -97,7 +97,13 @@ public class ProductDao {
 	}
 
 	public Product findProduct(String name) {
-		Product product = map.get(productList.get(name));
+		Product product = null;
+		
+		for(Product m : map.values()) {
+			if(m.getName().toLowerCase().equals(name.toLowerCase())) {
+				product = m;
+			}
+		}
 		return product;
 	}
 

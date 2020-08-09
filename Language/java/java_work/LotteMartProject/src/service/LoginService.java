@@ -111,7 +111,7 @@ public class LoginService implements marketService {
 
 	public void getCustomers() {
 		Iterator<User> iterator = userdao.getSet().iterator();
-		System.out.println("========= Customer List =========");
+		System.out.println("\n\n========= Customer List =========");
 		while (iterator.hasNext()) {
 				User temp = iterator.next();
 				if (temp instanceof Customer) {
@@ -125,7 +125,7 @@ public class LoginService implements marketService {
 						}
 				}
 		}
-		System.out.println("=================================");
+		System.out.println("=================================\n\n");
 
 	}
 

@@ -1,6 +1,7 @@
 package service;
 
 import java.util.InputMismatchException;
+import java.util.Map;
 import java.util.Scanner;
 
 import dao.ProductDao;
@@ -95,10 +96,9 @@ public class LotteMartService implements marketService {
 			System.out.print("구매 갯수: ");
 			try {
 				int amount = Integer.parseInt(scan.nextLine());
-				
-				productDao.updateProduct(product,amount,user);
-				
-				
+
+				productDao.updateProduct(product, amount, user);
+
 			} catch (InputMismatchException e) {
 				System.out.println("입력오류");
 				return;
@@ -119,6 +119,32 @@ public class LotteMartService implements marketService {
 		int point = Integer.parseInt(scan.nextLine());
 		user.setPoint(point);
 		System.out.println("충전완료");
+	}
+
+	public void autoOrder() {
+		Map<String, Product> m = productDao.getMap();
+		System.out.println("======================  구매 필요 물품  (재고10개미만)  ===================");
+		int count = 0;
+		for (Product p : m.values()) {
+			if (p.getAmount() < 10) {
+				System.out.println(p.getNsn() + "---" + p);
+				count++;
+			}
+		}
+		if (count == 0)
+			System.out.println("없음");
+		else {
+			System.out.println("y 입력시 재고충전 (30개)");
+			String order = scan.nextLine().toLowerCase();
+			if ("y".equals(order)) {
+				for (Product p : m.values()) {
+					if (p.getAmount() < 10)
+						p.setAmount(p.getAmount() + 30);
+				}
+				System.out.println("주문완료.");
+			}
+		}
+
 	}
 
 }
