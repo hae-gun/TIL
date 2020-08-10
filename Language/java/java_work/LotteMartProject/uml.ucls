@@ -21,7 +21,7 @@
   </class>  
   <enumeration id="3" language="java" name="vo.ProductType" project="LotteMartProject" 
     file="/LotteMartProject/src/vo/ProductType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="5" y="444"/>    
+    <position height="-1" width="-1" x="59" y="358"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </enumeration>  
   <class id="4" language="java" name="vo.Product" project="LotteMartProject" 
     file="/LotteMartProject/src/vo/Product.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="43" y="167"/>    
+    <position height="-1" width="-1" x="141" y="621"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="service.LoginService" project="LotteMartProject" 
     file="/LotteMartProject/src/service/LoginService.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="679" y="386"/>    
+    <position height="-1" width="-1" x="692" y="377"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="dao.ProductDao" project="LotteMartProject" 
     file="/LotteMartProject/src/dao/ProductDao.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="183" y="680"/>    
+    <position height="-1" width="-1" x="456" y="658"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

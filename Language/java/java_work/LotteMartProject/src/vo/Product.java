@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Product implements Serializable{
 	
-	private String nsn;
-	private ProductType type;
-	private String name;
-	private int price;
-	private int amount;
+	private String nsn; // 물품번호
+	private ProductType type; // 물건타입
+	private String name; // 물건명
+	private int price; // 물건가격
+	private int amount; // 물건갯수
 	
 	public Product() {
 	

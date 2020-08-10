@@ -35,8 +35,8 @@ public class HomeService implements marketService {
 //					System.out.println("======로그인======");
 					while (user == null) {
 						user = loginService.startLogin();
-						if(user==null) {
-							System.out.println("로그인 실");
+						if (user == null) {
+							System.out.println("로그인 실패");
 						}
 					}
 					showMenu(user);
