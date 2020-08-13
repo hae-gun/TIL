@@ -138,7 +138,19 @@
 
   ![image-20200812222346598](sts_Install&Setting.assets/image-20200812222346598.png)
 
+  <a name="solveProblemLombok">문제해결!</a>
+
+  * 여기서 아무생각없이 install을 하였으나 그러면 안됨!
+
+  * Specify location을 클릭한후 다음 경로에 있는 sts를 설정
+
+    ![스크린샷 2020-08-13 오후 8.33.08](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 8.33.08.png)
+
+    ![스크린샷 2020-08-13 오후 8.34.56](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 8.34.56.png)
+
   ![스크린샷 2020-08-12 오후 10.23.42](sts_Install&Setting.assets/스크린샷 2020-08-12 오후 10.23.42.png)
+
+  * 설치후 sts 재시작!
 
 ## Java Configuration
 
@@ -241,5 +253,189 @@
       
       ```
 
-      
+
+
+
+
+# 의존성 주입 연습!
+
+* 코배웹 예제!
+
+* 먼저 사용될 두 VO(?) Data 를 생성!
+
+* Chef.class
+
+  ```java
+  package org.zerock.sample;
+  
+  import org.springframework.stereotype.Component;
+  
+  import lombok.Data;
+  
+  @Component
+  @Data
+  public class Chef {
+  
+  }
+  
+  ```
+
+* Restaurant.class
+
+  ```java
+  package org.zerock.sample;
+  
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.stereotype.Component;
+  
+  import lombok.Data;
+  import lombok.Setter;
+  
+  
+  
+  @Component
+  @Data
+  public class Restaurant{
+  	
+  	@Setter(onMethod_ = @Autowired)
+  	private Chef chef;
+  
+  }
+  ```
+
+  * 해당 코드 작성하면서 onMethod_ 속성 사용에서 오류가 발생함. --> [해결 방안](#lombokError)
+
+  
+
+* 의존성 주입을 이용할 때 보통의 Spring의 경우 `root-context.xml` 을 이용하여 의존성을 설정하지만 요즘 추세로 Java Configuration 을 이용하기 위해 RootConfiguration class로 의존성 주입을 시도함.
+
+* RootConfig.class
+
+  ```java
+  package org.zerock.config;
+  
+  import org.springframework.context.annotation.ComponentScan;
+  import org.springframework.context.annotation.Configuration;
+  
+  @Configuration
+  @ComponentScan(basePackages = {"org.zerock.sample"})
+  public class RootConfig {
+  	
+  }
+  ```
+
+* 테스트 코드 작성!
+
+  * 테스트는 Junit을 이용하여 로그를 확인하였다.
+  * 여기서 또 문제 발생
+    1. Log4j 어노테이션 오류가 발생함. - [해결 방안](#Log4jError)
+    2. 위처럼 Java Configuration을 이용할 시 경로를 다르게 해야함 - [해결 방안](#ContextConfigurationError)
+
+* SampleTests.class
+
+  ```java
+  package org.zerock.sample;
+  
+  import static org.junit.Assert.assertNotNull;
+  
+  import org.junit.Test;
+  import org.junit.runner.RunWith;
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.test.context.ContextConfiguration;
+  import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+  import org.zerock.config.RootConfig;
+  
+  import lombok.Setter;
+  import lombok.extern.log4j.Log4j;
+  
+  @RunWith(SpringJUnit4ClassRunner.class)
+  @ContextConfiguration(classes = RootConfig.class)
+  @Log4j
+  public class SampleTests {
+  
+  	@Setter(onMethod_ = { @Autowired })
+  	private Restaurant restaurant;
+  
+  	@Test
+  	public void testExist() {
+  		assertNotNull(restaurant);
+  		
+  		log.info(restaurant);
+  		log.info("------------------");
+  		log.info(restaurant.getChef());
+  
+  	}
+  
+  }
+  ```
+
+* JUnit Test로 실행!
+
+* 결과
+
+  ![스크린샷 2020-08-13 오후 9.34.06](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 9.34.06.png)
+
+* 해당 부분에서 알수 있는것
+
+  * Restaurant 객체가 new 생성자 없이 생성됨. -> **스프링에서 필요한 객체(Bean)을 컨테이너 or 팩토리의 기능으로 객체를 생성함.**
+  * 스프링은 생성자 주입 혹은 setter주입을 이용해서 동작하는데 실제 클래스에는 getter/setter가 없다. 이는 Lombok의 @Data 어노테이션으로 인해 Restaurant 에 자동으로 getter/setter 메소드가 생성되었기 때문이다.
+  * Restaurant 객체의 Chef 필드변수에 Chef 타입의 객체가 주입되었다. 이는 스프링의 @Autowired 어노테이션으로 스프링이 자동으로 객체들을 자동으로 관리해주었기 때문이다!
+
+
+
+
+
+
+
+# 책 따라하면서 발생한 오류들
+
+## Lombok @Setter 어노테이션 onMethod 속성 오류
+
+* <a name="lombokError">해결</a> : Lombok.jar 를 sts 경로 설정을 한 후 설치함. [이곳](#solveProblemLombok)
+
+## @Log4j 어노테이션 오류 해결
+
+* <a name="Log4jError">Log4j 오류!</a>
+
+* [블로그 글 참고함!](https://velog.io/@shson/2020-02-07-2002-작성됨-s3k6c3sk4k)
+
+* porm.xml 에서 해당부분을 주석처리하여 해결함.
+
+  ![image-20200813205309682](sts_Install&Setting.assets/image-20200813205309682.png)
+
+## @ContextConfiguration 어노테이션 오류 해결
+
+* <a name="ContextConfigurationError">*@ContextConfiguration*</a> 는 xml 파일을 이용해 config파일 설정시 사용.
+
+* 나는 java Configuration을 사용하여 Exception 이 발생함.
+
+* `java.lang.IllegalStateException: Failed to load ApplicationContext`
+
+  ![image-20200813210915803](sts_Install&Setting.assets/image-20200813210915803.png)
+
+* 해결방안!
+
+  * Java Configuration 을 이용할 때는 `@ContextConfiguration` 어노테이션 사용시 경로를 다음과 같이 설정.
+
+    * 변경전 (xml 사용시에 이렇게 씀.. 경로는 저거 말구 config.xml이 있는 경로로..)
+
+    ```java
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @ContextConfiguration("file:src/main/java/org/zerock/config/RootConfig.java")
+    @Log4j
+    public class SampleTests {...생략
+    ```
+
+  * 변경후
+
+    ```java
+    @RunWith(SpringJUnit4ClassRunner.class)
+    @ContextConfiguration(classes = RootConfig.class)
+    @Log4j
+    public class SampleTests { ... 생략
+    ```
+
+  * java configuration 을 이용할 때는 `classes = class명.class` 이용!!!!!!!!
+
+
 
