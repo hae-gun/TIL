@@ -54,6 +54,23 @@ delete from emp10 where deptno = 10;
 SAVEPOINT d1;
 delete from emp10 where deptno = 20;
 SAVEPOINT d2;
+delete from emp10 where deptno = 30;
+SAVEPOINT d3;
+insert into emp10(empno, ename) values(2222,'tom');
 
+select * from emp10;
+
+rollback to d2;
+rollback to d3; -- d2 로 가면서 d3가 없어짐.
+rollback to d1;
+rollback;
+
+
+update emp10 set sal = sal *2 where ename = 'SMITH';
+
+/*
+create user tom identified by 1234;
+grant create session, connect to tom;
+*/
 
 

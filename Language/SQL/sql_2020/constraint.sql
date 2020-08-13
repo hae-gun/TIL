@@ -77,3 +77,4 @@ alter table car drop constraint U_MODEL;
 desc car;
 alter table car add constraint U_MODEL unique(model);
 
+delete from car where model is null;

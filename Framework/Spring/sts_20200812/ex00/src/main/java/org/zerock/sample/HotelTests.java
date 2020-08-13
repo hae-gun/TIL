@@ -15,18 +15,18 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = RootConfig.class)
 @Log4j
-public class SampleTests {
+public class HotelTests {
 
 	@Setter(onMethod_ = { @Autowired })
-	private SampleHotel sampleHotel;
+	private Restaurant restaurant;
 
 	@Test
 	public void testExist() {
-		assertNotNull(sampleHotel);
+		assertNotNull(restaurant);
 		
-		log.info(sampleHotel);
+		log.info(restaurant);
 		log.info("------------------");
-		log.info(sampleHotel.getChef());
+		log.info(restaurant.getChef());
 
 	}
 

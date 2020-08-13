@@ -281,5 +281,21 @@ select deptno,count(*),round(avg(sal),2) as 평균 from emp group by deptno orde
 -- having : group by 의 조건을 넣어줌 (group by 의 결과의 조건)
 -- 부서별 평균 급여가 2000이 넘는 부서의 번호와 평균 급여 출력
 
-select deptno,round(avg(sal),2) from emp group by deptno having avg(sal) > 2000;
+select deptno,round(avg(sal),2) from emp 
+group by deptno -- 그룹화
+having avg(sal) > 2000; -- 그룹조건
 
+-- 평균 급여가 2000 이상인 부서별, 직무별 그룹에서 급여 3000이상 직원의 부서번호, 직무, 평균급여 출력
+-- 정렬 : 부서번호, 직무 오름차순
+
+select deptno, job, avg(sal) from emp 
+where sal >=1000
+group by deptno,job 
+having avg(sal) >= 2000 
+order by deptno;
+
+select deptno,job,count(*) from emp
+group by deptno, rollup(job);
+
+select deptno,job,count(*) from emp
+group by cube(job,deptno);

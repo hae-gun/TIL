@@ -383,11 +383,111 @@
 
 
 
+## 생성자 주입 이용
 
+* 스프링에서 의존성 주입시 위처럼 @Setter 어노테이션 이용하거나 또는 아래 진행될 예제 처럼 생성자를 통해 주입이 가능하다.
 
+* SampleHotel.class
 
+  ```java
+  package org.zerock.sample;
+  
+  import org.springframework.stereotype.Component;
+  
+  import lombok.Getter;
+  import lombok.ToString;
+  
+  @Component
+  @ToString
+  @Getter
+  public class SampleHotel {
+  	
+  	private Chef chef;
+  	
+  	// 생성자 주입!
+  	 public SampleHotel(Chef chef) {
+  		 this.chef = chef;
+  	 }
+  	 
+  }
+  ```
 
-# 책 따라하면서 발생한 오류들
+* HotelTests.class
+
+  ```java
+  package org.zerock.sample;
+  
+  import static org.junit.Assert.assertNotNull;
+  
+  import org.junit.Test;
+  import org.junit.runner.RunWith;
+  import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.test.context.ContextConfiguration;
+  import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+  import org.zerock.config.RootConfig;
+  
+  import lombok.Setter;
+  import lombok.extern.log4j.Log4j;
+  
+  @RunWith(SpringJUnit4ClassRunner.class)
+  @ContextConfiguration(classes = RootConfig.class)
+  @Log4j
+  public class HotelTests {
+  
+  	@Setter(onMethod_ = { @Autowired })
+  	private Restaurant restaurant;
+  
+  	@Test
+  	public void testExist() {
+  		assertNotNull(restaurant);
+  		
+  		log.info(restaurant);
+  		log.info("------------------");
+  		log.info(restaurant.getChef());
+  	}
+  }
+  ```
+
+* 테스트 코드
+
+  ![image-20200813221715009](sts_Install&Setting.assets/image-20200813221715009.png)
+
+* @Setter 어노테이션과 마찬가지로 동일하게 객체가 주입되어 실행되는 것을 볼 수 있다.
+
+* 생성자 주입을 Lombok 을 이용하여 만들면 아래와 같이도 사용이 가능하다.
+
+* SampleHotel.class
+
+  ```java
+  @Component
+  @ToString
+  @Getter
+  @AllArgsConstructor
+  public class SampleHotel {
+  	
+    
+  	private Chef chef;
+  
+  }
+  ```
+
+* 만일 여러 개의 인스턴스 변수들 중에서 특정한 변수에 대해서만 생성자를 작성하고 싶다면 아래와 같이 @NonNull 과 @RequiredArgsConstructor 어노테이션 이용.
+
+  ```java
+  @Component
+  @ToString
+  @Getter
+  @RequiredArgsConstructor
+  public class SampleHotel {
+  	
+  	@NonNull
+  	private Chef chef;
+  	
+  }
+  
+  ```
+
+# 예제 따라하면서 발생한 오류들
 
 ## Lombok @Setter 어노테이션 onMethod 속성 오류
 
