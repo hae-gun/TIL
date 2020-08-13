@@ -1,6 +1,6 @@
 > 진행하면서 발생한 오류들
 >
-> [이동](#예제 따라하면서 발생한 오류들)
+> [이동](#ErrorList)
 
 # Spring Tool Suite 설정
 
@@ -52,7 +52,7 @@
 
 * 종료는 당연히 `./catalina stop` 명령어로 종료가 가능하다.
 
-  ![스크린샷 2020-08-12 오후 9.17.26](sts_Install&Setting.assets/스크린샷 2020-08-12 오후 9.17.26.png)
+  ![image-20200813230236503](sts_Install&Setting.assets/image-20200813230236503.png)
 
 
 
@@ -148,11 +148,11 @@
 
   * Specify location을 클릭한후 다음 경로에 있는 sts를 설정
 
-    ![스크린샷 2020-08-13 오후 8.33.08](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 8.33.08.png)
+    ![image-20200813230437116](sts_Install&Setting.assets/image-20200813230437116.png)
 
-    ![스크린샷 2020-08-13 오후 8.34.56](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 8.34.56.png)
+    ![image-20200813230449894](sts_Install&Setting.assets/image-20200813230449894.png)
 
-  ![스크린샷 2020-08-12 오후 10.23.42](sts_Install&Setting.assets/스크린샷 2020-08-12 오후 10.23.42.png)
+  ![image-20200813230510500](sts_Install&Setting.assets/image-20200813230510500.png)
 
   * 설치후 sts 재시작!
 
@@ -377,7 +377,7 @@
 
 * 결과
 
-  ![스크린샷 2020-08-13 오후 9.34.06](sts_Install&Setting.assets/스크린샷 2020-08-13 오후 9.34.06.png)
+  ![image-20200813230543515](sts_Install&Setting.assets/image-20200813230543515.png)
 
 * 해당 부분에서 알수 있는것
 
@@ -492,6 +492,8 @@
   ```
 
 # 예제 따라하면서 발생한 오류들
+
+<a name="ErrorList"></a>
 
 ## Lombok @Setter 어노테이션 onMethod 속성 오류
 
