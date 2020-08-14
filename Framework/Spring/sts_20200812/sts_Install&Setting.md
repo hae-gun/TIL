@@ -74,11 +74,11 @@
 
   ![image-20200812212312234](sts_Install&Setting.assets/image-20200812212312234.png)
 
-### porm.xml 설정 변경
+### pom.xml 설정 변경
 
 * 스프링의 사용은 버전별로 약간씩 상이한 것이 있다.
 
-* 해당 설정은 프로젝트 파일에 있는 porm.xml 파일을 통해 변경이 가능하다.
+* 해당 설정은 프로젝트 파일에 있는 pom.xml 파일을 통해 변경이 가능하다.
 
   ![image-20200812213909216](sts_Install&Setting.assets/image-20200812213909216.png)
 
@@ -166,9 +166,9 @@
 
     * `web.xml, servlet-context.xml, root-context.xml` 3개 모두 삭제!
 
-  * `porm.xml` 의 수정 및 스프링 버전 변경
+  * `pom.xml` 의 수정 및 스프링 버전 변경
 
-    * 위 3개의 xml을 삭제하면 porm.xml에서 오류가 생김
+    * 위 3개의 xml을 삭제하면 pom.xml에서 오류가 생김
 
     * 먼저 plugins 맨 하단에 아래 내용 추가
 
@@ -505,7 +505,7 @@
 
 * [블로그 글 참고함!](https://velog.io/@shson/2020-02-07-2002-작성됨-s3k6c3sk4k)
 
-* porm.xml 에서 해당부분을 주석처리하여 해결함.
+* pom.xml 에서 해당부분을 주석처리하여 해결함.
 
   ![image-20200813205309682](sts_Install&Setting.assets/image-20200813205309682.png)
 
