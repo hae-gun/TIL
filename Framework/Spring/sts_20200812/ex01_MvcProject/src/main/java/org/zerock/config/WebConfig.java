@@ -21,5 +21,5 @@ public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitiali
 		// TODO Auto-generated method stub
 		return new String[] {"/"};
 	}
-
+	
 }
