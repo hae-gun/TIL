@@ -27,7 +27,6 @@ public class SampleController {
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		binder.registerCustomEditor(java.util.Date.class, new CustomDateEditor(dateFormat, false));
-		
 	}
 
 	@RequestMapping(value = "/basic", method = { RequestMethod.GET, RequestMethod.POST })
@@ -45,6 +44,7 @@ public class SampleController {
 		log.info("" + dto);
 		return "ex01";
 	}
+	
 	@GetMapping("/ex02")
 	public String ex02(@RequestParam("name") String name,@RequestParam("age") int age) {
 		log.info("name: "+name);
