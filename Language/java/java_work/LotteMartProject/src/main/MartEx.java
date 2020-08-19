@@ -8,5 +8,7 @@ public class MartEx {
 		HomeService service = HomeService.getInstance();
 		service.launch();
 		
+		
+		
 	}
 }

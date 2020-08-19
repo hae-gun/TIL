@@ -1,0 +1,7 @@
+DBMS 연결순서
+ driver load : Class.forName("driver path")
+ Connection DB연결 : Connection 객체 생성 - DriverManager.getConnection(url,user,password)
+ Statement 객체 생성 : connection.createStatement()
+ SQL 문장 실행 : statement.executeQuery(sql)
+ ResultSet 객체 생성하고 결과 받아와 처리 : select 결과를 반환받는 객체.
+ DB 연결해제 : 열린 입출력 객체를 열린 반대 순서로 닫아줌.
