@@ -3,20 +3,23 @@ package newMarket.vo;
 import java.util.Date;
 
 public class Order_List {
+	
 	private int order_id;
 	private String nsn;
 	private String id;
 	private Date date;
-	
+	private int amount;
+
 	public Order_List() {
-		
+
 	}
-	
-	public Order_List(int order_id, String nsn, String id, Date date) {
+
+	public Order_List(int order_id, String nsn, String id, Date date, int amount) {
 		this.order_id = order_id;
 		this.nsn = nsn;
 		this.id = id;
 		this.date = date;
+		this.amount = amount;
 	}
 
 	public int getOrder_id() {
@@ -51,12 +54,18 @@ public class Order_List {
 		this.date = date;
 	}
 
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
 	@Override
 	public String toString() {
-		return "Order_List [order_id=" + order_id + ", nsn=" + nsn + ", id=" + id + ", date=" + date + "]";
+		return "Order_List [order_id=" + order_id + ", nsn=" + nsn + ", id=" + id + ", date=" + date + ", amount="
+				+ amount + "]";
 	}
-	
-	
-	
-	
+
 }
