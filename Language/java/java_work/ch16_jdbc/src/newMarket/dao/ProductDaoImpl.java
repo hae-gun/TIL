@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import newMarket.connector.ConGenerator;
 import newMarket.vo.Product;
@@ -175,6 +177,10 @@ public class ProductDaoImpl implements ProductDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		
+		
+		
 		return result;
 	}
 	

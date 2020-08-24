@@ -1,0 +1,18 @@
+body{
+    background-color: lightblue;
+    
+}
+
+h2{
+    background-color: cadetblue;
+    color: white;
+    text-align: center;
+    
+}
+p{
+    font-family: 돋움;
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 20px;
+    color: white;
+}
