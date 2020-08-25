@@ -16,13 +16,19 @@
     .sizing_list { width:500px; margin-top: 20px;}
     .sizing_list li { 
         list-style-type: none;
-        float: left; width:25%; padding: 10px;
+        float: left; /*box 컴포넌트를 inline으로 바꿔줌*/
+        width:25%; padding: 10px;
         box-sizing: border-box; 
         text-align: center; background: rgba(0,0,100,0.3);
     }
     .sizing_list li:nth-child(even) { background: rgba(0,0,100,0.15); }
     .sizing_list li a { text-decoration: none; color:#000;}
-    .sizing_list li a:hover { text-decoration:underline; }
+    .sizing_list li:hover { 
+/*        text-decoration:underline; */
+        text-decoration-color: white;
+        background-color: rgba(255,255,0,0.1);
+        
+    }
 </style>
 </head> 
 <body>

@@ -7,6 +7,7 @@
     li { list-style-type:none; }
     .gnb li { display: inline; }
     .gnb li a{ 
+/*        inline block : 한줄은 다 차지 하지 않지만 block을 지정할 수 있음.*/
         display: inline-block; 
         background: brown; color: #fff;
         width: 100px; height: 35px; line-height: 35px;
@@ -14,12 +15,13 @@
         text-decoration: none;
     }
     .gnb li a:hover { 
-        text-decoration: underline; 
+/*        text-decoration: underline; */
         background: #369; 
     }
 </style>
 </head> 
 <body>
+<!--global navitaion bar-->
 	<ul class="gnb">
 		<li><a href="#">Company</a></li>
 		<li><a href="#">Product</a></li>
