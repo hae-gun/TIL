@@ -1,0 +1,396 @@
+
+@charset "UTF-8"
+
+/*기본색상*/
+:root {
+    --main-color: #5D9AB2;
+    --accent-color: #BF6A7A;
+    --dark-main-color: #2B5566;
+    --text-bright-color: #fff;
+    --icon-color: #fff;
+    --icon-bk-color: #ddd;
+    --gray-color: #ddd;
+    --large-width: 1000px;
+    --middle-width: 768px;
+} 
+
+/*기본 폰트 크기 설정*/
+@media (max-width: 599px){
+    :root{
+        font-size: 14px;
+    }
+}
+@media (min-width: 600px) and (max-width: 799px){
+    :root{
+        font-size: 16px;
+    }
+}
+@media (min-width: 800px){
+    :root{
+        font-size: 18px;
+    }
+}
+
+body{
+    font-size: 16px;
+    margin: 0;
+    font-family: '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
+    background-color: rgba(0,0,0,0.2);
+}
+
+/*header*/
+header{
+    position: sticky; top: 0; left: 0;
+    width: 100%; background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1000;
+}
+
+/*Logo*/
+.headA{
+    display: inline-block; line-height: 70px;
+    padding: 0 20px; background-color: var(--main-color); background-color: rgba(255,255,255,0.2);
+    color: #000; font-family: 'Montserrat', sans-serif; font-size: 50px; text-decoration: none;
+}
+
+/*nav*/
+.headB ul{
+    margin: 0; padding: 0; list-style: none;
+}
+.headB a{
+    display: block; padding: 15px 70px; color: #fff;
+    background-color: red;
+    border-radius: 10px;
+    font-size: 12px; text-decoration: none;
+}
+
+.headB a:hover{
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+}
+
+/*큰 화면 전용*/
+@media (min-width: 768px){
+    header .container{
+        display: flex;
+        align-items: center; 
+        justify-content: space-between;
+        max-width: 1000px;
+        /*margin: 0 auto;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .headB ul{
+        display: flex;
+    }
+    .headB a{ font-size: 14px;
+    }
+    
+    .headC{ display: none;}
+    .headB{ display: block !important;
+    }
+    
+}
+
+/*작은 화면 전용: 메뉴 토글 버튼*/
+@media (max-width: 767px){
+    header .container-small{
+        display: flex;
+        align-items: center; 
+        justify-content: space-between
+    }
+    .headB {
+        display: none;
+        text-align: center;
+    }
+    .headB a{
+        margin: 0 100px;
+    }
+    .headC{
+        outline: none; border: none; background: none; padding: 0; margin-right: 10px; font-size: 28px; cursor: pointer; opacity: 0.5;
+    }
+    .headC:hover{
+        opacity: 0.3
+    }
+}
+
+/*conA: hero image*/
+.conA{
+    display: flex; align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(../images/main.jpg);
+    background-position: center; background-size: cover;
+    height: 100vh; min-height: 450px;
+    color: #fff; text-align: center
+}
+.conA h1{
+    font-family: 'Montserat', sans-serif;
+    font-size: 8vw; letter-spacing: 0.2em;
+    margin-top: 0; margin-bottom: 10px; margin-left: 0.2em
+}
+.conA img{width: 20%}
+
+.conA .input_email{
+    display: inline-block;margin-top: 20px;
+    text-align: center;
+    padding:  10px 50px; border: 3px solid #fff;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border-radius: 6px; 
+    font-size: 14px; text-decoration: none;
+}
+.input_email::placeholder{
+    color: #fff;
+}
+
+.conA p,.conA h1{
+    background-color: rgba(0,0,0,0.5);
+}
+.conA p{
+    margin-top: 0; margin-bottom: 0;
+    
+    font-size: 3vw;
+}
+.conA a{
+    display: inline-block; margin-top: 20px;
+    padding:  10px 30px; border: 3px solid currentColor;
+    color: #fff; border-radius: 6px; 
+    background-color: red; font-size: 14px; text-decoration: none;
+}
+.conA a:hover{
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+}
+
+@media (min-width: 768px){
+    .conA h1{font-size: 115px}
+    .conA p{font-size: 23px}
+}
+
+
+/*conB: contents*/
+.conB .container{
+    padding-top: 80px; padding-bottom: 20px;
+    background-color: rgba(0,0,0,0.6);
+}
+.conB .text{
+    text-align: center;
+    padding: 0 20px 60px;
+    color: #fff;
+}
+.conB h2{
+    margin-top: 0; margin-bottom: 10px; font-size: 20px;
+}
+.conB p{
+    margin-top: 0; margin-bottom: 20px;font-size: 14px;
+    line-height: 1.8; opacity: 0.8
+}
+.conB a{
+    color: #fff;
+    text-decoration: none;
+}
+.conB a:hover{
+    text-decoration: underline
+}
+.conB .icon{
+    display: inline-block;
+    width: 2em; font-size: 40px; background-color: #ddd;
+    color: #fff; text-align: center;line-height: 2em; border-radius: 50%; margin-bottom: 20px;
+}
+
+.conB .icon:hover{
+    background-color: rgba(0,0,0,0.65);
+    
+}
+@media (min-width: 768px){
+    .conA h1{
+        font-size: 8vw;
+    }
+    
+    .conB .container{
+        display: flex;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .conB .text{
+        flex: 1;
+    }
+}
+
+
+
+
+
+
+/*conC*/
+.conC{
+    background-color: #5D9AB2;
+    color: #fff;
+}
+.conC .text, .conD .text{
+    padding: 20px;
+}
+.conC h2, .conD h2{
+    margin-top: 0; margin-bottom: 10px; font-size: 20px;
+}
+.conC p, .conD p{
+    margin-top: 0; margin-bottom: 20px;font-size: 14px;
+    line-height: 1.8; opacity: 0.8
+}
+.conC a, .conD a{
+    display: inline-block; margin-top: 20px;
+    padding:  10px 30px; border: 3px solid currentColor;
+    color: #fff; border-radius: 6px; 
+    background-color: #BF6A7A; font-size: 14px; text-decoration: none;
+}
+.conD a{ box-shadow: 0 0 0 1px #888}
+.conC a:hover, .conD a:hover{
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2));
+}
+.conC .photo{
+    background-image: url(../images/note.jpg);
+    min-height: 200px;
+    background-position: center;
+    background-size: cover
+}
+.conD .photo{
+    background-image: url(../images/life.jpg);
+    min-height: 200px;
+    background-position: center;
+    background-size: cover
+}
+.conList{
+    display: inline-block;
+    background-color: rgba(0,0,0,0.8);
+    padding: 50px;
+}
+
+
+.conList h1{
+    color: #fff;
+    text-align:center;
+}
+
+
+@media (min-width: 768px){
+    .conC .container, .conD .container {
+        display: flex;
+        max-width: 1000px;
+        margin: auto;
+    }
+    .conD .container{
+        flex-direction: row-reverse;
+        padding-top: 40px; padding-bottom: 40px;
+    }
+    .conC .photo{
+        flex:3;
+    }
+    .conC .text, .conD .text{
+        flex:2;
+    }
+    
+    .conD .photo{
+        flex: 2;
+    }
+    .conD .text{
+        flex:3;
+    }
+}
+
+
+/*footer*/
+footer{
+    background-color: #000;
+    color: #ddd;
+}
+footer .container{
+    padding: 50px 60px;
+}
+/*
+footer .con2{
+    position: relative;
+*/
+}
+@media (min-width: 768px){
+    footer .container{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: auto;
+        }
+    .footA{
+        flex: 0 0 100%;
+    }
+    .footB{
+        flex: 0 0 100%;
+    }
+    .footC{
+        width: 100%;
+        text-align: left;
+        
+    }
+}
+
+.footA{
+    margin-bottom: 30px;
+}
+.footA h5{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+/*    letter-spacing: 2em;*/
+}
+
+.footA a{
+    color: inherit;
+    text-decoration: none;
+}
+.footB div{
+    margin-bottom: 20px;
+}
+
+.footB ul{
+    list-style: none ;
+    text-indent: -1.4em;
+        
+}
+.footB ul li{
+    min-width: 100px;
+}
+.footB a{
+    display: inline-block; padding: 5px; color: inherit; 
+    font-size: 12px; text-decoration: none;
+}
+.footB a:hover{
+    text-decoration: underline;
+}
+.footB {
+        display: flex;
+    }
+    .footB div{
+        flex: 1;
+    }
+ 
+/*    서로 띠나*/
+    .footB div:not(:last-child){
+        margin-right: 40px;
+    }
+/*
+@media(min-width: 768px){
+    
+}
+*/
+.footC{
+    font-size: 11px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+}
+.footC a{
+    font-size: 11px;
+    padding: 0;
+      color: #ddd;
+    text-decoration: none;
+}
+.footC a:hover{
+    text-decoration: underline;
+}
+
