@@ -16,21 +16,22 @@ public class MakeNumber {
 		int answer = 0;
 		int index = 0;
 
-		// dfs
 
 		Queue<Integer> queue = new LinkedList<Integer>();
 		LinkedList<Integer> list = new LinkedList<Integer>();
+		
 		queue.add(numbers[0]);
 		queue.add(-numbers[0]);
+		
+		// bfs 시작
 		for (int i = 1; i < numbers.length; i++) {
-
 			int count = 0;
 			// 배열 뽑아서 더하고 빼기
 			while (!queue.isEmpty()) {
 				list.add(queue.poll());
 				System.out.println(++count);
 			}
-			System.out.println("list: " + i + "-" + list);
+//			System.out.println("list: " + i + "-" + list);
 
 			while (!list.isEmpty()) {
 				int curNum = list.removeFirst();
@@ -38,10 +39,10 @@ public class MakeNumber {
 				queue.add(curNum - numbers[i]);
 			}
 
-			System.out.println("queue: " + i + "-" + queue);
+//			System.out.println("queue: " + i + "-" + queue);
 
 		}
-		System.out.println(queue);
+//		System.out.println(queue);
 		while (!queue.isEmpty()) {
 			int checkNum = queue.poll();
 			if (checkNum == target) {
