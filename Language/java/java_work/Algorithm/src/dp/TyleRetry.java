@@ -10,6 +10,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TyleRetry {
+	
+		
+		
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -24,7 +27,7 @@ public class TyleRetry {
 			String s = br.readLine();
 			int line = Integer.parseInt(s.split(" ")[0]);
 			int number = Integer.parseInt(s.split(" ")[1]);
-
+			
 			if (map.containsKey(line)) {
 				ArrayList<Integer> temp = map.get(line);
 				temp.add(number);
@@ -40,17 +43,17 @@ public class TyleRetry {
 		long b_count = countBlock(r, c, map);
 
 		// situation counting
-		long s_count = countSituation(r, c, map) % 1000000007;
+		long s_count = countSituation(r, c, map,b_count) % 1000000007;
 //		System.out.println(test);
 		long divConst = 1000000007L;
-		System.out.println(b_count + " " + s_count % divConst);
+		System.out.printf("%d %d\n",b_count,s_count);
 //		System.out.println(s_count % 1000000007);
 
 	}
 
-	private static long countSituation(int row, int col, HashMap<Integer, ArrayList<Integer>> map) {
-		long result = 1L;
-
+	private static long countSituation(int row, int col, HashMap<Integer, ArrayList<Integer>> map,long b_count) {
+		long result = 1;
+		
 		for (int a : map.keySet()) {
 			List<Integer> temp = map.get(a);
 			int[] numset = toArray(temp);
@@ -60,16 +63,24 @@ public class TyleRetry {
 		}
 //		System.out.println("result in countSituation: " + result);
 //		System.out.println(map);
+//		if(result==0 && row-map.keySet().size()>0 && col >1) result=1;
+		
+		
+		
 		if (col % 2 != 0) {
 			result *= (long) (Math.pow((col / 2 + 1), row - map.keySet().size()));
 		}
+		if(col==1) {
+			result = 0;
+		}
 //		System.out.println(result);
+		if(b_count==0) result = 0;
 		return result;
 	}
 
 	private static long countingSituation(int[] numset, int col) {
 		long result = 1;
-
+		
 		Arrays.sort(numset);
 
 		LinkedList<Integer> list = new LinkedList<Integer>();
@@ -111,13 +122,24 @@ public class TyleRetry {
 
 	private static long checkLength(long result, int length) {
 //		System.out.println("result in checkLength before if: " + result);
+		
 		if (length > 1 && length % 2 != 0) {
+			if(result==0) result=1;
 			result *= length / 2 + 1;
 		}
-//		System.out.println("result in checkLength before after: " + result);
+//		System.out.println("result in checkLength after if: " + result);
+//		System.out.println("------------------------------------------");
 		return result;
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	private static long countBlock(int row, int col, HashMap<Integer, ArrayList<Integer>> map) {
 		long result = 0;
 
@@ -131,7 +153,7 @@ public class TyleRetry {
 		long blocks = col / 2;
 		long cleanLine = row - map.size();
 		result += blocks * cleanLine;
-
+		
 		return result;
 	}
 
@@ -160,7 +182,6 @@ public class TyleRetry {
 		if(length>1) {
 			result += length/2;
 		}
-		
 		return result;
 	}
 
