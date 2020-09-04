@@ -1,6 +1,6 @@
 num = int(input())
 
-print(num,'의 펙토리얼 구하기')
+#print(num,'의 펙토리얼 구하기')
 
 def factorial(num):
     if num ==1:
