@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1 {
+            background-color: skyblue;
+            border: 1px solid black;
+            width: 200px;
+        }
+
+        div {
+            background-color: brown;
+            margin: 30px 80px;
+        }
+
+        p {
+            background-color: goldenrod;
+            color: white;
+            margin: 50px 100px 10px 10px;
+            padding: 10px
+        }
+
+        ul {
+            list-style-type: none
+        }
+
+        li {
+            padding: 20px;
+            background-color: pink;
+            margin-bottom: 5px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ajax - XML</h1>
+    <button onclick="callXML('ajax.xml')">Ajax</button>
+    <p id="xml"></p>
+
+    <script>
+        var http, xmlDoc, txt, x, i;
+
+        function callXML(url) {
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.reponseXML);
+                    xmlDoc = this.responseXML;
+                    txt = '';
+                    x = xmlDoc.getElementsByTagName('ARTIST');
+                    console.log(x);
+                    txt = x[0].textContent;
+                    
+                    for(var i =0; i<x.length; i++){
+                        txt += x[i].textContent+"<br>";
+                    }
+                    document.getElementById("xml").innerHTML = txt;
+                }
+            }
+            xhttp.open("get", url, true);
+            xhttp.send();
+        }
+        
+         
+    </script>
+
+
+</body></html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .blue {
+            color: blue
+        }
+
+        .important {
+
+            animation-name: move;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes move {
+            from {
+                background-color: white;
+                margin: 0px;
+                padding: 0px;
+                font-size: 16px;
+                font-weight: normal;
+                color: black;
+            }
+
+            to {
+                background-color: firebrick;
+                margin: 20px;
+                padding: 10px;
+                font-size: xx-large;
+                font-weight: bolder;
+                color: white;
+            }
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <button id="add">Add Class</button>
+    <button id="remove">Remove Class</button>
+    <button id="toggle">Toggle Class</button>
+
+    <h1>오늘은 화요일</h1>
+    <h2>내일은 수요일이겠군요</h2>
+    <p>그럼 그 다음 날은요?</p>
+    <p>그 날은 가장 중요한 날입니다.</p>
+
+    <div>쉬는 날이거든요</div>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#add').click(function(){
+                $('h1,h2,p').addClass('blue');
+                
+            });
+            
+            $('#remove').click(function(){
+                $('h1,h2,p').removeClass('blue');
+                
+            });
+            $('#toggle').click(function(){
+                $('h1,h2,p').addClass('ani');
+                
+            });
+
+
+        });
+    </script>
+
+</body></html>

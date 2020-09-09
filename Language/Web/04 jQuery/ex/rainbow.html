@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .highlight0 {
+            background-color: red
+        }
+
+        .highlight1 {
+            background-color: orange
+        }
+
+        .highlight2 {
+            background-color: yellow
+        }
+
+        .highlight3 {
+            background-color: green
+        }
+
+        .highlight4 {
+            background-color: blue
+        }
+
+        .highlight5 {
+            background-color: navy
+        }
+
+        .highlight6 {
+            background-color: violet
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <button id="color">색깔 입히기</button>
+    <h1>Monday</h1>
+    <h1>Tuesday</h1>
+    <h1>Wednesday</h1>
+    <h1>Thursday</h1>
+    <h1>Friday</h1>
+    <h1>Saturday</h1>
+    <h1>Sunday</h1>
+
+    <script>
+        $(function() {
+            $('#color').click(function() {
+                $('h1').each(function(index) {
+                    $(this).toggleClass('highlight'+index);
+                });
+            });
+           
+        });
+    </script>
+
+</body></html>

@@ -27,7 +27,11 @@ public class Princess {
 		}
 
 		Arrays.sort(flowers);
+		
+		
 		String s = System.getProperty("server.upload.server.xmlPath");
+		
+		
 		System.out.println(s);
 		
 		int endDay = 301;

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {
+            display: block;
+            width: 200px;
+            padding: 5px;
+            border: 1px solid green;
+
+        }
+
+        button {
+            padding: 10px;
+            background: navy;
+            color: white;
+            border: none;
+            display: inline-block;
+            width: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>내가 좋아하는 과일</h1>
+    <img src="../../images/0.jpg" alt="사과" id='img'>
+    <br>
+    <button id="2">Lemon</button>
+    <button id="3">Kiwi</button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+    
+    <script>
+        
+        
+        $(document).ready(function(){
+            var src =''
+            
+           
+            
+//            console.log(a);
+            
+            
+//            $('#lemon').click(function(){
+//                console.log('lemon');
+//                src = '../../images/3.jpg';
+//                $('img').attr('src',src);
+//                $('img').attr('alt',"레몬");
+//                
+//            });
+//            
+//            $('#kiwi').click(function(){
+//                console.log('kiwi');
+//                src = '../../images/2.jpg';
+//                 $('img').attr('src',src);
+//                 $('img').attr('alt','키위');
+//            });
+//            
+            
+            $('button').click(function(){
+                var id = $(this).attr('id');
+                src = '../../images/'+id+'.jpg';
+                console.log(src);
+                $('img').attr('src',src);
+            });
+            
+        });
+       
+    
+    
+    </script>
+
+
+</body></html>
