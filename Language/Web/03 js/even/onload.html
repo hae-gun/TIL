@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<!--<body onload="checkCookies()">-->
+   <body>
+       
+    <h3>body 로딩 완료시 checkCookies 실행</h3>
+    <p id="cookie"></p>
+    <script>
+        window.onload = function checkCookies(){
+            var txt = '';
+            if(navigator.cookieEnabled==true){
+                txt="Cookies are enabled";
+            }else{
+                txt = "Cookies are not enabled";
+            }
+            
+            document.getElementById("cookie").innerHTML = txt;
+            
+        }
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <body onload="init()">
+    <fieldset>
+        <legend>데이터베이스</legend>
+        이름 : <input type="text" id="name">
+        <p>
+            나이 : <input type="number" id="age">
+            <p>
+                주소 : <input type="text" id="addr">
+                <p>
+                    <input type="button" value="입력" onclick="addData()">
+    </fieldset>
+    <fieldset>
+        <legend>결과조회</legend>
+        <select id="list" size="10"></select>
+        <p>
+            <input type="button" value="삭제" onclick="removeData()">
+    </fieldset>
+    
+    <script>
+        var db;
+        function init() {
+            db = window.openDatabase("AddressBook", "1",
+                "AddressBook", 1024 * 1024);
+            db.transaction(function(tx) {
+                tx.executeSql("create table if not exists Addr (" +
+                    "num integer primary key autoincrement, " +
+                    "name, age integer, addr)");
+            });
+            showDatabase();
+        }
+        function showDatabase() {
+            db.transaction(function(tx) {
+                tx.executeSql(
+                    "select * from Addr", [],
+                    function(tx, rs) {
+                        var list = document.getElementById("list");
+                        list.innerHTML = "";
+                        var rows = rs.rows;
+                        for (var i = 0; i < rows.length; i++) {
+                            var row = rows.item(i);
+                            var option = new Option(row.num + " " +
+                                row.name + " " + row.age + " " +
+                                row.addr, row.num);
+                            list.options[list.options.length] = option;
+                        }
+                    });
+            });
+        }
+         function addData() {
+            var name = document.getElementById("name").value;
+            var age = document.getElementById("age").value;
+            var addr = document.getElementById("addr").value;
+            db.transaction(function(tx) {
+                tx.executeSql("insert into Addr (name,age,addr)" +
+                    "values (?,?,?)", [name, age, addr],
+                    function(tx, rs) {
+                        alert("입력 성공");
+                        showDatabase();
+                    });
+            });
+        }
+        function removeData() {
+            var list = document.getElementById("list");
+            if (list.selectedIndex < 0) return;
+            var selected = list.options[list.selectedIndex].value;
+            db.transaction(function(tx) {
+                tx.executeSql("delete from Addr where num=?", [selected], function(tx, rs) {
+                    alert("삭제 성공");
+                    showDatabase();
+                });
+            });
+        }
+        </script>
+</body>
+</body>
+</html>

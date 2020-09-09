@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <h2>Radio &amp; CheckBox &amp; Select</h2>
+    <form action="" name="frm">
+        <fieldset>
+            <p>1. 가장 좋아하는 동물을 선택하시오</p>
+            <input type="radio" name="pet" value="dog" checked>dog
+            <input type="radio" name="pet" value="cat">cat
+            <input type="radio" name="pet" value="fox">fox
+        </fieldset>
+        <hr>
+        <fieldset>
+            <p>2. 가장 좋아하는 나라를 선택하시오</p>
+            <input type="checkbox" name="nation" value="Japan" checked>Japan
+            <input type="checkbox" name="nation" value="Austria">Austria
+            <input type="checkbox" name="nation" value="Canada" >Canada
+        </fieldset>
+        <hr>
+        <select name="song" id="" multiple size="2">
+            <option value="애국가">애국가</option>
+            <option value="야생화">야생화</option>
+            <option value="들국화">들국화</option>
+            <option value="장미" selected>장미</option>
+            
+        </select>
+        <hr> 
+        <input type="button" value="내가 좋아하는..." onclick="chk()">
+    </form>
+    
+    
+    <h2>내가 좋아하는 동물: <span id="pet"></span></h2>
+    <h2>내가 좋아하는 나라: <span id="nation"></span></h2>
+    <h2>내가 좋아하는 노래: <span id="song"></span></h2>
+    <!--  radio box check box 는 name에 붙어있는 value가 넘어감  -->
+    <script>
+        
+        var pet = document.getElementById('pet');
+        var nation = document.getElementById('nation');
+        var song = document.getElementById('song');
+        
+        function chk(){
+            for(var i=0; i<frm.pet.length; i++){
+                if(frm.pet[i].checked){
+                    pet.innerHTML = frm.pet[i].value;
+                    break;
+                }
+            }
+            for(var i=0; i<frm.nation.length; i++){
+                if(frm.nation[i].checked){
+                    nation.innerHTML += frm.nation[i].value +'|';
+                    
+                }
+            }
+             for(var i=0; i<frm.song.length; i++){
+                if(frm.song[i].selected){
+                    song.innerHTML += frm.song[i].value;
+                    break;
+                }
+            }
+        }
+        
+    </script>
+    
+    
+    
+</body>
+</html>

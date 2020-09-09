@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <select name="" id="list" size=10>
+        <option value="fkjfasl">fdfd</option>
+
+    </select>
+    
+    <fieldset>
+        <legend>세션 스토리지</legend>
+        key: <input type="text" id="key">
+        value: <input type="text" id="value">
+        <input type="button" value="입력" id="add">
+        <input type="button" value="삭제" id="remove">
+    </fieldset>
+    
+    <script>
+        var list;
+        var add = document.getElementById("add");
+        var remove = document.getElementById("remove");
+        add.addEventListener("click",addData);
+        remove.addEventListener("click",removeData);
+        displaySS();
+        function addData(){
+            var key = document.getElementById("key").value;
+            var value = document.getElementById("value").value;
+            
+            sessionStorage[key] = value;
+            displaySS();
+        }
+        function displaySS(){
+            list = document.getElementById("list");
+            for(var i=0; i<sessionStorage.length; i++){
+                var key = sessionStorage.key(i);
+                list.add(new Option("key: "+key+", value: "+sessionStorage[key],key));
+            }
+        }
+        
+        
+    
+    </script>
+    
+    
+</body>
+
+</html>

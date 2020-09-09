@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+   <p id="now">Stop Watch</p>
+   <div id="btn">
+       <button id="start" onclick="start()">start</button>
+       <button id="stop" onclick="stop()">stop</button>
+   </div>
+    
+    
+    <script>
+        var time; var flag = true;
+        function start(){
+            if(flag){
+                flag = false;
+            }
+            document.getElementById("start").disable = true;
+            time = setInterval(function(){
+                var date = new Date();
+                var hour = date.getHours();
+                var min = date.getMinutes();
+                var sec = date.getSeconds();
+                var milli = date.getMilliseconds();
+                document.getElementById("now").innerHTML = hour + " : " + min + " : " + sec + " : " + milli;
+            },10);
+        }
+        function stop(){
+            if(!flag){
+                flag = true;
+            }
+            clearInterval(time);
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+</head>
+<body>
+    <script>
+        var city = ['서울','대구','대전','부산'];
+        
+        for( var i in city){
+            console.log(i); // index 출력
+        }
+        console.log('-------------')
+        for (var i of city){
+             console.log(i); // 값을 출력 
+        }
+        console.log('-------------')
+        city.forEach(function(v,i,a){
+            console.log(v);// value 출력 
+            console.log(i);// index  출력
+            console.log(a);// array 출력
+            
+        });
+            
+        console.log('-------------')
+        var base = [10,20,30];
+        var square = base.filter(a=> a>=20).map(function(v){
+            return v*v;
+        });
+        console.log(square.toString());
+        console.log('-------------');
+        
+        var data = ['javascript',20,30,'jquery'];
+        var num = data.filter(function(v){
+            return typeof v === 'number';
+        });
+        console.log(num);
+    
+    
+    </script>
+</body>
+</html>

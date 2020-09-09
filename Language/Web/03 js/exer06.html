@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1 ondblclick="alert('wow')">asdf</h1>
+    <script>
+        function Obj(name, city, gender){
+            this.name=name;this.city=city;this.gender=gender;
+        }
+        
+        var myObj = {name:"tom", city:"seoul", gender:"male"}
+        
+        
+        var json_string = JSON.stringify(myObj);
+        console.log(json_string);
+//        confirm.log(json_string.name);
+        
+        localStorage.setItem("myFriend",json_string);
+        
+        var friend = localStorage.getItem("myFriend");
+        console.log(friend);
+        
+        var obj = JSON.parse(friend);
+        for (var key in obj){
+            document.write("<h3>"+key+":"+obj[key]+"</h3>")
+        }
+    </script>
+</body>
+</html>

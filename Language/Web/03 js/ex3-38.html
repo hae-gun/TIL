@@ -4,11 +4,37 @@
     <meta charset="UTF-8">
     <title>배열 sort()</title>
     <script>
-        var info = [45, 11, 7, 32, 20, 19];        
+        var info = [45, 11, 7, 32, 20, 19];    
+        //info.sort();
+        //결과 11 19 20 32 45 7
+        //sort 를 재정의 하지 않으면 문자열로 비교를 한다.
         info.sort(function(a, b) {            
             return a - b;
         });
         console.log(info.toString());       
+        
+        let numbers = [4,2,5,1,3]
+        
+        numbers.sort((a,b) => a-b);
+        console.log(numbers);
+        
+        var words = ["가을","사랑","미움","Zoo","증오","ace"]
+        
+        document.write("<h3>words: "+words+"<h3>");
+        
+        words.sort();
+        document.write("<h3>words: "+words+"<h3>");
+        
+        
+        var sortedwords = words.sort(function(left,right){
+            return left-right;
+            
+        });
+        sortedwords.reverse();
+        document.write("<h3>words: "+sortedwords+"<h3>");
+        
+        
+        
     </script>
 </head>
 <body>

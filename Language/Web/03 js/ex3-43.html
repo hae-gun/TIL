@@ -26,7 +26,7 @@
             };
             inner.onclick = function(event) {
                 alert('자식 이벤트');
-                // event.stopPropagation();
+                 event.stopPropagation();
             };
         };
     </script>
@@ -35,5 +35,25 @@
     <div id="outer">
         <p id="inner">클릭</p>
     </div>
+    
+    <div><a href="http://www.daum.net" id="daum" >daum</a>
+    </div>
+    
+    <script>
+        
+        function toNaver(){
+            location.href = "http://www.naver.com";
+        }
+        document.getElementById('daum').addEventListener("click",function(e){
+            e.preventDefault();
+            toNaver();
+        });
+    
+    </script>
+    
+    
+    
+    
+    
 </body>
 </html>

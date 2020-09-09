@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>file</title>
+</head>
+
+<body>
+    <h1>file</h1>
+    <input type="file" onchange="previewFile()">
+    <br>
+    <img src="" height="200" alt="Image preview...">
+
+    <script>
+        function previewFile() {
+            const preview = document.querySelector('img');
+            console.log(document.querySelector('input[type=file]').files[0]);
+            const file = document.querySelector('input[type=file]').files[0];
+
+            const reader = new FileReader();
+            reader.addEventListener("load", function() {
+                preview.src = reader.result;
+            }, false);
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+
+        }
+    </script>
+
+</body></html>

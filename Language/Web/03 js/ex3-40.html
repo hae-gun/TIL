@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Date 객체</title>
     <script>
+        console.log(new Date());
         var dateObj = new Date(2022, 9, 30, 10, 30);        
         var dateInfo = {
             year: dateObj.getFullYear(),
@@ -11,11 +12,17 @@
             date: dateObj.getDate(),
             hours: dateObj.getHours(),
             minutes: dateObj.getMinutes(),
-            nowDate : dateObj.toUTCString()
+            nowDate : dateObj.toUTCString(),
+            getTime : dateObj.getTime()
         }
         for(var i in dateInfo) {
             console.log(i + ':' + dateInfo[i]);
-        }        
+        }       
+        
+        var today = new Date(2018,9,1);
+        var afterDay = new Date();
+        
+        
     </script>
 </head>
 <body>

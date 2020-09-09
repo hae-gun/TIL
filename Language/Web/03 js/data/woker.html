@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>누적 합계를 구할 숫자를 입력하세요</h2>
+    숫자: <input type="number" id="num">
+    <button onclick="cal()">계산</button>
+    <button onclick="stopCal()">계산 중지</button>
+
+    <script>
+        var num = document.getElementById('num');
+
+        function cal() {
+            var result = 0;
+            for (var i = 1; i <= num.value; i++) {
+                result += i;
+                console.log(result);
+            }
+            alert(result);
+        }
+    </script>
+</body></html>

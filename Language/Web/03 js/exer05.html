@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Nested Object</h1>
+   <hr>
+   <div id="tom"></div>
+   <div id="jane"></div>
+   <script>
+       
+       function pet(kind,name){
+           this.kind = kind;
+           this.name = name;
+       }
+       function friend(name,age,pet){
+           this.name = name;
+           this.age = age;
+           this.pet = pet;
+       }
+       
+       var f1 = new friend("jane",19,[new pet("dog","wal","wol")]);
+       
+       var f2 = {
+           "name":"Tom",
+           "age":33,
+           "pet": [
+               {"kind":"dog","name":["thunder","sky"]},
+               {"kind":"cat","name":["sally","terry"]},
+               {"kind":"bird","name":["e1","e2"]}
+           ]
+       };
+       
+       var x = "<h1>"+f2.name+"'s Pet</h1>"
+       
+       
+       for (var i of f2.pet){
+           console.log("i: ",i);
+//           x += "<h2>" + f2.pet[i].kind +"<h2>" for in
+           x += "<h2>" + i.kind +"<h2>" // for of
+           for (var j of i.name){
+               x += "<p>" + j + "</p>"
+               console.log("j: ",j);
+           }
+
+       }
+       
+       var y = "<h1>"+f1.name+"</h1>"
+       
+       for (var i of f1.pet){
+           y += "<h2>" + i.kind+ "</h2>"
+           for (var j of i.name){
+               y += "<p>" + j + "</p>"
+               console.log("j: ",j);
+           }
+       }
+       
+       document.getElementById("jane").innerHTML = y;
+       document.getElementById("tom").innerHTML = x;
+    </script>
+    
+</body>
+</html>

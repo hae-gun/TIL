@@ -15,12 +15,26 @@
             console.log(document.forms['frm1'].elements['search'].placeholder);
             console.log(document.forms['frm2']['subject'].placeholder);
         }
+//        document.addEventListener('submit()',function(event){
+//            
+//            
+//        });
+        function sub(){
+            
+            if(frm1.search.value == '' || frm1.search.value ==null){
+                frm1.search.placeholder = "값을 입력하세요";
+                frm1.search.focus();
+                return;
+            }
+            frm1.submit();
+            frm1.clear();
+        }
     </script>
 </head>
 <body>
     <form action="#" name="frm1">
         <input type="search" name="search" placeholder="검색어입력">
-        <input type="submit" value="확인">
+        <input type="button" onclick="sub()" value="확인">
     </form>
     <form action="#" name="frm2">
         <input type="text" name="subject" placeholder="과목입력">

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        #container {
+            width: 150;
+            height: 150;
+            background: black;
+            position: relative;
+        }
+        #box{
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="box">
+
+        </div>
+    </div>
+
+    <script>
+        function move() {
+            mv.disabled = true;
+            position = 0;
+            box.style.top = 0;
+            time = setInterval(rightmove, 10);
+        }
+
+        function rightmove() {
+            if (position >= 150) {
+                clearInterval(time);
+                downmove
+            } else {
+                position += 1;
+                box.style.left = position + "px";
+            }
+        }
+
+        function downmove() {
+
+        }
+
+        function leftmove() {
+
+        }
+
+        function upmove() {
+
+        }
+
+        function stop() {
+            clearInterval(time);
+            mv.disabled = false;
+        }
+    </script>
+
+
+</body></html>

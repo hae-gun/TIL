@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        div{
+            border:1px solid green;
+            padding: 10px;
+            min-width:200px;
+            height: 100px;
+            font-size: 40px;
+            margin: 20px;
+            line-height: 90px;
+        }
+    </style>
+</head>
+<body>
+    <h2>1보다 크고 10보다 작은 정수를 입력하시오</h2>
+    <input type="text" id="num">
+    <button type="button" onclick="check()">제출</button>
+    <div id="msg">존잘</div>
+    
+    <script>
+    
+        var num = document.getElementById('num');
+        var txt='';
+        
+        
+        function check(){
+            var val = num.value;
+            
+            
+            if(val == ''){
+                txt= '비어있습니다.';
+            }else if(isNaN(val)){
+                txt= '숫자가 아닙니다.';
+            }else if(val<=1 || val >= 10){
+                txt = '범위가 넘어감.';
+            }else{
+                txt = val;
+            }
+            document.getElementById('msg').innerHTML = txt;
+            
+        }
+        
+                     
+                     
+    </script>
+</body>
+</html>

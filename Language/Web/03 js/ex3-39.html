@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <title>Math 객체</title>
     <script>
-        var luckyNumber = [];
-        var num = 0;
-        for(var i = 1; i <= 100; i++) {
-            luckyNumber.push(i); // 1(index 0) ~ 100(index 99)
+        
+        var match = function() {
+            var myNum = document.getElementById('guessNum').value;
+            
+            
+            
+            var luckyNumber = [];
+            var num = 0;
+            for (var i = 1; i <= 100; i++) {
+                luckyNumber.push(i); // 1(index 0) ~ 100(index 99)
+            }
+            num = Math.floor(Math.random() * luckyNumber.length); // 0 ~ 99
+            console.log(luckyNumber.toString());
+            console.log('오늘 행운의 당첨번호은 ' + luckyNumber[num] + '입니다.');
+            
+            
+            if(luckyNumber[num]==myNum){
+               document.getElementById('result').innerHTML = "축 당첨!"
+            }else{
+                document.getElementById('result').innerHTML = "꽝 !";
+            }
+            
         }
-        num = Math.floor(Math.random() * luckyNumber.length); // 0 ~ 99
-        console.log(luckyNumber.toString()); 
-        console.log('오늘 행운의 당첨번호은 ' + luckyNumber[num] + '입니다.');
     </script>
 </head>
+
 <body>
-</body>
-</html>
+
+
+    행운의 숫자: <input type="text" id="guessNum" name="number" /><br>
+    <span id="result"></span>
+    <br>
+    <button onclick="match()">정답제출</button>
+
+
+</body></html>

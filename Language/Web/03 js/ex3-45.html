@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>setInterval 메서드</title>
-    <script>
-        var i = 0;
-        setInterval(function() {
-            i++;
-            alert('2초 마다 실행' + i);
-        }, 2000);
-    </script>
+    
 </head>
 <body>
+
+   <button id="btn">stop</button>
+   
+    <script>
+        var i = 0;
+        var printNum = setInterval(function() {
+            i++;
+            console.log(i);
+        }, 2000);
+        
+        var hi = function hi(){
+            console.log("hi!");
+        }
+        
+        btn.onclick = function(){
+            clearInterval(printNum);
+        }
+    </script>
 </body>
 </html>
