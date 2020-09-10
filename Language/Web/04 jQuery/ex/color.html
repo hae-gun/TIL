@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        .redBox{
+            background-color: red;
+            width: 100px; height: 100px;
+            margin: 10px;
+            float:left;
+            border: 3px solid green;
+        }
+        .box0{background-color: tomato}
+        .box1{background-color: teal}
+        .box2{background-color: yellowgreen}
+    
+    </style>
+    
+</head>
+<body>
+    <button id="make">만들기</button>
+    <button id="changeColor">색깔 바꾸기</button>
+    <button id="remove">없애기</button>
+    <hr>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+    
+    <script>
+        $(function(){
+           $('button#make').click(function() {
+            $('div').each(function() {
+                $(this).addClass('redBox');
+            });
+        });
+        $('button#changeColor').click(function() {
+            var i = 0;
+            $('div').each(function() {
+                $(this).addClass('box' + i);
+                i = i + 1;
+            });
+        });
+        $('button#remove').click(function() {
+            $('div').each(function() {
+                $(this).removeClass();
+            });
+        }); 
+        })
+        
+    </script>
+    
+</body>
+</html>

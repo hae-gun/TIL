@@ -6,10 +6,12 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script>
         $(document).ready(function() {
+            // m1 밑에 만든것을 넣어줌 (id로 잡은경우)
             $("#m1").prepend("<p>삽입1_1</p>");
             $("#m1").append("<p>삽입1_2</p>");
             $("#m1").before("<p>삽입1_3</p>");
-            $("#m1").after("<p>삽입1_4</p>");            
+            $("#m1").after("<p>삽입1_4</p>");   
+            // 만든것을 m1밑에 넣어줌 (넣을 값을 잡은경우)
             $("<p>삽입2_1</p>").prependTo("#m2");
             $("<p>삽입2_2</p>").appendTo("#m2");
             $("<p>삽입2_3</p>").insertBefore("#m2");

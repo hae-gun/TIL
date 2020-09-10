@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메소드 체이닝(chaning) 중에 최초 엘리먼트로 돌아가기</title>
+<style>
+  p, div { margin:5px; padding:5px; }
+  .border { border: 2px solid red; }
+  .background { background:yellow; }
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+<script>
+    $(function(){
+//        $('div').addClass('border').find('p').addClass('background');
+        $('div:first').find('p').addClass('background').end().addClass('border');
+    });
+    
+    
+    </script>
+</head>
+<body>
+  <div>
+    <p>첫째 문장</p>
+    <div>가운데</div>
+    <p>둘째 문장</p>
+  </div>
+</body>
+</html>

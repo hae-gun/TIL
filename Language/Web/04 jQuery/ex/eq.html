@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+       <style>
+           span{
+               display: none;
+           }
+    
+        </style>
+    <script>
+    
+    
+        $(function(){
+            
+            $('h1').css('background','skyblue');
+            $('h1:eq(4)').css('background','gold');
+            $('h1').eq(1).css('background','firebrick');
+            $('h1:last-child').css('background','blue');
+            $('h1:last-child').prev().css('background','silver');
+            $('h1.tree').css('background','green');
+            $('h1').not('.tree').css('border-left','5px solid green');
+        
+            $('input').focus(function(){
+               $(this).css('background','yellow').next().css('display','inline');
+            });
+        
+        });
+    
+    
+    </script>
+
+</head>
+<body>
+    <h1>월</h1>
+    <h1 class="fire">화</h1>
+    <h1>수</h1>
+    <h1 class="tree">목</h1>
+    <h1>금</h1>
+    <h1>토</h1>
+    <h1>일</h1>
+    
+    
+    
+    <form action="">
+    <input id="focus" type="text" name="id"><span>id를 적어주세요</span>
+    
+    <input type="text" name="pw"><span>password</span>
+    </form>
+    
+    
+</body>
+</html>

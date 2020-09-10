@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        h1{
+            color: brown;
+        }
+        .remove{
+            margin-left: 5px;
+            background-color: white;
+            color: red; border: none; cursor: pointer;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script>
+    
+        $(function(){
+            
+            var txt ='';
+            $('#add').click(function(){
+                txt = $('input').val();
+                
+                console.log(txt);
+               
+                
+                if(txt!=''){
+                    var elem = $('<li></li>').text(txt).append('<button class="remove">X</button>');   
+                    $('#myList').append(elem)
+                    $('input').val('');
+                }
+                
+                
+            });
+            
+            $('#myList').on('click','.remove',function(index){
+               $(this).parent().remove();
+            });
+           
+        });
+         
+            
+        
+    
+    
+    </script>
+    
+    
+</head>
+<body>
+   <h1>My To-Do List</h1>
+    <input type="text" placeholder="New Item">
+    <button id="add">할 일 추가</button>
+    <ol id="myList"></ol>
+   
+    
+</body>
+</html>

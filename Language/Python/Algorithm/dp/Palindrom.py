@@ -1,7 +1,5 @@
 # 팰린드롬
 s = input()
-
-
 stack = []
 
 stack.append(s)
