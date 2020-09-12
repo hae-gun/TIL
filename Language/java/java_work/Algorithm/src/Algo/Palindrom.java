@@ -45,10 +45,6 @@ public class Palindrom {
 					break;
 				}
 			}
-			
-			
-			
-			
 		}
 		System.out.println(set);
 		Long end = System.currentTimeMillis();

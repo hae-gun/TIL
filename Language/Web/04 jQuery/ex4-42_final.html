@@ -59,12 +59,14 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script>
         $(document).ready(function() {
+            $("#control a:first").addClass("on").add("#pic > div:first").show();
+            
             $("#control a").click(function() {
                 var num = Number($(this).text()) - 1; // 0, 1, 2, 3                 
                 $(this).addClass("on").siblings().removeClass("on");
                 $("#pic > div").filter(":visible").stop(true).fadeOut(350).end().eq(num).stop(true).fadeIn(350);
             });
-            $("#control a:first").addClass("on").add("#pic > div:first").show();
+            
         });
     </script>
 </head>

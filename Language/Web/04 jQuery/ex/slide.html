@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        #wrap{
+            width:100%;
+            
+        }
+        div{
+            width:100%;
+            padding:20px;
+            text-align-last: center;
+        }
+        #flip{
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+        #panel{
+            display: none;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 2;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="wrap">
+        <div id="flip">오늘의 명언</div>
+        <div id="panel">
+            <pre>
+                오늘 책을 한 권 읽지 않으면
+                    내일 눈에 가시가 돋고
+                        모레 심장이 얼어붙게 되리라
+            </pre>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('#flip').on("mouseenter focusin",function(){
+               console.log('in');
+//                $('#panel').css('display','inline-block');
+                $('#panel').slideToggle('slow','swing');
+            }).on("mouseleave",function(){
+                 console.log('out');
+                $('#panel').slideToggle('slow','swing');
+//                $('#panel').css('display','none');
+            });
+        });
+        
+    </script>
+</body>
+</html>
