@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+    </title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+    
+    
+</head>
+<body>
+    <button>성인</button>
+    <h1 class="adult"></h1>
+    
+    <ul>
+        <li class="friday">wow</li>
+        <li>wow</li>
+        <li class="fog">wow</li>
+        <li>wow</li>
+        
+    </ul>
+    
+    <script>
+        var members = [32,33,16,57]
+        $(function(){
+            
+            $('button').click(function(){
+                result = members.filter(function(age){
+                    age >= 18;
+                });
+//                $('.adult').text(result);
+//                $("'li[class*-'f']").css("background","red");
+                $('li').filter('[class*="f]').css("background","red");
+            });
+            
+            
+        });
+            
+        
+    </script>
+</body>
+</html>

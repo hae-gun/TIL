@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+      div{
+         float:left;
+         margin: 10px;
+         padding: 10px;
+         border: 2px solid red;
+         border-radius: 10px;
+         text-align: center;
+      }
+      
+   </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+        $.ajax({url: "name.xml",dataType: "xml", success: function(data){
+         console.log(data);
+            alert("wqow");
+            show(data);
+        }
+        });
+    });
+        var txt = '';
+        function show(data){
+//            var xmlDoc = $.parseXML(data);
+            console.log(data);
+                  
+            $(data).find('friend').each(function(index){
+                console.log(index);
+                txt+='<div><h1>'+$(this).find('name').text()+'</h1><p>'+$(this).find('language').text()+'</p></div>';
+            });
+        document.body.innerHTML = txt;
+        
+        }
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

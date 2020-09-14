@@ -1,22 +1,37 @@
 # 2
-
+import itertools
+import operator
 
 def solution(orders, course):
     answer = []
 
     
     alphabet = dict()
-
+    sets = []
     for i in orders:
-        for word in i:
-            if word in alphabet:
-                alphabet[word] += 1
-            else:
-                alphabet[word] = 1
-    
+        tmp = list(i)
+        combiSet = []
+        for j in range(2,len(tmp)):
+            combiSet.append(list(itertools.combinations(tmp,j)))
+        
+        
+       # print(combiSet)
+        
+        for j in combiSet:
+            for k in j:
+                tmp = ''.join(list(k))
+                if tmp in alphabet:
+                    alphabet[tmp] += 1
+                else:
+                    alphabet[tmp] = 1
+            #sets.append(word)
+
+        #print(sets)
+    sdict= sorted(alphabet.items(), key=operator.itemgetter(1),reverse=True)
 
 
-    print(alphabet)
+        
+    print(sdict)
     
 
     return answer

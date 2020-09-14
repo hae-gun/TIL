@@ -1,0 +1,10 @@
+<friends>
+    <friend>
+        <name>김길동</name>
+        <language>java</language>
+    </friend>
+       <friend>
+        <name>고길동</name>
+        <language>c++</language>
+    </friend>
+</friends>
