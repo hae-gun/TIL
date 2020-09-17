@@ -1,0 +1,118 @@
+*{box-sizing: border-box}
+body{margin: 0; padding: 0;}
+
+h2 {
+            background-color: black;
+            color: white;
+            padding: 20px;
+        }
+h3{margin: 20px 10px;
+            background-color: dimgrey; padding: 10px;width:300px;color: white;
+        }
+p{margin: 10px;padding: 10px;}
+table {
+	    border-collapse: collapse;
+	    border-spacing: 0;
+	    width: 100%;
+	    border: 1px solid #ddd;
+	}
+	
+th, td {
+	    text-align: left;
+	    padding: 8px;
+	}
+	
+tr:nth-child(even){background-color: #f2f2f2}
+
+th:hover, td:hover{
+            
+           color: #ff0080;
+            background-color: pink;
+            
+        }
+        
+
+input{
+            padding: 10px;
+            margin-bottom: 5px;
+            display: block;
+	}
+input[type=text]{
+    	border: 1px solid green;
+	}
+input:disabled{
+    	background-color: lightcoral;
+	}
+input:enabled{
+    	background-color: bisque;
+	}
+input:checked{
+	    width: 30px;
+	    height: 30px;
+	}
+input:focus{
+    	height:100px;
+	}
+	
+div{
+            height: 100px;
+            margin: 5px;
+            background-color: tomato;
+        }
+div#top{
+    width:50px;
+    height: 20px;
+    background-color: rgba(0,0,0,0.3);
+    color:white;
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            background-color: #ddd;
+        }
+        li a{
+            display: block;
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        a:link, a:visited{
+            color:red;
+        }
+/*
+        a:visited{
+            color:green;
+        }
+*/
+        a:hover{
+            background-color: #555;
+        }
+        a:active{
+            color:hotpink;
+        }
+        
+ .btn{
+            border:none;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            background-color: white;
+            color:black;
+            cursor: pointer;
+            transition-duration: 0.4s;
+            box-sizing: border-box;
+        }
+        .btn:hover{
+            border: 2px solid green;
+            border-radius: 10px;
+        }
+        
+
+        

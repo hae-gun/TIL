@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.js"
+  integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+  crossorigin="anonymous"></script>
+<body>
+	<h2>보고싶은 구구단 숫자 선택하기</h2>
+	<form action="gugu.jsp" name="frm">
+	<label for="num">숫자:</label><input type="text" name="num" id="num"/>
+	<input type="submit" value="제출" />
+	</form>
+	
+	<script>
+	
+		/* $(function(){
+			$(frm).on("submit",function(e){
+				e.preventDefault();
+				var numVal = $('#num').val();
+				
+				
+				if(numVal==null || numVal > 9 || numVal<2){
+					alert("오류(2~9 입력)");
+					return false;
+				}
+				frm.submit();
+			});
+			
+		});
+	 */
+	
+	</script>
+</body>
+</html>

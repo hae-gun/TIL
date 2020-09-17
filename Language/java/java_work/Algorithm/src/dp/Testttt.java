@@ -1,6 +1,7 @@
 package dp;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Testttt {
 	public static void main(String[] args) {
@@ -21,6 +22,11 @@ public class Testttt {
 		
 		LocalDate a = LocalDate.now();
 		System.out.println(a.getMonthValue());
+		ArrayList<Integer> b = new ArrayList<Integer>();
+		b.add(1);
+		System.out.println(b.get(0));
 		
+		boolean[] set = new boolean[1];
+		System.out.println(set[0]);
 	}
 }

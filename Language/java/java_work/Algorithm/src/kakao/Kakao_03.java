@@ -55,6 +55,7 @@ public class Kakao_03 {
 			int score = q.score;
 			
 			
+			
 //			System.out.printf("%s %s %s %s %d\n",lan,position,year,food,score);
 			for (Info mem : infos) {
 				if(mem.score>=score) {
