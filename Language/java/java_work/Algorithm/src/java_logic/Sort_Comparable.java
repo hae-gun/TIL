@@ -3,7 +3,7 @@ package java_logic;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class CollectionSort {
+public class Sort_Comparable {
 	public static void main(String[] args) {
 		ArrayList<myObject> list = new ArrayList<myObject>();
 		
