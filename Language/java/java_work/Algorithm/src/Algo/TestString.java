@@ -59,8 +59,12 @@ public class TestString {
 //		System.out.println(sb.toString());
 		mySingletone ms = mySingletone.getInstance();
 		mySingletone ms2 = mySingletone.getInstance();
+		
+		
 		System.out.println(ms.getNumber());
+		
 		System.out.println(ms2.getNumber());
+		
 		System.out.println(ms.getNumber());
 	}
 
