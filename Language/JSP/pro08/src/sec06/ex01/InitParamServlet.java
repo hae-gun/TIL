@@ -13,19 +13,17 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class InitParamServlet
  */
-@WebServlet(name="initParamServlet",
-        urlPatterns = { "/sInit", "/sInit2" }, initParams = {
-		@WebInitParam(name = "email", value = "admin@jweb.com"), 
-		@WebInitParam(name = "tel", value = "010-1111-2222") })
+@WebServlet(name = "initParamServlet", urlPatterns = { "/sInit", "/sInit2" }, initParams = {
+		@WebInitParam(name = "email", value = "admin@jweb.com"), @WebInitParam(name = "tel", value = "010-1111-2222") })
 public class InitParamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String email = getInitParameter("email");
@@ -38,5 +36,4 @@ public class InitParamServlet extends HttpServlet {
 
 	}
 
-	
 }
