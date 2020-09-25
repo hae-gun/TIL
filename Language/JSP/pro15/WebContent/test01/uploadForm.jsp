@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
+<c:set var="contextPath"  value="${pageContext.request.contextPath}"/>
 
 <%
   request.setCharacterEncoding("UTF-8");
@@ -14,7 +14,8 @@
 <meta charset="UTF-8">
  <head>
    <title>파일 업로드창</title>
- </head> <body>
+ </head> 
+ <body>
    <form action="${contextPath}/upload.do"  method="post" enctype="multipart/form-data" > <!-- multipart 중요! 인코딩을 안하는 것 -->
       파일1: <input type="file" name="file1" ><br>
       파일2: <input type="file" name="file2" > <br>
@@ -23,5 +24,5 @@
       파라미터3: <input type="text" name="param3" > <br>
  <input type="submit" value="업로드" >
 </form>
- </body>
+</body>
 </html>

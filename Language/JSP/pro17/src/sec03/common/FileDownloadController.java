@@ -1,4 +1,4 @@
-package sec01.ex02;
+package sec03.common;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,17 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FileDownload
+ * Servlet implementation class FileDownloadController
  */
 @WebServlet("/download.do")
-public class FileDownload extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class FileDownloadController extends HttpServlet {
+	private static String ARTICLE_IMAGE_REPO = "/Users/choehyegeun/Downloads/test";
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException {
 		doHandle(request, response);
 	}
 
@@ -37,20 +37,16 @@ public class FileDownload extends HttpServlet {
 	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=utf-8");
-		String file_repo = "/Users/choehyegeun/Downloads/test";
-		String fileName = (String) request.getParameter("fileName");
-		System.out.println("fileName=" + fileName);
-		
-		// 사진 내보낼 출력 객체 생성 및 response에 헤더 추가
+		String imageFileName = (String) request.getParameter("imageFileName");
+		String articleNO = request.getParameter("articleNO");
+		System.out.println("imageFileName=" + imageFileName);
 		OutputStream out = response.getOutputStream();
-//		String downFile = file_repo + "\\" + fileName;
-		String downFile = file_repo + "/" + fileName;
-		File f = new File(downFile);
+		String path = ARTICLE_IMAGE_REPO + "/" + articleNO + "/" + imageFileName;
+		File imageFile = new File(path);
+
 		response.setHeader("Cache-Control", "no-cache");
-		response.addHeader("Content-disposition", "attachment; fileName=" + fileName);
-		
-		// 파일 읽어서 출력 개체로 출력.
-		FileInputStream in = new FileInputStream(f);
+		response.addHeader("Content-disposition", "attachment;fileName=" + imageFileName);
+		FileInputStream in = new FileInputStream(imageFile);
 		byte[] buffer = new byte[1024 * 8];
 		while (true) {
 			int count = in.read(buffer);
