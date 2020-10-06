@@ -147,6 +147,7 @@ public class BoardDAO {
 		try {
 			conn = dataFactory.getConnection();
 			int parentNO = article.getParentNO();
+			System.out.println("부모글>>>>>>>>>>>>>>>"+parentNO);
 			String title = article.getTitle();
 			String content = article.getContent();
 			String id = article.getId();
@@ -154,6 +155,7 @@ public class BoardDAO {
 			String query = "INSERT INTO t_board (articleNO, parentNO, title, content, imageFileName, id)"
 					+ " VALUES (?, ? ,?, ?, ?, ?)";
 			System.out.println(query);
+			System.out.println("id:"+id);
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, articleNO);
 			pstmt.setInt(2, parentNO);
@@ -189,7 +191,7 @@ public class BoardDAO {
 			String imageFileName = rs.getString("imageFileName");
 			String id = rs.getString("id");
 			Date writeDate = rs.getDate("writeDate");
-
+			
 			article.setArticleNO(_articleNO);
 			article.setParentNO(parentNO);
 			article.setTitle(title);

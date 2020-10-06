@@ -53,6 +53,7 @@
 	 
 	 function fn_reply_form(url, parentNO){
 		 var form = document.createElement("form");
+		 form.setAttribute("charset", "UTF-8");
 		 form.setAttribute("method", "post");
 		 form.setAttribute("action", url);
 	     var parentNOInput = document.createElement("input");

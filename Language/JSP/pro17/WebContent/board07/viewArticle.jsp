@@ -84,7 +84,7 @@
       글번호
    </td>
    <td >
-    <input type="text"  value="${article.articleNO }"  disabled />
+    <input type="text"  value="${article.articleNO}"  disabled />
     <input type="hidden" name="articleNO" value="${article.articleNO}"  />
    </td>
   </tr>

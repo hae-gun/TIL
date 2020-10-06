@@ -26,7 +26,7 @@ import org.apache.commons.io.FileUtils;
 /**
  * Servlet implementation class BoardController
  */
-/*@WebServlet("/board/*")*/
+@WebServlet("/board/*")
 public class BoardController extends HttpServlet {
 	private static String ARTICLE_IMAGE_REPO = "/Users/choehyegeun/Downloads/test";
 	BoardService boardService;
@@ -45,7 +45,10 @@ public class BoardController extends HttpServlet {
 	 *      response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)  throws ServletException, IOException {
+		System.out.println("get");
+		System.out.println("method: "+request.getMethod());
 		doHandle(request, response);
+		System.out.println("session: "+request.getSession().getAttribute("parentNO"));
 	}
 
 	/**
@@ -53,7 +56,10 @@ public class BoardController extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("post");
+		System.out.println("method: "+request.getMethod());
 		doHandle(request, response);
+		System.out.println("session: "+request.getSession().getAttribute("parentNO"));
 	}
 
 	private void doHandle(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -107,13 +113,13 @@ public class BoardController extends HttpServlet {
 				articleVO.setImageFileName(imageFileName);
 				articleNO = boardService.addArticle(articleVO);
 				if (imageFileName != null && imageFileName.length() != 0) {
-					File srcFile = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName);
-					File destDir = new File(ARTICLE_IMAGE_REPO + "\\" + articleNO);
+					File srcFile = new File(ARTICLE_IMAGE_REPO + "/" + "temp" + "/" + imageFileName);
+					File destDir = new File(ARTICLE_IMAGE_REPO + "/" + articleNO);
 					destDir.mkdirs();
 					FileUtils.moveFileToDirectory(srcFile, destDir, true);
 				}
 				PrintWriter pw = response.getWriter();
-				pw.print("<script>" + "  alert('������ �߰��߽��ϴ�.');" + " location.href='" + request.getContextPath()
+				pw.print("<script>" + "  alert('작성완료!');" + " location.href='" + request.getContextPath()
 						+ "/board/listArticles.do';" + "</script>");
 
 				return;
@@ -121,7 +127,7 @@ public class BoardController extends HttpServlet {
 				String articleNO = request.getParameter("articleNO");
 				articleVO = boardService.viewArticle(Integer.parseInt(articleNO));
 				request.setAttribute("article", articleVO);
-				nextPage = "/board07/viewArticle.jsp";
+				nextPage = "/board06/viewArticle.jsp";
 			} else if (action.equals("/modArticle.do")) {
 				Map<String, String> articleMap = upload(request, response);
 				int articleNO = Integer.parseInt(articleMap.get("articleNO"));
@@ -137,39 +143,44 @@ public class BoardController extends HttpServlet {
 				boardService.modArticle(articleVO);
 				if (imageFileName != null && imageFileName.length() != 0) {
 					String originalFileName = articleMap.get("originalFileName");
-					File srcFile = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName);
-					File destDir = new File(ARTICLE_IMAGE_REPO + "\\" + articleNO);
+					File srcFile = new File(ARTICLE_IMAGE_REPO + "/" + "temp" + "/" + imageFileName);
+					File destDir = new File(ARTICLE_IMAGE_REPO + "/" + articleNO);
 					destDir.mkdirs();
 					FileUtils.moveFileToDirectory(srcFile, destDir, true);
 					;
-					File oldFile = new File(ARTICLE_IMAGE_REPO + "\\" + articleNO + "\\" + originalFileName);
+					File oldFile = new File(ARTICLE_IMAGE_REPO + "/" + articleNO + "/" + originalFileName);
 					oldFile.delete();
 				}
 				PrintWriter pw = response.getWriter();
-				pw.print("<script>" + "  alert('���� �����߽��ϴ�.');" + " location.href='" + request.getContextPath()
+				pw.print("<script>" + "  alert('수정완료!');" + " location.href='" + request.getContextPath()
 						+ "/board/viewArticle.do?articleNO=" + articleNO + "';" + "</script>");
 				return;
 			} else if (action.equals("/removeArticle.do")) {
 				int articleNO = Integer.parseInt(request.getParameter("articleNO"));
 				List<Integer> articleNOList = boardService.removeArticle(articleNO);
 				for (int _articleNO : articleNOList) {
-					File imgDir = new File(ARTICLE_IMAGE_REPO + "\\" + _articleNO);
+					File imgDir = new File(ARTICLE_IMAGE_REPO + "/" + _articleNO);
 					if (imgDir.exists()) {
 						FileUtils.deleteDirectory(imgDir);
 					}
 				}
 
 				PrintWriter pw = response.getWriter();
-				pw.print("<script>" + "  alert('���� �����߽��ϴ�.');" + " location.href='" + request.getContextPath()
+				pw.print("<script>" + "  alert('삭제완료!');" + " location.href='" + request.getContextPath()
 						+ "/board/listArticles.do';" + "</script>");
 				return;
 
 			} else if (action.equals("/replyForm.do")) {
+				System.out.println("method"+request.getMethod());
+				System.out.println(request.getParameter("parentNO"));
+				
 				int parentNO = Integer.parseInt(request.getParameter("parentNO"));
 				session = request.getSession();
 				session.setAttribute("parentNO", parentNO);
-				nextPage = "/board06/replyForm.jsp";
+				nextPage = "/board07/replyForm.jsp";
+				
 			} else if (action.equals("/addReply.do")) {
+			
 				session = request.getSession();
 				int parentNO = (Integer) session.getAttribute("parentNO");
 				session.removeAttribute("parentNO");
@@ -183,18 +194,21 @@ public class BoardController extends HttpServlet {
 				articleVO.setContent(content);
 				articleVO.setImageFileName(imageFileName);
 				int articleNO = boardService.addReply(articleVO);
+				
 				if (imageFileName != null && imageFileName.length() != 0) {
-					File srcFile = new File(ARTICLE_IMAGE_REPO + "\\" + "temp" + "\\" + imageFileName);
-					File destDir = new File(ARTICLE_IMAGE_REPO + "\\" + articleNO);
+					File srcFile = new File(ARTICLE_IMAGE_REPO + "/" + "temp" + "/" + imageFileName);
+					File destDir = new File(ARTICLE_IMAGE_REPO + "/" + articleNO);
 					destDir.mkdirs();
 					FileUtils.moveFileToDirectory(srcFile, destDir, true);
 				}
 				PrintWriter pw = response.getWriter();
-				pw.print("<script>" + "  alert('����� �߰��߽��ϴ�.');" + " location.href='" + request.getContextPath()
+				pw.print("<script>" + "  alert('답글작성완료!');" + " location.href='" + request.getContextPath()
 						+ "/board/viewArticle.do?articleNO="+articleNO+"';" + "</script>");
+				
+				
 				return;
 			}
-
+			System.out.println("this is the end.");
 			RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);
 			dispatch.forward(request, response);
 		} catch (Exception e) {
@@ -232,7 +246,7 @@ public class BoardController extends HttpServlet {
 						String fileName = fileItem.getName().substring(idx + 1);
 						System.out.println("���ϸ�:" + fileName);
 								articleMap.put(fileItem.getFieldName(), fileName);  //�ͽ��÷η����� ���ε� ������ ��� ���� �� map�� ���ϸ� ����);
-						File uploadFile = new File(currentDirPath + "\\temp\\" + fileName);
+						File uploadFile = new File(currentDirPath + "/temp/" + fileName);
 						fileItem.write(uploadFile);
 
 					} // end if
