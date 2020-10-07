@@ -41,7 +41,7 @@ public class MemberDAO {
 	      return memberVO;		
 	   }
 
-	public List<MemberVO> selectMemberByPwd(int pwd) {
+	public List<MemberVO> selectMemberByPwd(String pwd) {
 	sqlMapper = getInstance();
 	SqlSession session = sqlMapper.openSession();
 	List<MemberVO> membersList = null;

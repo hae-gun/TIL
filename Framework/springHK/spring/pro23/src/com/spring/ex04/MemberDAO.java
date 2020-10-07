@@ -42,7 +42,7 @@ public class MemberDAO {
 	      return memberVO;		
 	   }
 
-	public List<MemberVO> selectMemberByPwd(int pwd) {
+	public List<MemberVO> selectMemberByPwd(String pwd) {
 	sqlMapper = getInstance();
 	SqlSession session = sqlMapper.openSession();
 	List<MemberVO> membersList = null;
@@ -61,7 +61,7 @@ public class MemberDAO {
 	public int insertMember2(Map<String,String> memberMap){
         sqlMapper=getInstance();
         SqlSession session=sqlMapper.openSession();
-        int result= result=session.insert("mapper.member.insertMember2",memberMap);
+        int result=session.insert("mapper.member.insertMember2",memberMap);
         session.commit();	
         return result;		
 	}

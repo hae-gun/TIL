@@ -25,10 +25,12 @@ public class MemberServlet extends HttpServlet {
 		MemberDAO dao = new MemberDAO();
 		//String name = dao.selectName();
 		int pwd = dao.selectPwd();
+		String name = dao.selectName();
 		PrintWriter pw = response.getWriter();
 		pw.write("<script>");
-		//pw.write("alert(' ÀÌ¸§: " + name +"');");
-		pw.write("alert(' ºñ¹Ð¹øÈ£ : "+ pwd+"');");
+		//pw.write("alert(' ï¿½Ì¸ï¿½: " + name +"');");
+		pw.write("alert(' name : "+ name+"');");
+		pw.write("alert(' password : "+ pwd+"');");
 		pw.write("</script>");
 
 	}

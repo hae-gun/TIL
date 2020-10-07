@@ -4,22 +4,25 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+	<!-- DTO 클래스 객체의 별명 설정 -->
    <typeAliases>
       <typeAlias type="com.spring.ex01.MemberVO" alias="memberVO"/>
    </typeAliases>
-
+	
+	<!-- mybatis 환경설정 (DB Connection, ConnectionPool)-->
    <environments default="development">
      <environment id="development">
         <transactionManager type="JDBC"/>
         <dataSource  type="POOLED">
             <property name="driver"  value="oracle.jdbc.driver.OracleDriver" />
-            <property  name="url"    value="JDBC:oracle:thin:@localhost:1521:XE" />
+            <property  name="url"    value="JDBC:oracle:thin:@localhost:49161:XE" />
             <property name="username" value="scott" />
-            <property name="password"  value="tiger"/>        
+            <property name="password"  value="TIGER"/>        
         </dataSource>
      </environment>
    </environments>
-
+   
+<!-- 사용할 sql과 매개변수 혹은 반환값 정의 -->
 <mappers>
    <mapper resource="mybatis/mappers/member.xml"/>
 </mappers>

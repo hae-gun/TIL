@@ -4,6 +4,8 @@
    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="mapper.member">
+
+	<!-- 가져온 데이터를 vo객체에 맵핑 -->
 	<resultMap id="memResult" type="memberVO">
 		<result property="id" column="id" />
         <result property="pwd" column="pwd" />
@@ -20,13 +22,13 @@
       <result property="joinDate" column="joinDate" />
    </resultMap> -->
 
-
+	<!-- dao 에서 쿼리 이용할 때 id명으로 사용. 결과는 resultMap 형태로 만들어진다.  -->
 	<select id="selectAllMemberList" resultMap="memResult">
       <![CDATA[
          select * from t_member	order by joinDate desc	 	
       ]]>
 	</select>
-
+	<!-- mybatis 3. 버전부터 String 그냥 사용가능. 이하는 java.lang.String 으로 써야함. -->
 	<select id="selectName" resultType="String">
     <![CDATA[
 	select name from t_member
@@ -49,7 +51,7 @@
       ]]>
 	 </select>	
 	
-	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="int" >
+	<select id="selectMemberByPwd" resultMap="memResult"  parameterType="String" >
       <![CDATA[
          select * from t_member
          where
@@ -144,7 +146,7 @@
       
       where name in
       <foreach item="item" collection="list" open="(" separator="," close=")" >
-         #{item}
+         #{item} 
       </foreach>
       order by joinDate desc
    </select>
@@ -169,6 +171,7 @@
     </select>
      -->
    <!--  like 검색 -->
+   <!-- sql 문자열 연결 '||' concat -->
    <select id="selectLike" resultMap="memResult"  parameterType="String" >
       <![CDATA[
          select * from t_member

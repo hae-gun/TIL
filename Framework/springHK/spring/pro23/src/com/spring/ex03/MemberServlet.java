@@ -39,16 +39,15 @@ public class MemberServlet extends HttpServlet {
 			request.setAttribute("member", memberVO);
 			nextPage = "test02/memberInfo.jsp";
 		} else if (action.equals("selectMemberByPwd")) {
-			int pwd = Integer.parseInt(request.getParameter("value"));
+//			int pwd = Integer.parseInt(request.getParameter("value"));
+			String pwd = request.getParameter("value");
 			List<MemberVO> membersList = dao.selectMemberByPwd(pwd);
 			request.setAttribute("membersList", membersList);
 			nextPage = "test02/listMembers.jsp";
 		}
 		
-		
 		RequestDispatcher dispatch = request.getRequestDispatcher(nextPage);  
 		dispatch.forward(request, response);
-
 
 	}
 }

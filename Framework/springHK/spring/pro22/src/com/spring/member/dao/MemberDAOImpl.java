@@ -15,18 +15,20 @@ import com.spring.member.vo.MemberVO;
 
 
 public class MemberDAOImpl implements MemberDAO {
+	// JdbcTemplate 객체를 필드로 갖고 setter를 이용해서 초기화. 
+	// action-dataSource.xml 에서 생성한 DataSource 객체를 주입받는다.
 	private JdbcTemplate jdbcTemplate;
 	public void setDataSource(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List selectAllMembers() throws DataAccessException {
 		String query = "select id,pwd,name,email,joinDate" + " from t_member " + " order by joinDate desc";
-		List membersList = new ArrayList();
+		List<MemberVO> membersList = new ArrayList();
 
-		membersList = this.jdbcTemplate.query(query, new RowMapper() {
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+		membersList = this.jdbcTemplate.query(query, (rs,rownum)->{
 				MemberVO memberVO = new MemberVO();
 				memberVO.setId(rs.getString("id"));
 				memberVO.setPwd(rs.getString("pwd"));
@@ -35,7 +37,18 @@ public class MemberDAOImpl implements MemberDAO {
 				memberVO.setJoinDate(rs.getDate("joinDate"));
 				return memberVO;
 			}
-		});
+		);
+//		membersList = this.jdbcTemplate.query(query, new RowMapper() {
+//			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
+//				MemberVO memberVO = new MemberVO();
+//				memberVO.setId(rs.getString("id"));
+//				memberVO.setPwd(rs.getString("pwd"));
+//				memberVO.setName(rs.getString("name"));
+//				memberVO.setEmail(rs.getString("email"));
+//				memberVO.setJoinDate(rs.getDate("joinDate"));
+//				return memberVO;
+//			}
+//		});
 		return membersList;
 	}
 

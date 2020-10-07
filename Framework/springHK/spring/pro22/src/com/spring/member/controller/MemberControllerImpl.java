@@ -17,12 +17,15 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 		this.memberService = memberService;
 	}
 
-
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		List membersList = memberService.listMembers();
+		// request 에서 추출한 값인 listMember를 viewResolver를 통해 
+		// /WEB-INF/views/listMembers.jsp로 만들어서 ModelAndView 객체의 뷰 설정으로 지정
 		ModelAndView mav = new ModelAndView(viewName);
+		// 서비스를 통해 받은 리스트를 ModelAndView 객체에 오브젝트로 붙여줌.
 		mav.addObject("membersList", membersList);
+		//Dispatcher 객체에게 생성된 ModelAndView 객체를 반환 => 해당 뷰로 오브젝트를 달고 이동.
 		return mav;
 	}
 	

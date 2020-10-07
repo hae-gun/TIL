@@ -10,5 +10,6 @@
 <body>
    <h1>index.jsp파일입니다.</h1>
    <p>Hello Spring!!</p>
+   <p>${wow}</p>
 </body>
 </html>
