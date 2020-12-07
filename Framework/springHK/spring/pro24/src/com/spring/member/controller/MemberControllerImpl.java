@@ -20,6 +20,12 @@ public class MemberControllerImpl extends MultiActionController implements Membe
 	}
 	
 	@Override
+	public ModelAndView aa(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		System.out.println("MemberControllerImpl aa: "+ request.getParameter("wow"));
+		return null;
+	}
+	
+	@Override
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String viewName = getViewName(request);
 		List membersList = memberService.listMembers();

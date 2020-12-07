@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class AccountService {
 	private AccountDAO accDAO;
 
+	public AccountService() {}
+	
 	public void setAccDAO(AccountDAO accDAO) {
 		this.accDAO = accDAO;
 	}

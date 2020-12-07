@@ -18,10 +18,12 @@ import com.spring.ex01.MemberVO;
 @WebServlet("/mem4.do")
 public class MemberServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doGet>>>"+request.getContextPath());
 		doHandle(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("doPost>>>"+request.getContextPath());
 		doHandle(request, response);
 	}
 
@@ -94,21 +96,21 @@ public class MemberServlet extends HttpServlet {
           nextPage="test03/listMembers.jsp";
        }else if(action.equals("foreachSelect")) {
 		  List<String> nameList = new ArrayList<String>();
-		  nameList.add("ȫ�浿");
-		  nameList.add("������");
-		  nameList.add("�̼���");
+		  nameList.add("111");
+		  nameList.add("12");
+		  nameList.add("qwer");
 		  List<MemberVO> membersList=dao.foreachSelect(nameList);
 		  request.setAttribute("membersList",membersList);
 		  nextPage="test03/listMembers.jsp";
 	   }else if(action.equals("foreachInsert")) {
           List<MemberVO> memList = new ArrayList<MemberVO>();
-          memList.add(new MemberVO("m1", "1234", "�ڱ浿", "m1@test.com"));
-          memList.add(new MemberVO("m2", "1234", "�̱浿", "m2@test.com"));
-          memList.add(new MemberVO("m3", "1234", "��浿", "m3@test.com"));
+          memList.add(new MemberVO("m1", "1234", "m1", "m1@test.com"));
+          memList.add(new MemberVO("m2", "1234", "m2", "m2@test.com"));
+          memList.add(new MemberVO("m3", "1234", "m3", "m3@test.com"));
           int result=dao.foreachInsert(memList);
           nextPage="/mem4.do?action=listMembers";
 	    }else if(action.equals("selectLike")) {
-	      String name="�浿";
+	      String name="m";
 		  List<MemberVO> membersList=dao.selectLike(name);
 		  request.setAttribute("membersList",membersList);
 		  nextPage="test03/listMembers.jsp";

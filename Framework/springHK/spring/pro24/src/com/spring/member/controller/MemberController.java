@@ -10,5 +10,6 @@ public interface MemberController {
 	public ModelAndView listMembers(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView addMember(HttpServletRequest request, HttpServletResponse response) throws Exception;
 	public ModelAndView removeMember(HttpServletRequest request, HttpServletResponse response) throws Exception;
-
+	public ModelAndView aa(HttpServletRequest request, HttpServletResponse response) throws Exception;
+	
 }

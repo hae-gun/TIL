@@ -160,7 +160,22 @@
                     #{item.email})
       </foreach>
    </insert>
-   
+   <!-- 실제 sql 문장 : 
+   		  INSERT ALL 
+   		  
+   		  INTO  t_member(id, pwd, name, email)
+	          VALUES  (#{item.id},
+	                    #{item.pwd},
+	                    #{item.name},
+	                    #{item.email})
+   		  INTO  t_member(id, pwd, name, email)
+   		  
+	          VALUES  (#{item.id},
+	                    #{item.pwd},
+	                    #{item.name},
+	                    #{item.email}) ...
+	                    
+          SELECT * FROM DUAL-->
    <!-- 
     <select id="selectLike" resultMap="memResult"  parameterType="String" >
       <![CDATA[

@@ -8,6 +8,8 @@ import org.springframework.web.servlet.mvc.multiaction.MultiActionController;
 
 public class AccountController  extends MultiActionController  {
 	   private AccountService accService ; 
+	   
+	   public AccountController() {}
 	   public void setAccService(AccountService accService){
 	     this.accService = accService;
 	   }	

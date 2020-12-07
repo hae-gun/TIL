@@ -4,6 +4,8 @@
 
 <configuration>
 	<typeAliases>
-		<typeAlias type="com.spring.member.vo.MemberVO"  alias="memberVO" />
+		<!-- DTO class 의 별명설정. -->
+		<typeAlias type="com.spring.member.vo.MemberVO"
+			alias="memberVO" />
 	</typeAliases>
 </configuration>

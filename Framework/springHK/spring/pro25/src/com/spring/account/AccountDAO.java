@@ -6,6 +6,8 @@ import org.springframework.dao.DataAccessException;
 public class AccountDAO {
 	private SqlSession sqlSession;
 
+	public AccountDAO() {}
+	
 	public void setSqlSession(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
 	}
