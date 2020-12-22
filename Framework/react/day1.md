@@ -97,3 +97,57 @@ pizza = false // error
   ![image-20201208221248114](day1.assets/image-20201208221248114.png)
 
   ![image-20201208221305824](day1.assets/image-20201208221305824.png)
+
+
+
+
+
+### 화살표함수
+
+* function 키워드 없이 함수를 만들 수  있다.
+* return을 하지 않아도 식을 계산한 값이 자동으로 반환된다.
+
+```javascript
+var lordify = function(firstName){
+  return `캔터베리의 ${firstName}`;
+}
+// 화살표 함수 사용
+var lodify = firstName => `캔터베리의 ${firstName}`
+```
+
+* 화살표 함수는 this를 새로 바인딩하지 않는다.
+
+```javascript
+var gangwon = {
+  resorts : ['용평', '평창', '강촌', '강릉', '홍천'],
+  print: function(){
+    setTimeout(function(){
+      console.log(this);
+      console.log(this.resorts.join(','))
+    },delay)
+  }
+}
+gangwon.print()
+```
+
+* 위의 경우 this 는 gangwon 객체가 아닌 window로 바인딩 되어 join 을 사용할 수 없다.
+
+![image-20201210230300431](day1.assets/image-20201210230300431.png)
+
+* 안쪽 함수를 화살표 함수로 지정하게 되면 this는gangwon 객체를 가르키게 된다.
+
+```javascript
+var gangwon = {
+  resorts : ['용평', '평창', '강촌', '강릉', '홍천'],
+  print: function(){
+    setTimeout(() => {
+      console.log(this);
+      console.log(this.resorts.join(','))
+    },delay)
+  }
+}
+gangwon.print()
+```
+
+![image-20201210230427202](day1.assets/image-20201210230427202.png)
+

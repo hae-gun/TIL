@@ -13,19 +13,25 @@ public class Test {
 		int a=Integer.parseInt(br.readLine());
 		double result = 0;
 		
+		double test= Math.sqrt(a);
+		
+		
+		int chk = (int)((test - (int)test) * 10);
+		if(chk != 0) {
 		for(int N=0; N<=7;N++) {
 			
 			double plus = 1/Math.pow(10, N);
-			for(int j=0; j<10; j++) {
+			for(int j=0; j<1000; j++) {
 				result += plus;
 				if(Math.pow(result+plus, 2)>=a) {
 					break;
 				}
-				System.out.println(result);
 			}
 		}
-		System.out.printf("%.7f",result);
-		int b = 10;
+		System.out.printf("root %d = %.7f",a,result);
+		}else {
+			System.out.printf("root %d = %.2f",a,test);
+		}
 		
 	}
 }
