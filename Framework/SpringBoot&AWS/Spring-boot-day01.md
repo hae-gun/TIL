@@ -29,4 +29,21 @@
 * 스프링 부트가 제공하는 Welcome Page 기능
   * 'static/index.html'을 올려두면 Welcome Page 기능을 제공한다.
   * https://docs.spring.io/spring-boot/docs/2.3.7.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content
-* 
+
+
+
+
+
+
+
+
+
+### @ResponseBody 사용원리
+
+* `@ResponseBody` 어노테이션 사용시
+  * HTTP 의 BODY에 문자 내용을 직접 반환한다.
+  * `viewResolver` 대신 `HttpMessageConverter`가 동작하게 된다.
+    * 기본 문자처리: `StringHttpMessageConverter`
+    * 기본 객체처리: `MappingJackson2HttpMessageConverter`
+  * byte 처리 등등 기타 여러 `HttpMessageConverter`가 기본으로 등록되어 있다.
+

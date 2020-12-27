@@ -27,12 +27,14 @@ public class HelloController {
     }
 
     @GetMapping("hello-api")
-    @ResponseBody
+    @ResponseBody //Json 으로 반환됨. (Default)
     public Hello helloApi(@RequestParam("name") String name){
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
     }
+
+
     static class Hello{
         private String name;
 
