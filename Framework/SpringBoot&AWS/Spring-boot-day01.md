@@ -17,3 +17,16 @@
    * mockito: 목 라이브러리
    * assertj: 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
    * spring-test: 스프링 통합 테스트 지원
+
+
+
+
+
+
+
+## View 환경 설정
+
+* 스프링 부트가 제공하는 Welcome Page 기능
+  * 'static/index.html'을 올려두면 Welcome Page 기능을 제공한다.
+  * https://docs.spring.io/spring-boot/docs/2.3.7.RELEASE/reference/html/spring-boot-features.html#boot-features-spring-mvc-static-content
+* 
