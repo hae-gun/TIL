@@ -39,3 +39,49 @@
 라고 적혀있다.
 
 바이트 코드라 불리는 이유는 자바 컴파일러(javac)를 통해 자바를 컴파일 하게 되면 코드의 명령어 크기가 1바이트라서 바이트 코드라고 불린다고 한다. 이렇게 컴파일된 자바 바이트코드는 `.class`확장자로 생성이 된다. 이는 위에서 설명 했듯이 OS에 상관없이 JVM만 깔려있는 OS라면 해당 바이트코드를 어떤 환경에서도 동일하게 실행할 수 있게 된다.
+
+
+
+## JIT 컴파일러란 무엇이며 어떻게 동작하는가
+
+JIT(Just-in-Time) 컴파일러란 변환된 바이트코드를 CPU로 직접 보낼 수 있는 명령어(기계어)로 바꾸어주는 과정이다. 코드 런타임 과정에서 .class코드를 받아 Native code로 변환하는 과정을 말한다.
+
+JIT 컴파일러는 뒤에 알아볼 JRE 안에 존재한다. 
+그러면 JIT 컴파일러를 쓰는 이유는 무었일까?
+
+JIT 컴파일러는 기계어로 번역할 때  코드를 매번 해석하지 않고 실행할 때 컴파일을 하면서 해당 코드를 캐싱하게 된다. 이후엔, 바뀐 부분만 컴파일 하고 나머지 캐싱된 코드를 사용함으로써 기계어로 변역되는 속도를 줄여주는 역할을 하게된다.
+![](https://images.velog.io/images/chkchk610/post/5c945677-d9cd-411e-9d24-0ee1af79cd4e/image.png)
+출처- https://bloofer.tistory.com/21
+
+
+## JVM 구성요소
+
+그렇다면 이젠 JVM 의 전체 구성요소를 알아보자.
+
+![](https://images.velog.io/images/chkchk610/post/601a2e28-ac99-42f0-abd1-5c8150aa2f1e/image.png)
+출처- https://medium.com/webeveloper/jvm-java-virtual-machine-architecture-94b914e93d86
+
+1. Class Loader
+클래스 로더는 이름 그대로 클래스를 적재하는 역할을 한다. 적재하는 순서로는 `로딩, 링크, 초기화` 순서로 진행된다.
+
+1) 로딩: 클래스로더가 .class 파일을 읽고 내용에 따른 바이너리 데이터를 만든다. 만들어진 데이터는 메서드영역에 저장되며 로딩이 끝난후 해당 클래스 타입의 Class 객체를 생성하여 힙 영역에 저장하게 된다.
+
+1-1) 메서드 영역에 저장되는 데이터들은 FQCN(Full Qualified Class Name), 클래스, 인터페이스, Enum, 메서드, 변수 가 있다.
+
+2) 링크: Verify, Prepare, Resolve 세 단계로 나누어져 있으며 verify 과정에서는 .class 파일 형식이 유효한지 체크한다. prepare과정은 클래스 변수와 기본값에 필요한 메모리를 교체하고, Resolve는 심볼릭 메모리 래퍼런스를 메서드 영역에 있는 실제 레퍼런스와 교체한다.
+
+3) 초기화: 초기화 과정에서 static 변수의 값을 할당하게 된다.
+
+
+
+## JDK와 JRE의 차이
+
+* JRE : Java Runtime Environment의 약자
+* JRE는 JVM 이 자바 프로그램을 동작시킬때 필요한 라이브러리 파일들과 기타 파일들을 갖고 있다. JRE는 JVM의 실행환경을 구성해 준다.
+
+* JDK : Java Development Kit의 약자
+* JDK는 JRE + 개발을 위한 도구(javac, java등)들을 포함한다.
+
+정확히는 Java 개발자 들이 Java 언어로 작성된 소스를 컴파일하고 관리하는 도구가 JDK 이다. 이 JDK 안에는 JRE도 포함되어 있다. 컴파일 결과를 확인하기 위해 JRE가 필요하기 때문이다.
+
+하지만 단순히 Java 프로그램을 실행하는 사용자라면 OS에 JRE만 설치함으로써 Java 프로그램을 실행할 수 있다.
