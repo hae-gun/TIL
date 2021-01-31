@@ -1,10 +1,22 @@
-> 번외. mac 기준 command shift test
+
+
+
 
 # 6장
 
 ## Unitils
 
+단위 테스트 지원 라이브러리.
 
+
+
+
+
+
+
+
+
+![image-20210128194001014](TDD_7.assets/image-20210128194001014.png)
 
 ### 1. assertEquals 객체비교 에러
 
@@ -68,7 +80,7 @@
              m1.setId(1l);
              m2.setName("a");
              m2.setId(1l);
-          assertReflectionEquals("동일객체",m1,m2);
+          assertReflectionEquals("다른 객체",m1,m2);
   
       }
   ```
@@ -289,22 +301,9 @@ default 값은 `CleanInsert`
 
 1. Constructor Test
 
-   * 단순한 클래스 생성에는 테스트 케이스를 작성하지 않는다.
-   * 객체 사용시 반드시 필요한 값을 생성자에서 설정하는 경우는 필요에 따라 작성한다.
-   * Ex) Dao 생성자를 통한 DB Connection 확보.
-
-   
-
 2. DTO 스타일의 객체
 
-   * 단순한 setter/getter로 이뤄진 DTO는 테스트 케이스 작성하지 않는다.
-   * immutable object의 경우 getter 계열 메소드나 is 계열 메서드를 이용한 테스트 케이스 작성하기도 한다.
-
-   > 불변객체 : setter가 없는 객체 ex) String name = "근근근";
-
 3. 닭과 달걀 메소드 테스트
-
-   * 메서드가 서로 만불린 경우. 하나만 독립적으로 테스트 하기 어려운 경우.
 
 4. 배열 테스트
 
@@ -338,8 +337,16 @@ MVC 모델 기본 원칙.
 
 모델 TDD
 
-* 도메인 모델에 대한 TDD : DTO -> 단순하여 작성할 필요가 거의 없다.
-* 서비스 모델에 대한 TDD : 
+* 도메인 모델에 대한 TDD 
+* 서비스 모델에 대한 TDD 
+
+
+
+
+
+데이터 베이스 TDD 전략
+
+
 
 
 

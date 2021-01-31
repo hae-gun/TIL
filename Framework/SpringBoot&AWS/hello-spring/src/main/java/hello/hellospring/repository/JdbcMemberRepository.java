@@ -12,6 +12,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class JdbcMemberRepository implements MemberRepository {
+    @Override
+    public void updateById(Long id, String name) {
+
+    }
+
+    @Override
+    public void deleteByName(String name) {
+
+    }
 
     private final DataSource dataSource;
 

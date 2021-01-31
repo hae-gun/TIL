@@ -44,6 +44,21 @@ public class MemberService {
         return memberRepository.findById(memberId);
     }
 
+    /**
+     * 업데이트
+     */
+    public void updateById(Long id, String name){
+        memberRepository.updateById(id,name);
+    }
+
+    /**
+     * 삭제
+     */
+    public void deleteByName(String name){
+        memberRepository.deleteByName(name);
+    }
+
+
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {

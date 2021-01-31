@@ -6,6 +6,15 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 public class MemoryMemberRepository implements MemberRepository{
+    @Override
+    public void updateById(Long id, String name) {
+
+    }
+
+    @Override
+    public void deleteByName(String name) {
+
+    }
 
     private static Map<Long,Member> store = new HashMap<>();
     private static Long sequence = 0L;

@@ -1,24 +1,42 @@
 package hello.hellospring.repository;
 
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import hello.hellospring.domain.Member;
+
+import java.sql.*;
 
 public class DatabaseRepository implements Repository {
 
-    private final String driver = "oracle.jdbc.driver.OracleDriver";
-    private final String protocol = "jdbc:oracle:thin:@localhost:49161:";
-    private final String dbName = "USERS";
+    private final String driver = "org.h2.Driver";
+    private final String url = "jdbc:h2:tcp://localhost/~/test";
     private Connection conn;
 
     public DatabaseRepository() throws Exception{
         Class.forName(driver).newInstance();
-        conn = DriverManager.getConnection(protocol+dbName);
+        conn = DriverManager.getConnection(url);
     }
 
     @Override
-    public Seller findById(String id) {
-        return null;
+    public Member findById(Long id) {
+        PreparedStatement stmt = null;
+        ResultSet rs =null;
+        Member member = null;
+        try{
+            String query = "select id, name from member where ID = ?";
+            stmt = conn.prepareStatement(query);
+            stmt.setLong(1,id);
+            rs = stmt.executeQuery();
+            if(!rs.next()){
+                throw new SQLException("NO Data");
+            }
+            member = new Member(rs.getLong(1),rs.getString(2));
+            rs.close();
+            stmt.close();
+            conn.close();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return member;
     }
 
     @Override
