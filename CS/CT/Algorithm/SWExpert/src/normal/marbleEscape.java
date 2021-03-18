@@ -1,10 +1,12 @@
+package normal;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class marbleEscape {
 	
 	static class Status{
 		int rx,ry;
