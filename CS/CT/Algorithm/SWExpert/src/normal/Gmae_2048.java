@@ -34,7 +34,7 @@ public class Gmae_2048 {
 		}
 //		for(int i=0; i<size; i++)
 //			System.out.println(Arrays.toString(board[i]));
-		for(int i=0; i<mdir.length;i++) {
+		for(int i=0; i<4;i++) {
 			game(board,0,mdir[i]);
 		}
 		System.out.println(max);
@@ -44,7 +44,7 @@ public class Gmae_2048 {
 
 
 	private static void game(int[][] board, int count, char c) {
-		if(count>5) return;
+		if(count==5) return;
 		int size = board.length;
 		int[][] nextBoard = new int[size][size];
 		Stack<Integer> stack = new Stack<>();
@@ -168,7 +168,7 @@ public class Gmae_2048 {
 //			for(int i=0; i<size; i++)
 //			System.out.println(Arrays.toString(nextBoard[i]));
 //			System.out.println("#############################");
-		for(int i=0; i<size; i++) {
+		for(int i=0; i<4; i++) {
 			game(nextBoard,count+1,mdir[i]);
 		}
 	}
