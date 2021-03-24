@@ -12,7 +12,7 @@ public class RollingDice {
 	
 	static int[] dy = {1,-1,0,0};
 	static int[] dx = {0,0,-1,1};
-	
+	static String[] direction = {"→", "←","↑","↓"};
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -61,22 +61,22 @@ public class RollingDice {
 			
 			
 			
-			for(int i=0; i<N; i++) {
-				for(int j=0; j<M; j++) {
-					if(j==y &&i==x) {
-						System.out.print(">"+map[i][j]+" ");
-					}else {
-						System.out.print(map[i][j]+" ");
-					}
-				}
-				System.out.println();
-			}
-			System.out.println("#######"+dir+"#######");
-			System.out.println("  " + dice.back + "  ");
-			System.out.println(dice.left + " " + dice.top + " "+dice.right);
-			System.out.println("  " + dice.front + "  ");
-			System.out.println("  " + dice.bottom + "  ");
-			System.out.println("##############");
+//			for(int i=0; i<N; i++) {
+//				for(int j=0; j<M; j++) {
+//					if(j==y &&i==x) {
+//						System.out.print(">"+map[i][j]+" ");
+//					}else {
+//						System.out.print(map[i][j]+" ");
+//					}
+//				}
+//				System.out.println();
+//			}
+//			System.out.println("##############");
+//			System.out.println("  " + dice.back + "  ");
+//			System.out.println(dice.left + " " + dice.top + " "+dice.right);
+//			System.out.println("  " + dice.front + "  ");
+//			System.out.println("  " + dice.bottom + "  ");
+//			System.out.println("###### "+direction[dir-1]+" ######");
 			x = nx;
 			y = ny;
 			dice = dice.turn(dir);
@@ -84,12 +84,12 @@ public class RollingDice {
 			if(map[nx][ny] == 0) {
 				map[nx][ny] = dice.bottom;
 			}else {
-				int temp = dice.bottom;
+//				int temp = dice.bottom;
 				dice.bottom = map[nx][ny];
-				map[nx][ny] = temp;
+				map[nx][ny] = 0;
 			}
 			
-			
+			System.out.println(dice.top);
 		}
 		
 	}
