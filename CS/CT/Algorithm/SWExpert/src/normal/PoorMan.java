@@ -25,59 +25,33 @@ public class PoorMan {
 				.stream().map(Integer::parseInt)
 				.collect(Collectors.toList());
 		
-		int[][] xy = {
-				{position.get(0),position.get(2)},
-				{position.get(0),position.get(3)},
-				{position.get(1),position.get(2)},
-				{position.get(1),position.get(3)}
-				};
 		
 		
-		// ax+by+c = 0
-		// y = (-ax-c)/b
+		int x1 = position.get(0);
+		int x2 = position.get(1);
+		int y1 = position.get(2);
+		int y2 = position.get(3);
 		
-//		int[] y = new int[2];
-//		
-//		y[0] = (-a*xy[0][0] - c)/b;
-//		y[1] = (-a*xy[1][0] - c)/b;
-//		
-		String answer = "";
+		int xset[] = {x1,x2};
+		int yset[] = {y1,y2};
+		// ax+by+c=0;
 		
-//		if((y[0] <= xy[0][1] && y[1] <= xy[2][1])||(y[0] >= xy[1][1] && y[1] >= xy[3][1])) {
-//			answer = "Lucky";
-//		}else {
-//			answer = "Poor";
-//		}
+		int[] count = new int[2];
 		
-		int ld = a * xy[0][0] + b * xy[0][1] + c;
-		int lu = a * xy[1][0] + b * xy[1][1] + c;
-		int rd = a * xy[2][0] + b * xy[2][1] + c;
-		int ru = a * xy[3][0] + b * xy[3][1] + c;
-		
-//		System.out.printf("%d %d %d %d",ld,lu,rd,ru);
-		
-//		int xi = -(c/a);
-//		int yi = -(c/b);
-		
-		if(a*b <0) {
-			if(lu<=0 || rd >=0) answer = "Lucky";
-			else answer = "Poor";
-		}else if(a*b >0) {
-			if(ld>=0 || ru<=0) answer = "Lucky";
-			else answer = "Poor";
-		}else if(a==0) {
-			if(-c/b < position.get(4) && -c/b > position.get(3) ) {
-				answer = "Poor";
-			}else {
-				answer = "Lucky";
+		for(int x :xset) {
+			for(int y:yset) {
+				int r = a*x + b*y + c;
+				if(r <= 0) count[0] ++;
+				if(r >= 0) count[1] ++;
 			}
-		}else if(b==0) {
-			if(-a/c > position.get(0) && -a/c < position.get(1)) answer = "Poor";
-			else answer = "Lucky";
 		}
+		String[] answer = {"Poor","Lucky"};
 		
-		
-		System.out.println(answer);
+		if(count[0]==4 || count[1]==4) {
+			System.out.println(answer[1]);
+		}else {
+			System.out.println(answer[0]);
+		}
 		
 	}
 }
