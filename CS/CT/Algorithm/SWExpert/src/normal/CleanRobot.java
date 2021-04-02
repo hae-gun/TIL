@@ -61,19 +61,37 @@ public class CleanRobot {
 		que.add(robot);
 		int count = 0;
 		while(!que.isEmpty()) {
-			count++;
+			
 			Cleaner cur = que.removeFirst();
-			Cleaner next = new Cleaner(cur.x,cur.y,cur.dir);
+			
+			if(map[cur.x][cur.y] == 0) {
+				map[cur.x][cur.y] = 2;
+				count++;
+			}
+			
+			Cleaner next = new Cleaner();
+			
 			for(int dir = 0; dir < 4; dir++) {
-				next.x += dx[ (next.dir + 3 - dir) %4 ];
-				next.y += dy[ (next.dir + 3 - dir) %4 ];
+				next.dir = (cur.dir + 3 - dir) %4 ;
+				next.x = cur.x +  dx[ next.dir ];
+				next.y = cur.y +  dy[ next.dir ];
 				
-				if(next.x < 0 || next.x >= map.length || next.y < 0 || next.y > map[0].length) continue;
-				if(map[next.x][next.y] != 0) continue;
-				map[next.x][next.y] = 2;
+				if(next.x < 0 || next.x >= map.length || next.y < 0 || next.y > map[0].length || map[next.x][next.y] != 0) continue;
 				que.add(next);
 				break;
 			}
+			
+			if(que.isEmpty()) {
+				next.dir = cur.dir;
+				next.x = cur.x +  dx[ (next.dir + 2) % 4 ];
+				next.y = cur.y +  dy[ (next.dir + 2) % 4];
+				
+				if(next.x < 0 || next.x >= map.length || next.y < 0 || next.y > map[0].length || map[next.x][next.y] == 1) {
+					break;
+				}
+				que.add(next);
+			}
+			
 			
 		}
 		System.out.println(count);
@@ -104,6 +122,8 @@ public class CleanRobot {
 class Cleaner{
 	int x,y;
 	int dir;
+	
+	public Cleaner() {}
 	
 	public Cleaner(int x, int y, int dir) {
 		this.x = x;
