@@ -14,7 +14,10 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-*.KakaoTest/
+
+# KakaoTestFolder
+CS/CT/Algorithm/SWExpert/src/KakaoTest/
+
 
 # External tool builders
 .externalToolBuilders/
