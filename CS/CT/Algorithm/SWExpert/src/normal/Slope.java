@@ -22,15 +22,12 @@ public class Slope {
 			}
 		}
 		solve();
-		
-		
 	}
 	static int result=0;
 	private static void solve() {
 		for(int i=0; i<map.length; i++) {
 			slope(i,true);
 			slope(i,false);
-			
 		}
 		System.out.println(result);
 	}
@@ -42,7 +39,9 @@ public class Slope {
 			else if(d==1 && count >= L) count=1;
 			else if ( d==-1 && count >= 0) count = -L +1;
 			else return;
+			System.out.println(count);
 		}
+		System.out.println("+++");
 		if(count >= 0) result += 1;
 	}
 }
