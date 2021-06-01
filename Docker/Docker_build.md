@@ -76,7 +76,7 @@ docker push '내도커허브아이디/내도커허브Repository이름'
 
 4. 이미지 실행
 
-`sudo docker run -p 도커내부포트:gcp외부포트 '내도커허브아이디/내도커허브Repository이름'`
+`sudo docker run -p 외부포트(gcp):내부포트(docker) '내도커허브아이디/내도커허브Repository이름'`
 
 
 
